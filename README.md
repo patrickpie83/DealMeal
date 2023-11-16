@@ -1,4 +1,6 @@
 # DealMeal訂食 電商網站-JS練習作品
+## 專案進度
+  - 開發中
 
 ## 開發環境
   - 應用六角學院洧杰老師所提供的 [vite開發環境](https://github.com/gonsakon/vite0729/tree/main#%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B) 來執行開發(ejs版型管理,scss編譯)、部署網頁
