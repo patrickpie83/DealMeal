@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <section class="container">
+        <div class="row justify-content-center mt-3 mb-7">
+            <div class="col-10 px-0">
+              <button type="button" class="d-block py-2 mb-3 ms-auto btn btn-primary text-light-brown rounded-0">登出</button>
+
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item w-50" role="memberTab">
+                  <button class="nav-link active w-100 text-dark-brown py-4 fs-4" data-bs-toggle="tab" data-bs-target="#member" type="button" role="tab" aria-controls="member" aria-selected="true">會員資料</button>
+                </li>
+                <li class="nav-item w-50" role="orderTab">
+                  <button class="nav-link w-100 text-dark-brown py-4 fs-4" data-bs-toggle="tab" data-bs-target="#order" type="button" role="tab" aria-controls="order" aria-selected="false">歷史訂單</button>
+                </li>
+              </ul>
+              <div class="tab-content border border-dark-brown border-top-0 d-flex flex-column align-items-center">
+                <!-- 會員資料 -->
+                <div class="tab-pane fade show active w-50 my-7" id="member" role="tabpanel">
+                    <label for="memberName" class="form-label">歡迎回來！</label>
+                    <!-- 尚未製作要改成對應資料 -->
+                    <div class="d-flex mb-4 align-items-center">
+                      <input type="text" class="w-75 form-control rounded-0 border-primary" id="memberName" value="高雄金城武" disabled>
+                      <a class="text-decoration-none ms-2" href="#">修改</a>
+                    </div>
+                    
+                    <label for="memberEmail" class="form-label">你的電子信箱</label>
+                    <div class="d-flex mb-4 align-items-center">
+                      <input type="email" class="w-75 form-control rounded-0 border-primary" id="memberEmail" value="patrickpie@mail.com" disabled>
+                      <a class="text-decoration-none ms-2" href="#">修改</a>
+                    </div>
+                    <label for="memberAddress" class="form-label">你的配送地址</label>
+                    <div class="d-flex mb-5 align-items-center">
+                      <input type="text" class="w-75 form-control rounded-0 border-primary" id="memberAddress" value="高雄市新興區中華一路111巷1號" disabled>
+                      <a class="text-decoration-none ms-2" href="#">修改</a>
+                    </div>
+                    <button type="button" class="py-2 btn btn-primary text-light-brown w-100 rounded-0">儲存變更</button>
+                </div>
+
+                <!-- 歷史訂單 -->
+                <div class="tab-pane fade w-100" id="order" role="tabpanel">
+
+                  <table class="table table-borderless bg-light-brown table-striped text-center my-3">
+                    <thead>
+                      <tr>
+                        <th class="py-3" scope="col">訂單日期</th>
+                        <th class="py-3" scope="col">訂單編號</th>
+                        <th class="py-3" scope="col">訂購人</th>
+                        <th class="py-3" scope="col">訂單狀態</th>
+                        <th class="py-3" scope="col">展開訂單</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- 第一筆 -->
+                      <tr>
+                        <td >2023/11/07</td>
+                        <td>000000168</td>
+                        <td>金城武</td>
+                        <td>出貨中</td>
+                        <td>
+                          <a class="text-decoration-none" href="#" data-bs-toggle="collapse" data-bs-target="#orderNum-000000168">+</a>
+                        </td>
+                      </tr>
+                      
+                      <tr>
+                        <td colspan="5">
+                          <!-- 這邊要以訂單編號作為摺疊內容的id (不能為數字) -->
+                          <div id="orderNum-000000168" class="collapse">
+                            <p>五穀蘿蔔飯X1、蘿蔔蛤蜊蘑菇濃湯X2、牛豬雙響馬鈴薯X3</p>
+                            <p>使用優惠代碼：無</p>
+                            <p>訂單總額：1088元</p>
+                            <p>付款方式：街口支付</p>
+                            <p>訂購人電話：0912-345-678</p>
+                            <p>配送地址：高雄市新興區中華一路111巷1號</p>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <!-- 第二筆 -->
+                      <tr>
+                        <td >2023/11/01</td>
+                        <td>00000024</td>
+                        <td>金城武</td>
+                        <td>出貨中</td>
+                        <td>
+                          <a class="text-decoration-none" href="#" data-bs-toggle="collapse" data-bs-target="#orderNum-00000024">+</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="5">
+                          <!-- 這邊要以訂單編號作為摺疊內容的id (不能為純數字) -->
+                          <div id="orderNum-00000024" class="collapse ">
+                            <p>五穀蘿蔔飯X6、蘿蔔蛤蜊蘑菇濃湯X6、牛豬雙響馬鈴薯X6</p>
+                            <p>使用優惠代碼：無</p>
+                            <p>訂單總額：6688元</p>
+                            <p>付款方式：街口支付</p>
+                            <p>訂購人電話：0912-345-678</p>
+                            <p>配送地址：高雄市新興區中華一路111巷1號</p>
+                          </div>
+                          
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+
+            </div>
+        </div>
+    </section>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

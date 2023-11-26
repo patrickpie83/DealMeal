@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <img class="mb-lg-5" src="../assets/images/product_banner.png" alt="product_banner" style="width: 100%;">
+
+    <!-- mobile選單 -->
+    <nav class="stickyWithNav d-lg-none">
+      <div class="row">
+        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+      </div>
+    </nav>
+
+    <div class="container mb-7">
+      <div class="row">
+        <!-- pc選單 -->
+        <aside class="col-3">
+          <div class="d-none  d-lg-flex flex-column stickyWithNav d-none">
+            <button type="button" class="btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+            <button type="button" class="btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+            <button type="button" class="btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+          </div>
+        </aside>
+
+        <div class="col-9">
+          <div class="row">
+
+            <div class="col-6 mb-7">
+              <!-- 尚未製作，延伸連結效果及其功能 -->
+              <div class="ratio ratio-1x1">
+                <img src="../assets/images/塑身＿清爽豆蔬雞胸.jpg" alt="塑身＿清爽豆蔬雞胸">
+              </div>
+              <div class="mt-2 p-5 border border-primary">
+                <div class="d-flex justify-content-between">
+                  <a href="（暫）清爽豆蔬雞胸.html"><h3 class="fs-4">清爽豆蔬雞胸</h3></a>
+                  <p>即時庫存：18份</p>
+                </div>
+                <div class="mt-4 d-flex justify-content-between align-items-end">
+                  <div>
+                    <p>熱量：大卡
+                    <br>碳水化合物：公克
+                    <br>蛋白質：公克
+                    <br>脂肪：公克 </p>
+                  </div>
+                  <p class="fs-4 fw-bold">售價：160元</p>
+                </div>
+              </div>
+            </div>
+            
+            
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 頁數要用js生出來 -->
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

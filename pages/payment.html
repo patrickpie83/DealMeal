@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <section class="container my-7">
+      <!-- 商品資訊 -->
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-6">
+          <ol class="pay-list d-flex justify-content-between list-unstyled position-relative">
+            <!-- 當前的狀態會為number-active -->
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">1</p>
+              <p class="">購物車</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">2</p>
+              <p class="">配送資訊</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number number-active rounded-circle d-flex justify-content-center align-items-center">3</p>
+              <p class="">確認付款</p>
+            </li>
+          </ol>
+        </div>
+        
+        <div class="col-10 my-5">
+          <!-- mobile抬頭 -->
+          <div class="row d-md-none bg-normal-brown py-2">
+            <span class="d-block text-center">商品總覽</span>
+          </div>
+          <!-- pad.pc抬頭 -->
+          <div class="row py-3 justify-content-center bg-normal-brown text-center d-none d-md-block d-md-flex">
+            <div class="col-5">商品</div>
+            <div class="col-2">單價</div>
+            <div class="col-2">份數</div>
+            <div class="col-2">小計</div>
+            <div class="col-1">移除</div>
+          </div>
+          
+          <!-- 第一筆 -->
+          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
+            <div class="col-md-5 d-flex align-items-center">
+              <div class="w-50">
+                <div class=" ratio ratio-1x1">
+                  <img src="../assets/images/早餐＿蘿蔔蛤蜊蘑菇濃湯.jpg" alt="">
+                </div>
+              </div>
+              <div class="w-50 text-center">
+                <p>蘿蔔蛤蜊蘑菇濃湯湯湯</p>
+              </div>
+            </div>
+
+            <div class="col-md-2 my-auto text-end text-md-center">
+              <p>160元</p>
+            </div>
+
+            <div class="col-7 col-md-2 my-auto">
+              <p class="text-center">3份</p>
+            </div>
+            <div class="col-5 col-md-2 my-auto text-end text-md-center">
+              <p>共 480元</p>
+            </div>
+            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
+              <img width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+            </div>
+          </div>
+
+          <!-- 第二筆 -->
+          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
+            <div class="col-md-5 d-flex align-items-center">
+              <div class="w-50">
+                <div class=" ratio ratio-1x1">
+                  <img src="../assets/images/增肌＿牛豬雙響馬鈴薯.jpeg" alt="增肌＿牛豬雙響馬鈴薯">
+                </div>
+              </div>
+              <div class="w-50 text-center">
+                <p>牛豬雙響馬鈴薯</p>
+              </div>
+            </div>
+
+            <div class="col-md-2 my-auto text-end text-md-center">
+              <p>300元</p>
+            </div>
+
+            <div class="col-7 col-md-2 my-auto">
+              <p class="text-center">2份</p>
+            </div>
+            <div class="col-5 col-md-2 my-auto text-end text-md-center">
+              <p>共 600元</p>
+            </div>
+            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
+              <img width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="row justify-content-between">
+            <div class="col-md-8 mb-4 mb-md-6 mb-md-0 text-center text-md-start">
+              <span class="d-block mb-2">優惠折扣碼</span>
+              <div class="d-flex flex-column w-75 mx-auto mx-md-0">
+                <p>2023dealmealcoupon9</p>
+                <span>套用優惠碼：整筆訂單9折</span>
+              </div>
+            </div>
+
+            <div class="col-md-4 text-center">
+              <span class="d-block mb-2">運費</span>
+              <p>80元</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 訂購人資訊 -->
+      <div class="row mt-4 mt-md-0 justify-content-center">
+        <div class="col-10">
+          <div class="row bg-normal-brown py-2">
+            <span class="d-block text-center">訂購資訊</span>
+          </div>
+
+          <div class="row py-5 border border-dark-brown border-top-0">
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-3 text-lg-end">
+                  <span>姓名</span>
+                </div>
+                <div class="col-lg-9">
+                  <p class="w-100 mb-3 mb-md-4">金城武</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-2 text-lg-end">
+                  <span>電子信箱</span>
+                </div>
+                <div class="col-lg-10">
+                  <p class="w-100 mb-3 mb-md-4">patrickpie@mail.com</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-3 text-lg-end">
+                  <span>電話號碼</span>
+                </div>
+                <div class="col-lg-9">
+                  <p class="w-100 mb-3 mb-md-4">0912-345-678</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-2 text-lg-end">
+                  <span>配送地址</span>
+                </div>
+                <div class="col-lg-10">
+                  <p class="w-100 mb-3 mb-md-4">高雄市新興區中華一路111巷1號</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col d-flex justify-content-end align-items-center">
+              <span>合計</span>
+              <p class="fs-4 fw-bold mx-4">1420元</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 付款方式 -->
+      <div class="row justify-content-center">
+        <div class="col-10 mt-5">
+          <div class="row bg-normal-brown py-2">
+            <span class="d-block text-center">選擇付款方式</span>
+          </div>
+
+          <div class="row py-5 border border-dark-brown border-top-0">
+            <div class="col-4 col-lg-2 mx-auto">
+
+              <div class="form-check mb-5 d-flex align-items-center">
+                <div>
+                  <input class="form-check-input" type="radio" name="payment" id="linePay">
+                </div>
+                <div>
+                  <label class="form-check-label" for="linePay">
+                    <img class="w-100" src="../assets/images/icon_linepay.png" alt="icon_linepay">
+                  </label>
+                </div>
+              </div>
+              <div class="form-check mb-5 d-flex align-items-center">
+                <div>
+                  <input class="form-check-input" type="radio" name="payment" id="jkoPay">
+                </div>
+                <div>
+                  <label class="form-check-label" for="jkoPay">
+                    <img class="w-100" src="../assets/images/icon_jkopay.png" alt="icon_jkopay">
+                  </label>
+                </div>
+              </div>
+              <div class="form-check d-flex align-items-center">
+                <div>
+                  <input class="form-check-input" type="radio" name="payment" id="applePay">
+                </div>
+                <div>
+                  <label class="form-check-label" for="applePay">
+                    <img class="w-100" src="../assets/images/icon_applepay.png" alt="icon_applepay">
+                  </label>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4 mx-auto">
+          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0">確認付款</button>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

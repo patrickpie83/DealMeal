@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <section class="container my-7">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-6">
+          <ol class="pay-list d-flex justify-content-between list-unstyled position-relative">
+            <!-- 當前的狀態會為number-active -->
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">1</p>
+              <p class="">購物車</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number number-active rounded-circle d-flex justify-content-center align-items-center">2</p>
+              <p class="">配送資訊</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">3</p>
+              <p class="">確認付款</p>
+            </li>
+          </ol>
+        </div>
+        
+        <div class="col-10 mt-5">
+          <div class="row bg-normal-brown py-2">
+            <span class="d-block text-center">顧客資訊</span>
+          </div>
+
+          <!-- 姓名、電子信箱、電話號碼、配送地址為自動帶入，若要更改可更改。 -->
+          <div class="row py-5 border border-dark-brown border-top-0">
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-3 text-lg-end">
+                  <span>姓名</span>
+                </div>
+                <div class="col-lg-9">
+                  <input class="w-100 mb-3 mb-md-4" type="text" value="金城武">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-2 text-lg-end">
+                  <span>電子信箱</span>
+                </div>
+                <div class="col-lg-10">
+                  <input class="w-100 mb-3 mb-md-4" type="email" value="patrickpie@mail.com">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="row">
+                <div class="col-lg-3 text-lg-end">
+                  <span>電話號碼</span>
+                </div>
+                <div class="col-lg-9">
+                  <input class="w-100 mb-3 mb-md-4" type="tel" value="0912-345-678">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-2 text-lg-end">
+                  <span>配送地址</span>
+                </div>
+                <div class="col-lg-10">
+                  <input class="w-100 mb-3 mb-md-4" type="text" value="高雄市新興區中華一路111巷1號">
+                </div>
+              </div>
+            </div>
+            
+            <div class="col d-flex justify-content-end align-items-center">
+              <span>合計</span>
+              <p class="fs-4 fw-bold mx-4">1420元</p>
+            </div>
+          </div>
+          
+        </div>
+
+
+        <div class="col-4">
+          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0">下一步</button>
+        </div>
+        <a class="text-center" href="payment.html">測試用連結 下一步</a>
+      </div>
+    </section>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

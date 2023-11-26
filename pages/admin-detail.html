@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訂食後台管理</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/admin-header'); -%>
+    
+   <div class="container py-7">
+    <div class="row gx-3 gy-2">
+      <div class="col-12 mb-4 mt-0">
+        <a class="text-decoration-none text-danger" href="">刪除此品項</a>
+      </div>
+
+      <div class="col-6">
+        <div class="d-flex flex-column px-7 py-5 border border-primary rounded-40 h-100">
+          <span class="fs-4 mb-4">圖片</span>
+          <div class="ratio ratio-1x1 w-100 mb-4">
+            <img src="../assets/images/早餐＿菠菜乳酪烘蛋.jpg" alt="">
+          </div>
+          <span>圖片網址</span>
+          <div class="d-flex">
+            <input class="w-75" type="text" value="https://github.com/">
+            <button type="button" class="btn btn-normal-brown ms-3">確認</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="px-7 py-5 mb-2 border border-primary rounded-40">
+          <label class="fs-4 d-block mb-4" for="productSeries">商品系列</label>
+          <select class="w-50" name="series" id="productSeries">
+            <option value="塑身系列">塑身系列</option>
+            <option value="增肌系列">增肌系列</option>
+            <option value="早餐系列">早餐系列</option>
+          </select>
+        </div>
+        <div class="px-7 py-5 mb-2 border border-primary rounded-40">
+          <label class="fs-4 d-block mb-4" for="productName">商品名稱</label>
+          <div class="d-flex">
+            <input class="w-50" type="text" id="productName" value="蘿蔔蛤蜊蘑菇濃湯湯湯" maxlength="10">
+            <button class="w-25 ms-4 btn btn-normal-brown rounded-pill text-primary" type="button">檢查</button>
+          </div>
+          <span class="fs-7">＊名稱字數限制為10字以內</span>
+        </div>
+        <div class="px-7 py-5 mb-2 border border-primary rounded-40">
+          <label class="fs-4 d-block mb-4" for="productPrice">單價</label>
+          <div class="d-flex align-items-end">
+            <input class="w-50" type="number" id="productPrice" value="160">
+            <span>元</span>
+          </div>
+        </div>
+        <div class="px-7 py-5 border border-primary rounded-40">
+          <label class="fs-4 d-block mb-4" for="productStock">商品庫存</label>
+          <input class="w-50 d-block" type="number" id="productStock" value="30" disabled>
+          <span class="fs-7">＊庫存僅能於初始登錄時或總覽頁進行增加</span>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="px-7 py-5 border border-primary rounded-40">
+          <label class="fs-4 d-block mb-4" for="productIngredient">內容物</label>
+          <textarea class="w-100" name="productIngredient" id="productIngredient" >紅蘿蔔、蛤蜊、蘑菇、鹽、橄欖油</textarea>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="d-flex flex-column px-7 py-5 border border-primary rounded-40 h-100">
+          <span class="fs-4 mb-4">營養標示</span>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="productSize">每一份量</label>
+            <div class="d-flex align-items-end">
+              <input class="w-50" type="number" id="productSize" value="350">
+              <span>公克</span>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="productCalories">熱量</label>
+            <div class="d-flex align-items-end">
+              <input class="w-50" type="number" id="productCalories" value="410">
+              <span>大卡</span>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="productCarb">碳水化合物</label>
+            <div class="d-flex align-items-end">
+              <input class="w-50" type="number" id="productCarb" value="80">
+              <span>公克</span>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="productProtein">蛋白質</label>
+            <div class="d-flex align-items-end">
+              <input class="w-50" type="number" id="productProtein" value="18">
+              <span>公克</span>
+            </div>
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="productFat">脂肪</label>
+            <div class="d-flex align-items-end">
+              <input class="w-50" type="number" id="productFat" value="10.5">
+              <span>公克</span>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="d-flex flex-column px-7 py-5 border border-primary rounded-40 h-100">
+          <span class="fs-4 mb-4">加熱方式</span>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="microwave">微波</label>
+            <input class="w-100" type="text" id="microwave" value="撕開包裝一角，放入微波爐加熱10分鐘">
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="oven">烤箱</label>
+            <input class="w-100" type="text" id="oven" value="將包裝拆除移到盤中，170度加熱7分鐘">
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="electricPot">電鍋</label>
+            <input class="w-100" type="text" id="electricPot" value="將包裝拆除移到盤中，放入150ml的水，待電鍋跳起">
+          </div>
+          <div class="mb-5">
+            <label class="fs-4 d-block mb-2 fw-bold" for="pan">平底鍋</label>
+            <input class="w-100" type="text" id="pan" value="將包裝拆除放到鍋中，加熱至所需溫度">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-end mt-5">
+      <div class="col-3">
+        <button type="button" class="py-3 btn btn-secondary text-white w-100 rounded-0">取消</button>
+      </div>
+      <div class="col-3">
+        <button type="button" class="py-3 btn btn-danger text-white w-100 rounded-0">完成送出</button>
+      </div>
+    </div>
+   </div>
+    
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

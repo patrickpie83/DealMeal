@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <section class="container my-7">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-6">
+          <ol class="pay-list d-flex justify-content-between list-unstyled position-relative">
+            <!-- 當前的狀態會為number-active -->
+            <li class="d-flex flex-column align-items-center">
+              <p class="number number-active rounded-circle d-flex justify-content-center align-items-center">1</p>
+              <p class="">購物車</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">2</p>
+              <p class="">配送資訊</p>
+            </li>
+            <li class="d-flex flex-column align-items-center">
+              <p class="number rounded-circle d-flex justify-content-center align-items-center">3</p>
+              <p class="">確認付款</p>
+            </li>
+          </ol>
+        </div>
+        
+        <div class="col-10 my-5">
+          <!-- mobile抬頭 -->
+          <div class="row d-md-none bg-normal-brown py-2">
+            <span class="d-block text-center">商品總覽</span>
+          </div>
+          <!-- pad.pc抬頭 -->
+          <div class="row py-3 justify-content-center bg-normal-brown text-center d-none d-md-block d-md-flex">
+            <div class="col-5">商品</div>
+            <div class="col-2">單價</div>
+            <div class="col-2">份數</div>
+            <div class="col-2">小計</div>
+            <div class="col-1">移除</div>
+          </div>
+          
+          <!-- 第一筆 -->
+          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
+            <div class="col-md-5 d-flex align-items-center">
+              <div class="w-50">
+                <div class=" ratio ratio-1x1">
+                  <img src="../assets/images/早餐＿蘿蔔蛤蜊蘑菇濃湯.jpg" alt="">
+                </div>
+              </div>
+              <div class="w-50 text-center">
+                <p>蘿蔔蛤蜊蘑菇濃湯湯湯</p>
+              </div>
+            </div>
+
+            <div class="col-md-2 my-auto text-end text-md-center">
+              <p>160元</p>
+            </div>
+
+            <div class="col-7 col-md-2 my-auto">
+              <input class="w-100" type="number" value="3">
+            </div>
+            <div class="col-5 col-md-2 my-auto text-end text-md-center">
+              <p>共 480元</p>
+            </div>
+            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
+              <img width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+            </div>
+          </div>
+
+          <!-- 第二筆 -->
+          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
+            <div class="col-md-5 d-flex align-items-center">
+              <div class="w-50">
+                <div class=" ratio ratio-1x1">
+                  <img src="../assets/images/增肌＿牛豬雙響馬鈴薯.jpeg" alt="增肌＿牛豬雙響馬鈴薯">
+                </div>
+              </div>
+              <div class="w-50 text-center">
+                <p>牛豬雙響馬鈴薯</p>
+              </div>
+            </div>
+
+            <div class="col-md-2 my-auto text-end text-md-center">
+              <p>300元</p>
+            </div>
+
+            <div class="col-7 col-md-2 my-auto">
+              <input class="w-100" type="number" value="2">
+            </div>
+            <div class="col-5 col-md-2 my-auto text-end text-md-center">
+              <p>共 600元</p>
+            </div>
+            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
+              <img width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-10">
+          <div class="row">
+            <div class="col-md-6 mb-6 mb-md-0">
+              <span class="d-block mb-2">優惠折扣碼</span>
+              <div class="d-flex">
+                <div class="d-flex flex-column w-75 pe-4">
+                  <input class="mb-2 py-2" type="text" placeholder="在此輸入優惠碼後按下按鈕">
+                  <span>套用優惠碼：整筆訂單9折</span>
+                </div>
+                <button class="mb-auto py-2 btn btn-normal-brown w-25" type="button">使用</button>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3 text-center">
+              <span class="d-block mb-2">運費</span>
+              <p>80元</p>
+            </div>
+
+            <div class="col-6 col-md-3 text-center">
+              <span class="d-block mb-2">合計</span>
+              <p class="fs-4 fw-bold">1420元</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0">下一步</button>
+        </div>
+        <a class="text-center" href="deliver.html">測試用連結 下一步</a>
+      </div>
+    </section>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

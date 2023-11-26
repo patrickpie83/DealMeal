@@ -4,54 +4,251 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
   </head>
   <body>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 參數調整 -->
+    <script src="../assets/js/aos.js"></script>
+
     <%- include('./layout/header'); -%>
-
-    <h1 class="index-title text-light-brown mt-5">我是首頁0000</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
+    
+    <img class="backToTopBtn" src="../assets/images/icon_arrow_up.png" alt="icon_arrow_up" onclick="topFunction()">
+    
+    
+    <div class="bg-primary">
+      <div class="container d-flex position-relative">
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 24px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
+        <div class="w-25 my-auto ms-auto" data-aos="fade-left">
+          <h1 class="text-dark-brown mb-5 fw-bold" style="font-size: 64px;">Deal Meal</h1>
+          <p class="text-dark-brown fw-bold" style="font-size: 64px;">處理好</p>
+          <p class="text-dark-brown fw-bold" style="font-size: 64px;">你的每一餐</p>
+        </div>
+        <div class="position-absolute w-100 h-100 d-flex">
+          <img class="bannerHeight-557" style="width: 20%" data-aos="fade-down" src="../assets/images/banner_1.png" alt="banner_1">
+          <img class="bannerHeight-582 mt-auto ms-40" style="width: 20%" data-aos="fade-up" src="../assets/images/banner_2.png" alt="banner_2">
+          <img class="bannerHeight-582 ms-40" style="width: 20%" data-aos="fade-down" src="../assets/images/banner_3.png" alt="banner_3">
+        </div>
       </div>
+
+       <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <!-- 第一張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="../assets/images/增肌＿煙燻鮭魚時蔬.jpg" alt="增肌＿煙燻鮭魚時蔬">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">增肌系列</h3>
+                <h2 class="fs-2 text-white mt-4">煙燻鮭魚時蔬</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="../assets/images/塑身＿田園蔬菜爽身餃.jpg" alt="塑身＿田園蔬菜爽身餃">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">塑身系列</h3>
+                <h2 class="fs-2 text-white mt-4">田園蔬菜爽身餃</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white text-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第三張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="../assets/images/早餐＿烘蛋馬芬.jpg" alt="早餐＿烘蛋馬芬">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">早餐系列</h3>
+                <h2 class="fs-2 text-white mt-4">烘蛋馬芬</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white text-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="container position-absolute top-50 start-50 translate-middle" style="z-index: 20;">
+          <img class="swiper-button-prev" src="../assets/images/icon_arrow_shift_left.png" alt="icon_arrow_shift_left">
+          <img class="swiper-button-next" src="../assets/images/icon_arrow_shift_right.png" alt="icon_arrow_shift_right">
+        </div>
+
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
     </div>
 
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="bg-light-brown py-7">
+      <div class="container p-7 border border-primary border-4 rounded-80">
+        <h2 class="fs-1 mb-6">如何享用？</h2>
+        <div class="row justify-content-between">
+          <div class="col-2 ">
+            <p class="fs-2 fw-bold text-center">1.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="../assets/images/icon_cart.png" alt="icon_cart">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">2.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="../assets/images/icon_deliver.png" alt="icon_deliver">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">記得填寫配送方式</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">3.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="../assets/images/icon_pay.png" alt="icon_pay">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">結帳付款，進入配送流程</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">4.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="../assets/images/icon_freezer.png" alt="icon_freezer">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">5.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="../assets/images/icon_eat.png" alt="icon_eat">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="position-relative">
+      <!-- 底圖 -->
+      <img src="../assets/images/index_coupon.png" alt="index_coupon" style="width: 100%;height: 802px;">
+      <!-- 透明白底 -->
+      <div class="container bg-white h-75 opacity-80 rounded-80 position-absolute top-50 start-50 translate-middle">
+      </div>
+      <!-- 內容 -->
+      <div class="container px-7  position-absolute top-50 start-50 translate-middle">
+        <h2 class="fs-1 mb-6">領取優惠碼</h2>
+        <p class="mt-7 mb-5 fs-2 fw-bold">DealMeal感謝祭！筆筆訂單皆享9折優惠折扣碼</p>
+        <div class="d-flex">
+          <div class="bg-white d-flex w-75 py-5 ps-6">
+            <p class="fs-4">dealmealthanks</p>
+          </div>
+          <!-- 尚未製作，複製功能 -->
+          <button type="button" class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4">立即複製</button>
+        </div>
+
+        <!-- <div class="d-flex justify-content-center">
+          <a class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
+            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+          </a>
+        </div> -->
+        <div class="row justify-content-center">
+          <a class="col-4 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
+            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+          </a>
+        </div>
+
+        
+      </div>
+    </section>
+
 
     <%- include('./layout/footer'); -%>
-
+    <script src="../assets/js/index.js"></script>
     <script type="module" src="../main.js"></script>
   </body>
 </html>

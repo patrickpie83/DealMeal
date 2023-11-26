@@ -1,0 +1,25 @@
+.number{
+    background-color: $light-brown;
+    height: 48px;
+    width: 48px;
+    z-index: 1;
+}
+
+.number-active{
+    background-color: $normal-brown;
+}
+
+.pay-list::before{
+    width: 90%;
+    height: 2px;
+    content:"";
+    position:absolute;
+    background-color: $primary;
+    // 線 從頭部往下移
+    top: 30%;
+    //因為寬度不是滿寬比較短，需往右移
+    left:2%;
+
+    
+
+}

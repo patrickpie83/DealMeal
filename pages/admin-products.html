@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訂食後台管理</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/admin-header'); -%>
+    <div class="container py-7">
+      <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2 class="fs-4 fw-normal">商品總覽</h2>
+        <div class="d-flex">
+          <div class="me-5">
+            <label for="selectStatus">架上狀態</label>
+            <select name="statusSelector" id="selectStatus">
+              <option value="全部">全部</option>
+              <option value="販售中">販售中</option>
+              <option value="販售中">完售中</option>
+            </select>
+          </div>
+          <div>
+            <label for="selectSeries">系列篩選</label>
+            <select name="seriesSelector" id="selectSeries">
+              <option value="全部">全部</option>
+              <option value="塑身系列">塑身系列</option>
+              <option value="增肌系列">增肌系列</option>
+              <option value="早餐系列">早餐系列</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-3">
+          <a href="" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">預覽前台</a>
+        </div>
+        <div class="col-3">
+          <a href="admin-newProduct.html" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">登錄新商品</a>
+        </div>
+        <div class="col-3">
+          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯架上狀態與庫存</button>
+        </div>
+        <div class="col-3">
+          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯完成</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <table class="table text-center my-3">
+            <thead class="bg-primary">
+              <tr>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">圖片</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">系列</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">商品名稱</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">單價</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">架上狀態</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">庫存狀態</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">增加庫存量</th>
+                <th class="py-3 text-light-brown border border-light-brown" scope="col">修改內容</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 第一筆 -->
+              <tr class="align-middle border border-primary">
+                <td class="p-3" style="width: 110px;">
+                  <div class="ratio ratio-1x1 ">
+                    <img src="../assets/images/早餐＿蘿蔔蛤蜊蘑菇濃湯.jpg" alt="">
+                  </div>
+                </td>
+                <td>早餐系列</td>
+                <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
+                <td>160元</td>
+                <td>
+                    <!-- 各品項的狀態 如：蘑菇湯、雞胸肉，各自的狀態品群有各自的name。label與input也有各自對應 -->
+                  <div class="d-flex">
+                    <div class="form-check">
+                      <input class="form-check-input ms-auto" type="radio" name="status-1" id="onSale-1" checked>
+                      <label class="form-check-label" for="onSale-1">
+                        販售中
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input ms-auto" type="radio" name="status-1" id="soldOut-1">
+                      <label class="form-check-label" for="soldOut-1">
+                        完售中
+                      </label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span>30份，</span>
+                  <span>庫存量：中</span>
+                </td>
+                <td>
+                  <input type="number">
+                </td>
+                <td>
+                  <a href="admin-detail.html">測試用連結</a>
+                </td>
+              </tr>
+               <!-- 第二筆 -->
+               <tr class="align-middle border border-primary">
+                <td class="p-3" style="width: 110px;">
+                  <div class="ratio ratio-1x1 ">
+                    <img src="../assets/images/早餐＿蘿蔔蛤蜊蘑菇濃湯.jpg" alt="">
+                  </div>
+                </td>
+                <td>早餐系列</td>
+                <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
+                <td>160元</td>
+                <td>
+                  <div class="d-flex">
+                    <div class="form-check">
+                      <input class="form-check-input ms-auto" type="radio" name="status-2" id="onSale-2" checked>
+                      <label class="form-check-label" for="onSale-2">
+                        販售中
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input ms-auto" type="radio" name="status-2" id="soldOut-2">
+                      <label class="form-check-label" for="soldOut-2">
+                        完售中
+                      </label>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span>30份，</span>
+                  <span>庫存量：中</span>
+                </td>
+                <td>
+                  <input type="number">
+                </td>
+                <td>
+                  <a href="#">詳細內容</a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>

@@ -7,8 +7,10 @@
   - 應用 [json-server-auth](https://www.npmjs.com/package/json-server-auth) 套件來建立模擬的API
 
 ## 使用技術
-  - 切版框架 - Bootstrap
+  - 切版框架 - [Bootstrap](https://bootstrap5.hexschool.com/docs/5.1/getting-started/introduction/)
   - 樣式語言 - SCSS
+  - 動畫套件 - [AOS](https://michalsnik.github.io/aos/)
+  - 輪播套件 - [Swiper](https://swiperjs.com/)
 
 ## 規劃
   -  [使用者故事、網站地圖、流程圖](https://whimsical.com/3Y9fYoy21rLNkKCW2C4sDG)
