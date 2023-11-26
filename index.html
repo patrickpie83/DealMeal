@@ -4,57 +4,301 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
-    <script type="module" crossorigin src="/DealMeal/assets/main-71c30259.js"></script>
-    <link rel="stylesheet" href="/DealMeal/assets/main-accf464b.css">
+    <title>Deal Meal 訂食</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+    <script type="module" crossorigin src="/DealMeal/assets/main-97aff0f5.js"></script>
+    <link rel="stylesheet" href="/DealMeal/assets/main-24d6a5aa.css">
   </head>
   <body>
-    <h1 class="header">我是 header</h1>
-<a href="index.html">index</a>
-<a href="about.html">about</a>
-<a href="contact.html">contact</a>
-    <h1 class="index-title">我是首頁</h1>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 參數調整 -->
+    <script src="../assets/js/aos.js"></script>
 
-    <div class="card" style="width: 18rem">
-      <img src="../assets/images/cat.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
+    
+<nav class="navbar bg-dark-brown py-2 sticky-top shadow-sm navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="/DealMeal/assets/logo_blue 1-4f87adcf.png" alt="logo" style="width: 86px;height: 86px;"></a>
+        <!-- 收合按鈕及視窗待調整 -->
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="material-icons-round fs-1 text-light-brown menu-icon">menu</span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+            <ul class="navbar-nav ms-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-center text-light-brown" href="products.html">商品總覽</a>
+                </li>
+                <!-- 尚未製作，判斷是否登入呈現登入或帳戶資料 -->
+                <li class="nav-item">
+                    <a class="nav-link text-center text-light-brown" href="login.html">會員中心</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-center text-light-brown" href="admin-login.html">後台測試用連結</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+
+    
+    <img class="backToTopBtn" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGeSURBVHgB7dk9TsNAEIbh9dKkDCeg4hAofUTJDSKOwA2SG+QI5hYR1Ii09BSROAAuqbzYER+x4/hn7Z2xd7RvNTt24Udyt5Fibr5YrqJUbbMxMVqvk7fds2LsSjH2h42zcZYfI2MeZje3h5+vzw/FFBu4gC3FjWYB12ERJ5oc3IZFXGhScFcs4kCTgW2xiBqtFUF1WGPMY3WnK7soTeP54n6lCHIObsIm+9fKPtnvYk60U7AtFnGinYH7YhEX2gl4KBZxoAeDXWERNXoQ2DUWUaJ7g6mwiArdC0yNRRRoazAXFrlGW4G5scglujN4LCxyhe4EHhuLXKBbwVPBoqHoRvDUsGgIuhY8VSzqi74InjoW9UFXwL5gkS26BPYNi2zQ/2Bfsagr+gj2HYu6oLUULGpD6wy7Pn/oKxY1oLf5Lz0vLn3HosvoKNHZ8ikbDvk7UrDohIYv3USKueu7pSmev99fWL+B5OZhygWw9AJYegEsvQCWXgBLL4ClF8DSC2DpBbD0Alh6ASy9AJbeGODkNB6vQFhjB5fvstKNYu4X4UQHz+ORxKMAAAAASUVORK5CYII=" alt="icon_arrow_up" onclick="topFunction()">
+    
+    
+    <div class="bg-primary">
+      <div class="container d-flex position-relative">
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 24px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
+        <div class="w-25 my-auto ms-auto" data-aos="fade-left">
+          <h1 class="text-dark-brown mb-5 fw-bold" style="font-size: 64px;">Deal Meal</h1>
+          <p class="text-dark-brown fw-bold" style="font-size: 64px;">處理好</p>
+          <p class="text-dark-brown fw-bold" style="font-size: 64px;">你的每一餐</p>
+        </div>
+        <div class="position-absolute w-100 h-100 d-flex">
+          <img class="bannerHeight-557" style="width: 20%" data-aos="fade-down" src="/DealMeal/assets/banner_1-c93de532.png" alt="banner_1">
+          <img class="bannerHeight-582 mt-auto ms-40" style="width: 20%" data-aos="fade-up" src="/DealMeal/assets/banner_2-b443012b.png" alt="banner_2">
+          <img class="bannerHeight-582 ms-40" style="width: 20%" data-aos="fade-down" src="/DealMeal/assets/banner_3-74787dec.png" alt="banner_3">
+        </div>
       </div>
+
+       <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          
+          <!-- 第一張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="/DealMeal/assets/增肌＿煙燻鮭魚時蔬-fad9fe8e.jpg" alt="增肌＿煙燻鮭魚時蔬">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">增肌系列</h3>
+                <h2 class="fs-2 text-white mt-4">煙燻鮭魚時蔬</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="/DealMeal/assets/塑身＿田園蔬菜爽身餃-319011d1.jpg" alt="塑身＿田園蔬菜爽身餃">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">塑身系列</h3>
+                <h2 class="fs-2 text-white mt-4">田園蔬菜爽身餃</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white text-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第三張 -->
+          <div class="swiper-slide d-flex justify-content-start align-items-start">
+            <img class="w-50" src="/DealMeal/assets/早餐＿烘蛋馬芬-ee1fd420.jpg" alt="早餐＿烘蛋馬芬">
+            <div class="w-100 pt-7 ms-7 me-170">
+              <div class="d-flex flex-column align-items-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">早餐系列</h3>
+                <h2 class="fs-2 text-white mt-4">烘蛋馬芬</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
+                <p class="fs-4 text-white text-start">熱量約大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white text-white fs-4 w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="container position-absolute top-50 start-50 translate-middle" style="z-index: 20;">
+          <img class="swiper-button-prev" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAKrSURBVHgB7dzBUdtAFMbxt4LcSQfpJXDILQWEeFJCKpCcBpJUEDLmngLizKQTKIECGC37AA8YJGNmdvfbt/v9LmbM7f1Hsi2t1q1XvReC6YSgDjd/HJ8unVA2mzMPjwAwBgBjADAGAGMAMAYAYwAwBgBjADAGAGMAMAYAYwAwBgBjALBDMWq9Gj4657+Hi+pX3ruvJ6fDfzHIZID1+XIhfjzz9zdTnfg/4eWtGGTuFLQZ/uP3nJcrMcpUgKnhq9H732KUmQBzw/ejX54svg1ilIkAtQ5fFR+g5uGrogPUPnxVbIAWhq+KDNDK8FVxAVoavioqQGvDV8UEaHH4qogArQ5fwQO0PHwFDdD68BUsAId/BxKAw3+QPQCHvy1rAA7/uWwBOPxpWQJw+POSB+Dwd0sagMN/WbIAHP5+kgTg8PcXPQCH/zpRA3D4rxdtaaKu1ZwavuoO3OLfeb+QCsReixotwO1C2ZmNb8L776QiMdeiRjsFhSEfSSNirkWNFsB5t5QGuHAKGjv3UyKJdgp6/3n48Xc1HIXDs3/6P/0Qvh67M6nAhy/DpUQU9fmA8ME0hAjyNILrXP/mwF0cf+rNrmJOJfrvAI3gZeJ0FL4h3X5NpS1Jfgkzwv6SXQtihP0kvRrKCC9Lfj+AEXbLckeMEeZluyfMCNOyropghOeyrwtihG2QlXGM8AC2NpQR7kBXRzNCAc8HtB6hiCdkWo5QzDNirUYo6inJFiMU95xwaxGKfFK+pQjF7hXRSoSid0tpIULx+wXVHsHEjlk1RzCzZ9zOCLou1ShTuybORhD/S4wyFUBNReC+oZk9jhB7rWZuZveO1gjhZRDjTB4BNWEAMAYAYwAwBgBjADAGAGMAMAYAYwAwBgBjADAGAGMAMAYAc+tV74VgeASA3QAUCBifBDvPPQAAAABJRU5ErkJggg==" alt="icon_arrow_shift_left">
+          <img class="swiper-button-next" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJhSURBVHgB7dzdTQJBFMXxO4YCKMFeJFbhRyyBCoAOLAGDZVCMJdCAjHsFEgR8m+yZc+/5v2jWF7m/LAs7ky3bzaKagnVnCtrk9MvseVVMjdbpnUdnADgBgBMAOAGAEwA4AYATADgBgBMAOAGAEwA4AYATADgBgBMAuImRtv1cvZa6f7diu2p3y9nT4sMIoz0Diu2Xw4rGtFa7t7pfO4gRRgswDH769wAnAu8ZUMv86iAhAi3Aw8tyPSC8Xf2BDIH6U1AEBPqPoewIIb4HMCOE+SLGihDqmzAjQrhbEWwIIe8FMSGEvRnHghD6bigDQvjb0b0jpFgP6BkhzYJMrwipVsR6REi3JNkbQso14Z4Q0i7K94KQeldEDwjpt6WgEbQvyLAIAjiGQhDAWQgEAVw0NoIAbjQmQrO9oae9mr5d0AJU7Z+HyBwQrNVe1GZnwGmvpmXINwU3qhnA1V7NwJVqO2tUuzOglvnwj31Zgr6trKxRza4BfuEafqwtSL8X2+H9/vL4frg4Px5ea5P0KehGYw3fE8BFYw7fE8BZYw/fE8AxxPA9ARhu+F56AOTwvdQA6OF7aQF6GL6XEqCX4XvpAHoavpcKoLfhe2kAehy+lwKg1+F74QF6Hr4XGqD34XthARiG74UEYBm+Fw6AafheKAC24XthABiH74UAYB2+Rw/APHyPGoB9+B4tQIThe9TPDb08xjZ8L8xzQxmH71E/N9T3ohazHevwPdpnR0fZi6p9QeAEAE4A4AQATgDgBABOAOAEAE4A4AQATgDgBABOAOAEAE4A4Mp2s6imYOkMAPcDkZ8AYm+k2pUAAAAASUVORK5CYII=" alt="icon_arrow_shift_right">
+        </div>
+
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          loop: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
     </div>
 
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section class="bg-light-brown py-7">
+      <div class="container p-7 border border-primary border-4 rounded-80">
+        <h2 class="fs-1 mb-6">如何享用？</h2>
+        <div class="row justify-content-between">
+          <div class="col-2 ">
+            <p class="fs-2 fw-bold text-center">1.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="data:image/png;base64,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" alt="icon_cart">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">2.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="data:image/png;base64,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" alt="icon_deliver">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">記得填寫配送方式</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">3.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="data:image/png;base64,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" alt="icon_pay">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">結帳付款，進入配送流程</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">4.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="data:image/png;base64,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" alt="icon_freezer">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
+          </div>
+          <div class="col-2">
+            <p class="fs-2 fw-bold text-center">5.</p>
+            <div class="bg-normal-brown text-center mt-3">
+              <img class="how-icon" src="/DealMeal/assets/icon_eat-adabbaa8.png" alt="icon_eat">
+            </div>
+            <p class="mt-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <footer class="footer">我是 footer</footer>
+    <section class="position-relative">
+      <!-- 底圖 -->
+      <img src="/DealMeal/assets/index_coupon-d16bad41.png" alt="index_coupon" style="width: 100%;height: 802px;">
+      <!-- 透明白底 -->
+      <div class="container bg-white h-75 opacity-80 rounded-80 position-absolute top-50 start-50 translate-middle">
+      </div>
+      <!-- 內容 -->
+      <div class="container px-7  position-absolute top-50 start-50 translate-middle">
+        <h2 class="fs-1 mb-6">領取優惠碼</h2>
+        <p class="mt-7 mb-5 fs-2 fw-bold">DealMeal感謝祭！筆筆訂單皆享9折優惠折扣碼</p>
+        <div class="d-flex">
+          <div class="bg-white d-flex w-75 py-5 ps-6">
+            <p class="fs-4">dealmealthanks</p>
+          </div>
+          <!-- 尚未製作，複製功能 -->
+          <button type="button" class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4">立即複製</button>
+        </div>
+
+        <!-- <div class="d-flex justify-content-center">
+          <a class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
+            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+          </a>
+        </div> -->
+        <div class="row justify-content-center">
+          <a class="col-4 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
+            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+          </a>
+        </div>
+
+        
+      </div>
+    </section>
+
+
+    <footer class="bg-primary py-5">
+    <div class="d-flex justify-content-center">
+        <a href="https://line.me/zh-hant/">
+            <img class="h-40" src="data:image/png;base64,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" alt="icon_line">
+        </a>
+        <a class="mx-5" href="https://www.facebook.com/">        
+            <img class="h-40" src="data:image/png;base64,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" alt="icon_fb">
+        </a>
+        <a href="https://www.instagram.com/">        
+            <img class="h-40" src="data:image/png;base64,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" alt="icon_ig">
+        </a>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+        <a class="mt-5 text-light-brown text-decoration-none" href="">關於Deal Meal 訂食</a>
+        <a class="mt-5 text-light-brown text-decoration-none" href="">隱私條款</a>
+        <p class="mt-5 text-light-brown">客服信箱：dealmeal@mail.com</p>
+        <p class="mt-5 text-light-brown">客服電話：02-12345678</p>
+    </div>
+</footer>    <script src="../assets/js/index.js"></script>
     
   </body>
 </html>
