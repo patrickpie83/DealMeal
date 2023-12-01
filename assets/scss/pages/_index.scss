@@ -21,24 +21,96 @@
   background-color:$light-brown; /* Add a dark-grey background on hover */
 }
 
-
-
-
-
-.bannerHeight-557{
-  width: 272px;
-  height: 557px;
+.bannerArea{
+  height: 600px;
+  @include pc-xxl{
+    height: 100%;
+  }
 }
 
-.bannerHeight-582{
-  width: 272px;
-  height: 582px;
+.bannerBackgroundFirst{
+  @include pc{
+    width: 272px;
+    height: 557px;
+  }
+}
+
+.bannerBackgroundSecond{
+  @include pc{
+    width: 272px;
+    height: 557px;
+  }
+}
+
+.bannerBackground{
+  @include pc-xxl{
+    width: 272px;
+    height: 557px;
+  }
+}
+
+.bannerTextArea{
+  width: 50%;
+  font-size: 32px;
+  @include sm{
+    width: 40%;
+  }
+  @include pc{
+    width: 30%;
+    font-size: 48px;
+  }
+  @include pc-xl{
+    width: 35%;
+    font-size: 64px;
+  }
+  @include pc-xxl{
+    width: 25%;
+    font-size: 64px;
+  }
+}
+
+.bannerImageArea{
+  width: 45%;
+  height: 100%;
+  @include pc{
+    width: 100%;
+  }
+}
+
+.bannerImageFirst{
+  width: 100%;
+  @include pc{
+    display: block;
+    width: 272px;
+    height: 582px;
+  }
+}
+
+.bannerImageSecond{
+  display: none;
+  @include pc{
+    display: block;
+    width: 272px;
+    height: 582px;
+  }
+}
+
+.bannerImage{
+  display: none;
+  @include pc-xxl{
+    display: block;
+    width: 272px;
+    height: 582px;
+  }
 }
 
 .swiper {
   width: 100%;
-  height: 642px;
   border-top: 1px solid $light-brown;
+  height: 800px;
+  @include pc{
+    height: 642px;
+  }
 }
 
 .swiper-slide {
@@ -66,6 +138,37 @@
 .swiper-button-next:hover,.swiper-button-prev:hover{
   opacity: 0.5;
 }
+
+
+
+
+
+.carouselImg{
+  // display: none !important;
+  height: 240px !important;
+  @include pc{
+    display: block !important;
+    width: 50% !important;
+    height: 100% !important;
+  }
+}
+
+.carouselContent{
+  @include pc{
+    margin-right: 170px;
+    width: 100%;
+  }
+}
+
+.carouselTable{
+  font-size: 16px;
+  @include pc{
+    font-size: 24px;
+  }
+}
+
+
+
 
 .btn-product:hover{
   background-color: $light-brown !important;

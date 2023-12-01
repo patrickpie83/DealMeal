@@ -20,52 +20,58 @@
     
     <img class="backToTopBtn" src="../assets/images/icon_arrow_up.png" alt="icon_arrow_up">
     
-    
     <div class="bg-primary">
-      <div class="container d-flex position-relative">
-        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 24px;"></div>
-        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
-        <div class="bg-light-brown mt-6 mb-5 bannerHeight-557" style="width: 20%;margin-left: 40px;"></div>
-        <div class="w-25 my-auto ms-auto" data-aos="fade-left">
-          <h1 class="text-dark-brown mb-5 fw-bold" style="font-size: 64px;">Deal Meal</h1>
-          <p class="text-dark-brown fw-bold" style="font-size: 64px;">處理好</p>
-          <p class="text-dark-brown fw-bold" style="font-size: 64px;">你的每一餐</p>
+      <div class="container d-flex position-relative bannerArea">
+
+        <!-- 底色 -->
+        <div class="bg-light-brown mt-6 mb-5 bannerBackgroundFirst" style="margin-left: 24px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerBackgroundSecond" style="margin-left: 40px;"></div>
+        <div class="bg-light-brown mt-6 mb-5 bannerBackground" style="margin-left: 40px;"></div>
+
+        <!-- 文字區塊 -->
+        <h1 class="my-auto ms-auto bannerTextArea" data-aos="fade-left">
+          <p class="text-dark-brown mb-5 fw-bold">Deal Meal</p>
+          <p class="text-dark-brown fw-bold">處理好</p>
+          <p class="text-dark-brown fw-bold">你的每一餐</p>
+        </h1>
+
+        <!-- 三張圖 -->
+        <div class="position-absolute bannerImageArea d-flex">
+          <img class="bannerImageFirst" data-aos="fade-down" src="../assets/images/banner_1.png" alt="banner_1">
+          <img class="bannerImageSecond mt-auto ms-40" data-aos="fade-up" src="../assets/images/banner_2.png" alt="banner_2">
+          <img class="bannerImage ms-40" data-aos="fade-down" src="../assets/images/banner_3.png" alt="banner_3">
         </div>
-        <div class="position-absolute w-100 h-100 d-flex">
-          <img class="bannerHeight-557" style="width: 20%" data-aos="fade-down" src="../assets/images/banner_1.png" alt="banner_1">
-          <img class="bannerHeight-582 mt-auto ms-40" style="width: 20%" data-aos="fade-up" src="../assets/images/banner_2.png" alt="banner_2">
-          <img class="bannerHeight-582 ms-40" style="width: 20%" data-aos="fade-down" src="../assets/images/banner_3.png" alt="banner_3">
-        </div>
+
       </div>
 
        <!-- Swiper -->
-      <div class="swiper mySwiper">
+      <div class="swiper mySwiper py-7 py-lg-0">
         <div class="swiper-wrapper">
           
           <!-- 第一張 -->
-          <div class="swiper-slide d-flex justify-content-start align-items-start">
-            <img class="w-50" src="../assets/images/增肌＿煙燻鮭魚時蔬.jpg" alt="增肌＿煙燻鮭魚時蔬">
-            <div class="w-100 pt-7 ms-7 me-170">
-              <div class="d-flex flex-column align-items-start">
+          <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
+            <img class="carouselImg" src="../assets/images/增肌＿煙燻鮭魚時蔬.jpg" alt="增肌＿煙燻鮭魚時蔬">
+            <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
+              <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">增肌系列</h3>
                 <h2 class="fs-2 text-white mt-4">煙燻鮭魚時蔬</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
-                <p class="fs-4 text-white text-start">熱量約大卡</p>
+                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
+                <p class="fs-4 text-white text-start">熱量約222大卡</p>
               </div>
               <div class="w-100 mt-4">
-                <table class="table table-bordered border-white fs-4 w-100">
+                <table class="table table-bordered border-white carouselTable w-100">
                   <tbody>
                     <tr>
                       <td class="text-white">碳水化合物</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">70公克</td>
                     </tr>
                     <tr>
                       <td class="text-white">蛋白質</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">30公克</td>
                     </tr>
                     <tr>
                       <td class="text-white">脂肪</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">10公克</td>
                     </tr>
                   </tbody>
                 </table>
@@ -75,17 +81,17 @@
           </div>
 
           <!-- 第二張 -->
-          <div class="swiper-slide d-flex justify-content-start align-items-start">
-            <img class="w-50" src="../assets/images/塑身＿田園蔬菜爽身餃.jpg" alt="塑身＿田園蔬菜爽身餃">
-            <div class="w-100 pt-7 ms-7 me-170">
-              <div class="d-flex flex-column align-items-start">
+          <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
+            <img class="carouselImg" src="../assets/images/塑身＿田園蔬菜爽身餃.jpg" alt="塑身＿田園蔬菜爽身餃">
+            <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
+              <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">塑身系列</h3>
                 <h2 class="fs-2 text-white mt-4">田園蔬菜爽身餃</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
-                <p class="fs-4 text-white text-start">熱量約大卡</p>
+                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
+                <p class="fs-4 text-white text-start">熱量約222大卡</p>
               </div>
               <div class="w-100 mt-4">
-                <table class="table table-bordered border-white text-white fs-4 w-100">
+                <table class="table table-bordered border-white carouselTable w-100">
                   <tbody>
                     <tr>
                       <td class="text-white">碳水化合物</td>
@@ -107,17 +113,17 @@
           </div>
 
           <!-- 第三張 -->
-          <div class="swiper-slide d-flex justify-content-start align-items-start">
-            <img class="w-50" src="../assets/images/早餐＿烘蛋馬芬.jpg" alt="早餐＿烘蛋馬芬">
-            <div class="w-100 pt-7 ms-7 me-170">
-              <div class="d-flex flex-column align-items-start">
+          <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
+            <img class="carouselImg" src="../assets/images/早餐＿烘蛋馬芬.jpg" alt="早餐＿烘蛋馬芬">
+            <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
+              <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">早餐系列</h3>
                 <h2 class="fs-2 text-white mt-4">烘蛋馬芬</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量公克</p>
-                <p class="fs-4 text-white text-start">熱量約大卡</p>
+                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
+                <p class="fs-4 text-white text-start">熱量約222大卡</p>
               </div>
               <div class="w-100 mt-4">
-                <table class="table table-bordered border-white text-white fs-4 w-100">
+                <table class="table table-bordered border-white carouselTable w-100">
                   <tbody>
                     <tr>
                       <td class="text-white">碳水化合物</td>

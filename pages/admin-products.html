@@ -34,7 +34,7 @@
         </div>
       </div>
 
-      <div class="row mb-4">
+      <div class="row mb-5">
         <div class="col-3">
           <a href="" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">預覽前台</a>
         </div>
@@ -51,17 +51,17 @@
 
       <div class="row">
         <div class="col-12">
-          <table class="table text-center my-3">
+          <table class="table text-center">
             <thead class="bg-primary">
               <tr>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">圖片</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">系列</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">商品名稱</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">單價</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">架上狀態</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">庫存狀態</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">增加庫存量</th>
-                <th class="py-3 text-light-brown border border-light-brown" scope="col">修改內容</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">圖片</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">系列</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">商品名稱</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">單價</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">架上狀態</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">庫存狀態</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">增加庫存量</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">修改內容</th>
               </tr>
             </thead>
             <tbody>
@@ -76,20 +76,18 @@
                 <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
                 <td>160元</td>
                 <td>
-                    <!-- 各品項的狀態 如：蘑菇湯、雞胸肉，各自的狀態品群有各自的name。label與input也有各自對應 -->
-                  <div class="d-flex">
-                    <div class="form-check">
-                      <input class="form-check-input ms-auto" type="radio" name="status-1" id="onSale-1" checked>
-                      <label class="form-check-label" for="onSale-1">
-                        販售中
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input ms-auto" type="radio" name="status-1" id="soldOut-1">
-                      <label class="form-check-label" for="soldOut-1">
-                        完售中
-                      </label>
-                    </div>
+                  <!-- 各品項的狀態 如：蘑菇湯、雞胸肉，各自的狀態品群有各自的name。label與input也有各自對應 -->
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input ms-auto" type="radio" name="productState1" id="onSale1" checked>
+                    <label class="form-check-label" for="onSale1">
+                      販售中
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input ms-auto" type="radio" name="productState1" id="soldOut1">
+                    <label class="form-check-label" for="soldOut1">
+                      完售中
+                    </label>
                   </div>
                 </td>
                 <td>
@@ -114,19 +112,17 @@
                 <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
                 <td>160元</td>
                 <td>
-                  <div class="d-flex">
-                    <div class="form-check">
-                      <input class="form-check-input ms-auto" type="radio" name="status-2" id="onSale-2" checked>
-                      <label class="form-check-label" for="onSale-2">
-                        販售中
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input ms-auto" type="radio" name="status-2" id="soldOut-2">
-                      <label class="form-check-label" for="soldOut-2">
-                        完售中
-                      </label>
-                    </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input ms-auto" type="radio" name="productState2" id="onSale2" checked>
+                    <label class="form-check-label" for="onSale2">
+                      販售中
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input ms-auto" type="radio" name="productState2" id="soldOut2">
+                    <label class="form-check-label" for="soldOut2">
+                      完售中
+                    </label>
                   </div>
                 </td>
                 <td>

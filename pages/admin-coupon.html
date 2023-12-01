@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>訂食後台管理</title>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+  </head>
+
+  <body>
+    <%- include('./layout/admin-header'); -%>
+    <div class="container py-7">
+      <h2 class="fs-4 fw-normal mb-5">優惠碼</h2>
+
+      <div class="row mb-5">
+        <div class="col-3">
+          <a href="" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0" data-bs-toggle="modal" data-bs-target="#newCoupon">發佈新優惠碼</a>
+          <!-- 發布新優惠碼視窗-->
+          <div class="modal fade" id="newCoupon" data-bs-backdrop="static" tabindex="-1" aria-labelledby="newCoupon" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">發佈新優惠碼</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+                </div>
+                <div class="modal-body py-4">
+                  <label class="fs-6" for="releaseCouponDate">發佈日期</label>
+                  <input class="w-100" type="date" id="releaseCouponDate">
+
+                  <label class="fs-6 mt-4" for="releaseCouponCode">優惠碼序號</label>
+                  <div class="d-flex">
+                    <input class="w-75" type="text" id="releaseCouponCode">
+                    <button class="w-25 ms-4 py-0 btn btn-normal-brown rounded-pill text-primary" type="button">檢查</button>
+                  </div>
+                  <p class="fs-7 text-danger">＊序號已重複</p>
+
+                  <label class="fs-6 mt-4" for="releaseCouponName">用途名稱</label>
+                  <select class="w-100 py-1" name="couponNameSelector" id="releaseCouponName">
+                    <option disabled selected hidden>請選擇</option>
+                    <option value="感謝祭">感謝祭</option>
+                    <option value="節日活動">節日活動</option>
+                    <option value="藝人業配合作">藝人業配合作</option>
+                    <option value="會員註冊禮">會員註冊禮</option>
+                    <option value="會員好禮">會員好禮</option>
+                  </select>
+
+                  <label class="fs-6 mt-4" for="releaseCouponUsage">能用頻率</label>
+                  <select class="w-100 py-1" name="couponUsageSelector" id="releaseCouponUsage">
+                    <option disabled selected hidden>請選擇</option>
+                    <option value="每筆">每筆</option>
+                    <option value="僅一筆">僅一筆</option>
+                  </select>
+
+                  <label class="fs-6 mt-4" for="releaseCouponDiscount">折扣</label>
+                  <select class="w-100 py-1" name="couponDiscountSelector" id="releaseCouponDiscount">
+                    <option disabled selected hidden>請選擇</option>
+                    <option value="整筆訂單95折">整筆訂單95折</option>
+                    <option value="整筆訂單9折">整筆訂單9折</option>
+                    <option value="整筆訂單85折">整筆訂單85折</option>
+                    <option value="整筆訂單8折">整筆訂單8折</option>
+                    <option value="整筆折100元">整筆折100元</option>
+                    <option value="整筆折300元">整筆折300元</option>
+                    <option value="整筆折500元">整筆折500元</option>
+                  </select>
+
+                </div>
+                <!-- 要寫js 按下送出後會發佈（預設為發佈）-->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">送出</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <table class="table text-center">
+            <thead class="bg-primary">
+              <tr>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">發佈日期</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">優惠碼序號</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">用途名稱</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">能用頻率</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">折扣</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">狀態</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">已被使用次數</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- 第一筆 -->
+              <tr class="align-middle border border-primary">
+                <td>2023/11/01</td>
+                <td>dealmealthanks</td>
+                <td>感謝祭</td>
+                <td>每筆</td>
+                <td>訂單9折</td>
+                <td>
+                  <div class="form-check form-switch d-flex justify-content-around">
+                    <input class="form-check-input" type="checkbox" role="switch" id="releaseCouponChecked" checked data-bs-toggle="modal" data-bs-target="#couponAlert1">
+                    <label class="form-check-label" for="releaseCouponChecked">發佈中</label>
+                  </div>
+                  <!-- 切換狀態確認視窗-->
+                  <div class="modal fade" id="couponAlert1" tabindex="-1" aria-labelledby="couponAlert1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h6 class="modal-title">確認視窗</h6>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
+                        </div>
+                        <div class="modal-body">
+                          按下確認後將切換此優惠碼狀態
+                        </div>
+                        <!-- 要寫js 按下確認才會真正切換狀態（按下取消，或者關閉modal都不會真的切換）(增或減<input>的checked屬性) -->
+                        <!-- 要寫js 按下確認才會真正切換狀態（按下取消，或者關閉modal都不會真的切換）(增或減<input>的checked屬性) -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">確認</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>6</td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <script type="module" src="../main.js"></script>
+  </body>
+</html>
