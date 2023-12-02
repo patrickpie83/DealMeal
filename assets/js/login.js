@@ -14,7 +14,7 @@ const loginBtn=document.querySelector(".loginBtn");
 // const _url="https://dealmeal.onrender.com/";
 const _url="http://localhost:3000/";
 
-
+console.log("測試吃得到")
 
 // 註冊會員API
 function signUp(){
