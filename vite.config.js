@@ -5,8 +5,6 @@ import path from 'node:path';
 import { glob } from 'glob';
 import liveReload from 'vite-plugin-live-reload';
 
-import copy from 'rollup-plugin-copy';
-
 function moveOutputPlugin() {
   return {
     name: 'move-output',
@@ -30,13 +28,7 @@ export default defineConfig({
   plugins: [
     liveReload(['./layout/**/*.ejs', './pages/**/*.ejs', './pages/**/*.html']),
     ViteEjsPlugin(),
-    moveOutputPlugin(),
-
-    //將json檔拉至gh-page
-    copy({
-      targets: [{ src: '**/db.json', dest: 'dist/assets' }],
-      hook: 'writeBundle',
-    })
+    moveOutputPlugin()
   ],
   server: {
     // 啟動 server 時預設開啟的頁面
