@@ -51,61 +51,52 @@
 </nav>
     <div class="container py-7">
       <div class="d-flex justify-content-between align-items-center mb-5">
-        <h2 class="fs-4 fw-normal">商品總覽</h2>
+        <h2 class="fs-4 fw-normal">業績</h2>
         <div class="d-flex">
           <div class="me-5">
-            <label for="selectStatus">架上狀態</label>
-            <select name="statusSelector" id="selectStatus">
+            <label for="selectMonth">月別</label>
+            <select name="monthSelector" id="selectMonth">
               <option value="全部">全部</option>
-              <option value="販售中">販售中</option>
-              <option value="販售中">完售中</option>
+              <option value="8月">2023年8月</option>
+              <option value="9月">2023年9月</option>
+              <option value="10月">2023年10月</option>
+              <option value="11月">2023年11月</option>
+              <option value="12月">2023年12月</option>
             </select>
           </div>
           <div>
-            <label for="selectSeries">系列篩選</label>
-            <select name="seriesSelector" id="selectSeries">
-              <option value="全部">全部</option>
-              <option value="塑身系列">塑身系列</option>
-              <option value="增肌系列">增肌系列</option>
-              <option value="早餐系列">早餐系列</option>
+            <label for="selectType">排序</label>
+            <select name="typeSelector" id="selectType">
+              <option value="銷售數量">銷售數量</option>
+              <option value="銷售金額">銷售金額</option>
+            </select>
+            <select name="salesSelector" id="selectSales">
+              <option value="由高至低">由高至低</option>
+              <option value="由低至高">由低至高</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div class="row mb-5">
-        <div class="col-3">
-          <a href="" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">預覽前台</a>
-        </div>
-        <div class="col-3">
-          <a href="admin-newProduct.html" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">登錄新商品</a>
-        </div>
-        <div class="col-3">
-          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯架上狀態與庫存</button>
-        </div>
-        <div class="col-3">
-          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯完成</button>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-12">
-          <table class="table text-center">
+          <table class="table text-center mb-4">
             <thead class="bg-primary">
               <tr>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售月份</th>
                 <th class="py-3 text-white fw-normal border border-light-brown" scope="col">圖片</th>
                 <th class="py-3 text-white fw-normal border border-light-brown" scope="col">系列</th>
                 <th class="py-3 text-white fw-normal border border-light-brown" scope="col">商品名稱</th>
                 <th class="py-3 text-white fw-normal border border-light-brown" scope="col">單價</th>
-                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">架上狀態</th>
-                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">庫存狀態</th>
-                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">增加庫存量</th>
-                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">修改內容</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售數量</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售金額</th>
               </tr>
             </thead>
             <tbody>
               <!-- 第一筆 -->
               <tr class="align-middle border border-primary">
+                <td>2023年9月</td>
                 <td class="p-3" style="width: 110px;">
                   <div class="ratio ratio-1x1 ">
                     <img src="/DealMeal/assets/早餐＿蘿蔔蛤蜊蘑菇濃湯-a9c0c722.jpg" alt="">
@@ -114,68 +105,29 @@
                 <td>早餐系列</td>
                 <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
                 <td>160元</td>
-                <td>
-                  <!-- 各品項的狀態 如：蘑菇湯、雞胸肉，各自的狀態品群有各自的name。label與input也有各自對應 -->
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input ms-auto" type="radio" name="productState1" id="onSale1" checked>
-                    <label class="form-check-label" for="onSale1">
-                      販售中
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input ms-auto" type="radio" name="productState1" id="soldOut1">
-                    <label class="form-check-label" for="soldOut1">
-                      完售中
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <span>30份，</span>
-                  <span>庫存量：中</span>
-                </td>
-                <td>
-                  <input type="number">
-                </td>
-                <td>
-                  <a href="admin-detail.html">測試用連結</a>
-                </td>
+                <td>100份</td>
+                <td>16000元</td>
               </tr>
-               <!-- 第二筆 -->
-               <tr class="align-middle border border-primary">
-                <td class="p-3" style="width: 110px;">
-                  <div class="ratio ratio-1x1 ">
-                    <img src="/DealMeal/assets/早餐＿蘿蔔蛤蜊蘑菇濃湯-a9c0c722.jpg" alt="">
-                  </div>
-                </td>
-                <td>早餐系列</td>
-                <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
-                <td>160元</td>
-                <td>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input ms-auto" type="radio" name="productState2" id="onSale2" checked>
-                    <label class="form-check-label" for="onSale2">
-                      販售中
-                    </label>
-                  </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input ms-auto" type="radio" name="productState2" id="soldOut2">
-                    <label class="form-check-label" for="soldOut2">
-                      完售中
-                    </label>
-                  </div>
-                </td>
-                <td>
-                  <span>30份，</span>
-                  <span>庫存量：中</span>
-                </td>
-                <td>
-                  <input type="number">
-                </td>
-                <td>
-                  <a href="#">詳細內容</a>
-                </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row justify-content-end">
+        <div class="col-6">
+          <table class="table text-center">
+            <thead class="bg-primary">
+              <tr>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售總量</th>
+                <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售總額</th>
               </tr>
-              
+            </thead>
+            <tbody>
+              <!-- 第一筆 -->
+              <tr class="align-middle border border-primary">
+                <td>800份</td>
+                <td>128000元</td>
+              </tr>
             </tbody>
           </table>
         </div>
