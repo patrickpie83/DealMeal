@@ -34,8 +34,8 @@ export default defineConfig({
 
     //將json檔拉至gh-page
     copy({
-      targets: [{ src: 'assets/**/*.json', dest: 'dist/assets' }],
-      hook: 'writeBundle'
+      targets: [{ src: '**/db.json', dest: 'dist/assets' }],
+      hook: 'writeBundle',
     })
   ],
   server: {
