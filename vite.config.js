@@ -6,6 +6,8 @@ import { glob } from 'glob';
 
 import liveReload from 'vite-plugin-live-reload';
 
+import copy from 'rollup-plugin-copy';
+
 function moveOutputPlugin() {
   return {
     name: 'move-output',
@@ -30,6 +32,12 @@ export default defineConfig({
     liveReload(['./layout/**/*.ejs', './pages/**/*.ejs', './pages/**/*.html']),
     ViteEjsPlugin(),
     moveOutputPlugin(),
+
+    //將 vite config 設定讓資料能進入 dist
+    copy({
+      targets: [{ src: 'assets/**/*.js', dest: 'dist/assets' }],
+      hook: 'writeBundle',
+    }),
   ],
   server: {
     // 啟動 server 時預設開啟的頁面
