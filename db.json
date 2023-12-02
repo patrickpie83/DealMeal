@@ -1,0 +1,213 @@
+{
+  "users": [
+    {
+      "email": "patrick@mail.com",
+      "password": "$2a$10$mxnxZqpaV5Vjrs61Q2QyG.reguvfuv7iPH8CgRuaEnsvUARB3BKba",
+      "name": "Patrick",
+      "address": "高雄市左營區",
+      "id": "ddea107e-e4f3-4057-b877-15081caf582a"
+    },
+    {
+      "email": "jay@mail.com",
+      "password": "$2a$10$f14Jsz8thiuj4iEu8xyMaOzMf4omyNAGql8hOncGmRB/AfmrFZZMe",
+      "id": "eb08df1e-6247-409e-94e1-b2a844160d17",
+      "name": "jay",
+      "address": "新竹市東區"
+    }
+  ],
+  "carts": [
+    {
+      "userId": "",
+      "cart": [
+        {
+          "cartItemId": "",
+          "quantity": "",
+          "subtotal": "",
+          "product": {
+            "productId": "",
+            "image": "",
+            "name": "",
+            "price": ""
+          }
+        },
+        {},
+        {},
+        {}
+      ],
+      "total": ""
+    },
+    {},
+    {},
+    {}
+  ],
+  "orders": [
+    {
+      "date": "",
+      "orderId": "",
+      "status": "",
+      "buyer": {
+        "name": "",
+        "email": "",
+        "number": "",
+        "address": "",
+        "payment": ""
+      },
+      "products": [
+        {
+          "cartItemId": "",
+          "quantity": "",
+          "subtotal": "",
+          "product": {
+            "productId": "",
+            "image": "",
+            "name": "",
+            "price": ""
+          }
+        },
+        {},
+        {},
+        {}
+      ],
+      "total": "",
+      "coupon": "",
+      "finalTotal": ""
+    },
+    {},
+    {},
+    {}
+  ],
+  "memberCenters": [
+    {
+      "userId": "",
+      "history": [
+        {
+          "date": "",
+          "orderId": "",
+          "status": "",
+          "buyer": {
+            "name": "",
+            "email": "",
+            "number": "",
+            "address": "",
+            "payment": ""
+          },
+          "products": [
+            {
+              "cartItemId": "",
+              "quantity": "",
+              "subtotal": "",
+              "product": {
+                "productId": "",
+                "image": "",
+                "name": "",
+                "price": ""
+              }
+            },
+            {},
+            {},
+            {}
+          ],
+          "total": "",
+          "coupon": "",
+          "finalTotal": ""
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {},
+    {},
+    {}
+  ],
+  "products": [
+    {
+      "page": "",
+      "productId": "",
+      "image": "",
+      "series": "",
+      "name": "",
+      "storage": "",
+      "price": "",
+      "state": "",
+      "nutrition": {
+        "calories": "",
+        "carb": "",
+        "protein": "",
+        "fat": ""
+      },
+      "heat": {
+        "microwave": "",
+        "oven": "",
+        "electricPot": "",
+        "pan": ""
+      }
+    },
+    {},
+    {},
+    {}
+  ],
+  "previewProducts": [
+    {
+      "page": "",
+      "productId": "",
+      "image": "",
+      "series": "",
+      "name": "",
+      "storage": "",
+      "price": "",
+      "state": "",
+      "nutrition": {
+        "calories": "",
+        "carb": "",
+        "protein": "",
+        "fat": ""
+      },
+      "heat": {
+        "microwave": "",
+        "oven": "",
+        "electricPot": "",
+        "pan": ""
+      }
+    },
+    {},
+    {},
+    {}
+  ],
+  "sales": [
+    {
+      "monthId": "",
+      "products": [
+        {
+          "productId": "",
+          "image": "",
+          "series": "",
+          "name": "",
+          "price": "",
+          "saleQuantity": "",
+          "saleFigures": ""
+        },
+        {},
+        {},
+        {}
+      ]
+    },
+    {},
+    {},
+    {}
+  ],
+  "coupons": [
+    {
+      "code": "",
+      "date": "",
+      "name": "",
+      "usage": "",
+      "discount": "",
+      "state": "",
+      "useCount": ""
+    },
+    {},
+    {},
+    {}
+  ]
+}
