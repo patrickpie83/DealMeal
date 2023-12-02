@@ -5,4 +5,5 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './assets/js/aos.js';
 import './assets/js/index.js';
 
-// import './assets/login.js'; 最一開始的狀態，login.html直接引入login.js
+import './assets/login.js'; 
+// 最一開始的狀態，login.html直接引入login.js
