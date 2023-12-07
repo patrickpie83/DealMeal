@@ -17,15 +17,15 @@
       <div class="col-6">
         <div class="d-flex flex-column px-7 py-5 border border-primary rounded-40 h-100">
           <span class="fs-4 mb-4">圖片</span>
-          <div class="ratio ratio-1x1 w-100 mb-4">
-            <!-- 尚未製作，未置入圖片時，需以替代文字提醒(請置入圖片網址) -->
-            <span>請置入圖片網址</span>
-            <img class="d-none" src="" alt="">
+          <span>預覽圖片</span>
+          <div class="ratio ratio-1x1 w-100 mb-4 imgArea">
+            <p class="text-danger">目前是空的</p>
           </div>
           <span>圖片網址</span>
           <div class="d-flex">
-            <input class="w-75" type="text">
-            <button type="button" class="btn btn-normal-brown ms-3">確認</button>
+            <input class="imgInput" type="text" style="width: 70%;">
+            <button type="button" class="btn btn-normal-brown ms-3 imgUpload">預覽</button>
+            <button type="button" class="btn btn-danger ms-3 imgCancel">移除</button>
           </div>
           
         </div>
@@ -35,7 +35,7 @@
         <div class="px-7 py-5 mb-2 border border-primary rounded-40">
           <label class="fs-4 d-block mb-4" for="productSeries">商品系列</label>
           <select class="w-50" name="series" id="productSeries">
-            <option value="塑身系列">請選擇</option>
+            <option value="請選擇" disabled selected>請選擇</option>
             <option value="塑身系列">塑身系列</option>
             <option value="增肌系列">增肌系列</option>
             <option value="早餐系列">早餐系列</option>
@@ -43,22 +43,23 @@
         </div>
         <div class="px-7 py-5 mb-2 border border-primary rounded-40">
           <label class="fs-4 d-block mb-4" for="productName">商品名稱</label>
+          <span class="fs-7">＊名稱字數限制為10字以內</span>
           <div class="d-flex">
             <input class="w-50" type="text" id="productName" maxlength="10">
-            <button class="w-25 ms-4 btn btn-normal-brown rounded-pill text-primary" type="button">檢查</button>
+            <button class="w-25 ms-4 btn btn-normal-brown rounded-pill text-primary checkNameBtn" type="button">檢查</button>
           </div>
-          <span class="fs-7">＊名稱字數限制為10字以內</span>
+          <span class="fs-7" id="existNameText"></span>
         </div>
         <div class="px-7 py-5 mb-2 border border-primary rounded-40">
           <label class="fs-4 d-block mb-4" for="productPrice">單價</label>
           <div class="d-flex align-items-end">
-            <input class="w-50" type="number" id="productPrice">
+            <input class="w-50" type="number" id="productPrice" min="1">
             <span>元</span>
           </div>
         </div>
         <div class="px-7 py-5 border border-primary rounded-40">
           <label class="fs-4 d-block mb-4" for="productStock">商品庫存</label>
-          <input class="w-50 d-block" type="number" id="productStock">
+          <input class="w-50 d-block" type="number" id="productStock" min="1">
           <span class="fs-7">＊庫存僅能於初始登錄時或總覽頁進行增加</span>
         </div>
       </div>
@@ -76,33 +77,33 @@
           <div class="mb-5">
             <label class="fs-4 d-block mb-2 fw-bold" for="productSize">每一份量</label>
             <div class="d-flex align-items-end">
-              <input class="w-50" type="number" id="productSize">
+              <input class="w-50" type="number" id="productSize" min="1">
               <span>公克</span>
             </div>
           </div>
           <div class="mb-5">
             <label class="fs-4 d-block mb-2 fw-bold" for="productCalories">熱量</label>
             <div class="d-flex align-items-end">
-              <input class="w-50" type="number" id="productCalories">
+              <input class="w-50" type="number" id="productCalories" min="0">
               <span>大卡</span>
             </div>
           </div>
           <div class="mb-5">
             <label class="fs-4 d-block mb-2 fw-bold" for="productCarb">碳水化合物</label>
             <div class="d-flex align-items-end">
-              <input class="w-50" type="number" id="productCarb">
+              <input class="w-50" type="number" id="productCarb" min="0">
               <span>公克</span>
             </div>
           </div>
           <div class="mb-5">
             <label class="fs-4 d-block mb-2 fw-bold" for="productProtein">蛋白質</label>
             <div class="d-flex align-items-end">
-              <input class="w-50" type="number" id="productProtein">
+              <input class="w-50" type="number" id="productProtein" min="0">
               <span>公克</span>
             </div>
           </div>
           <div class="mb-5">
-            <label class="fs-4 d-block mb-2 fw-bold" for="productFat">脂肪</label>
+            <label class="fs-4 d-block mb-2 fw-bold" for="productFat" min="0">脂肪</label>
             <div class="d-flex align-items-end">
               <input class="w-50" type="number" id="productFat">
               <span>公克</span>
@@ -136,16 +137,18 @@
     <div class="row justify-content-end mt-5">
       <p class="mb-4 text-end text-danger">完成送出後，預設狀態將為「完售中」，若要開啟販售需進行即時編輯</p>
       <div class="col-3">
-        <button type="button" class="py-3 btn btn-secondary text-white w-100 rounded-0">取消</button>
+        <a href="admin-products.html" type="button" class="py-3 btn btn-secondary text-white w-100 rounded-0">取消</a>
       </div>
       <div class="col-3">
-        <button type="button" class="py-3 btn btn-danger text-white w-100 rounded-0">完成送出</button>
+        <button type="button" class="py-3 btn btn-danger text-white w-100 rounded-0 finishBtn">完成送出</button>
       </div>
     </div>
     
    </div>
     
 
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/admin.newProduct.js"></script>
   </body>
 </html>

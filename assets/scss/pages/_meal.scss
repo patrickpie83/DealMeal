@@ -1,0 +1,30 @@
+.mealName{
+    font-size: 24px;
+    @include pc{
+        font-size: 36px;
+    }
+    // @include pc-xxl{
+    //     font-size: 48px;
+    // }
+}
+
+.mealStorage{
+    font-size: 16px;
+    @include pc{
+        font-size: 24px;
+    }
+}
+
+.mealPrice{
+    font-size: 20px;
+    @include pc{
+        font-size: 24px;
+    }
+}
+
+.mealQuatity{
+    font-size: 16px;
+    @include pc{
+        font-size: 24px;
+    }
+}

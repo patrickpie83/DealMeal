@@ -1,25 +1,28 @@
-
-
 //註冊會員
 const signUpName=document.querySelector("#signUpName");
 const signUpAddress=document.querySelector("#signUpAddress");
 const signUpEmail=document.querySelector("#signUpEmail");
 const signUpPassword=document.querySelector("#signUpPassword");
 const signUpBtn=document.querySelector(".signUpBtn");
+const signUpForm=document.querySelector(".signUpForm");
+const signUpNameContent=document.querySelector(".signUpNameContent");
+const signUpAddressContent=document.querySelector(".signUpAddressContent");
+const signUpEmailContent=document.querySelector(".signUpEmailContent");
+const signUpPasswordContent=document.querySelector(".signUpPasswordContent");
+
 //登入會員
 const loginEmail=document.querySelector("#loginEmail");
 const loginPassword=document.querySelector("#loginPassword");
 const loginBtn=document.querySelector(".loginBtn");
 
-//000
 
-const _url="https://dealmealserver.onrender.com/";
-// const _url="http://localhost:3000/";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 // 註冊會員API
-function signUp(){
+function apiSignUp(){
     let myuuid = crypto.randomUUID();
-    axios.post(`${_url}users`,{
+    axios.post(`${_url}/users`,{
         "id":myuuid,
         "name":signUpName.value,
         "address":signUpAddress.value,
@@ -28,23 +31,84 @@ function signUp(){
     })
     .then(function(res){
         alert("註冊成功");
-        // window.location.href = "index.html" ;
+        window.location.href = "login.html" ;
     })
     .catch(function(err){
         console.log(err);
     })
 }
-signUpBtn.addEventListener("click",function(){
-    if(! (signUpName.value && signUpAddress.value && signUpEmail.value && signUpPassword.value)){
-        alert("尚有欄位未填完畢");
-        return;
+
+//註冊＆驗證
+signUpBtn.addEventListener("click",function(e){
+    e.preventDefault();
+
+    //驗證物件
+    const signUpNameConstraints = {
+        //驗證對象
+        用戶名稱:{
+            presence:{   //必填驗證
+                allowEmpty: false,
+                message:"是必填欄位",
+            },
+            format: {
+                pattern: /^[^\s]+([^\s]+)*$/, // 正則表達式：不可在中間包含空白符號
+                message: "不可含有空白符號",
+            },
+        },
+    };
+
+    //驗證配送地址
+    const signUpAddressConstraints = {
+        //驗證對象
+        配送地址:{
+            presence:{   //必填驗證
+                allowEmpty: false,
+                message:"是必填欄位",
+            },
+        },
+    };
+
+    //驗證電子信箱
+    const signUpEmailConstraints = {
+        //驗證對象
+        電子信箱:{
+            presence:{   //必填驗證
+                allowEmpty: false,
+                message:"是必填欄位",
+            },
+        },
+    };
+
+    //驗證密碼
+    const signUpPasswordConstraints = {
+        //驗證對象
+        密碼:{
+            presence:{   //必填驗證
+                allowEmpty: false,
+                message:"是必填欄位",
+            },
+        },
+    };
+
+    const signUpNameErrors = validate(signUpForm,signUpNameConstraints);
+    const signUpAddressErrors = validate(signUpForm,signUpAddressConstraints);
+    const signUpEmailErrors = validate(signUpForm,signUpEmailConstraints);
+    const signUpPasswordErrors = validate(signUpForm,signUpPasswordConstraints);
+
+    signUpNameContent.textContent = signUpNameErrors ? `${signUpNameErrors["用戶名稱"]}` : "";
+    signUpAddressContent.textContent = signUpAddressErrors ? `${signUpAddressErrors["配送地址"]}` : "";
+    signUpEmailContent.textContent = signUpEmailErrors ? `${signUpEmailErrors["電子信箱"]}` : "";
+    signUpPasswordContent.textContent = signUpPasswordErrors ? `${signUpPasswordErrors["密碼"]}` : "";
+
+    if( !(signUpNameErrors || signUpAddressErrors || signUpEmailErrors || signUpPasswordErrors) ){
+        apiSignUp();
     }
-    signUp();
+    
 })
 
 //登入會員
-function login(){
-    axios.post(`${_url}login`,{
+function apiLogin(){
+    axios.post(`${_url}/login`,{
         "email":loginEmail.value,
         "password":loginPassword.value
     })
@@ -62,17 +126,19 @@ function login(){
         //     // 待調整
         //     // window.location.href ="attractionList.html";
         // }
-        
+        window.location.href ="index.html";
     })
     .catch(function(err){
         console.log(err);
         alert("登入失敗");
     })
 }
-loginBtn.addEventListener("click",function(){
+
+loginBtn.addEventListener("click",function(e){
+    e.preventDefault();
     if(! (loginEmail.value && loginPassword.value)){
         alert("欄位未填");
         return;
     }
-    login();
+    apiLogin();
 })

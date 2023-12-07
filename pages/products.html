@@ -13,18 +13,20 @@
     <img class="mb-lg-5" src="../assets/images/product_banner.png" alt="product_banner" style="width: 100%;">
 
     <!-- mobile選單 -->
-    <nav class="stickyWithNav d-lg-none">
-      <div class="row">
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+    <nav class="stickyWithNav d-lg-none bg-primary">
+      <div class="container">
+        <div class="row">
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+        </div>
       </div>
     </nav>
 
     <div class="container mb-7">
       <div class="row">
         <!-- pc選單 -->
-        <aside class="col-3">
+        <aside class="col-lg-3">
           <div class="d-none  d-lg-flex flex-column stickyWithNav d-none">
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">塑身系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">增肌系列</button>
@@ -32,42 +34,18 @@
           </div>
         </aside>
 
-        <div class="col-9">
-          <div class="row">
-
-            <div class="col-6 mb-7">
-              <!-- 尚未製作，延伸連結效果及其功能 -->
-              <div class="ratio ratio-1x1">
-                <img src="../assets/images/塑身＿清爽豆蔬雞胸.jpg" alt="塑身＿清爽豆蔬雞胸">
-              </div>
-              <div class="mt-2 p-5 border border-primary">
-                <div class="d-flex justify-content-between">
-                  <a href="（暫）清爽豆蔬雞胸.html"><h3 class="fs-4">清爽豆蔬雞胸</h3></a>
-                  <p>即時庫存：18份</p>
-                </div>
-                <div class="mt-4 d-flex justify-content-between align-items-end">
-                  <div>
-                    <p>熱量：大卡
-                    <br>碳水化合物：公克
-                    <br>蛋白質：公克
-                    <br>脂肪：公克 </p>
-                  </div>
-                  <p class="fs-4 fw-bold">售價：160元</p>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-
+        <div class="col-lg-9">
+          <div class="row pt-3 pt-lg-0 productsList">
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- 頁數要用js生出來 -->
     <%- include('./layout/footer'); -%>
-
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/products.js"></script>
   </body>
 </html>

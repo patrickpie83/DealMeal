@@ -6,6 +6,7 @@
   - 應用六角學院提供的 [vite開發環境](https://github.com/gonsakon/vite0729/tree/main#%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B) 來執行開發(ejs版型管理,scss編譯)、部署網頁
   - 應用 [json-server-auth](https://www.npmjs.com/package/json-server-auth) 套件來建立模擬的API
   - 應用 [Render](https://render.com/) 雲端伺服器來部署API
+  - [API部署路徑](https://github.com/patrickpie83/DealMealServer)(額外建立一個Repo)
 
 ## 使用技術
   - 切版框架 - [Bootstrap](https://bootstrap5.hexschool.com/docs/5.1/getting-started/introduction/)

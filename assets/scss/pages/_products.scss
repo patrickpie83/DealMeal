@@ -3,3 +3,62 @@
     top:112px; //nav的高度
     z-index: 1;
 }
+
+.cardBtn{
+    display: none;
+}
+
+.card{
+
+    &:hover{
+        a{
+            opacity: 1;
+        }
+        
+
+        .cardBtn{
+            background-color: $primary;
+            color: $light-brown;
+            border: 0;
+
+            display: block;
+            width: 95%;
+            position: absolute;
+            z-index: 2;
+            opacity: 0.7;
+            bottom: 2%;
+            left: 50%;
+            transform:translate(-50%);
+        
+            &:hover{
+                opacity: 1;
+            }
+            
+        }
+    }
+
+}
+
+.productName{
+    font-size: 20px;
+    font-weight: bold;
+    @include pad{
+        font-size: 24px;
+    }
+
+}
+
+.productNutrition{
+    font-size: 12px;
+
+    @include pad{
+        font-size: 16px;
+    }
+}
+
+.productPrice{
+    font-size: 16px;
+    @include pad{
+        font-size: 24px;
+    }
+}
