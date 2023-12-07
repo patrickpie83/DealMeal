@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/bootstrap.min-55b080cb.js"></script>
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-60f773dc.css">
+    <script type="module" crossorigin src="/DealMeal/assets/products-082d4d92.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-9e46bc63.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-9942e009.css">
   </head>
 
   <body>
@@ -46,18 +47,20 @@
     <img class="mb-lg-5" src="/DealMeal/assets/product_banner-5c1a8ff8.png" alt="product_banner" style="width: 100%;">
 
     <!-- mobile選單 -->
-    <nav class="stickyWithNav d-lg-none">
-      <div class="row">
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
-        <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+    <nav class="stickyWithNav d-lg-none bg-primary">
+      <div class="container">
+        <div class="row">
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+        </div>
       </div>
     </nav>
 
     <div class="container mb-7">
       <div class="row">
         <!-- pc選單 -->
-        <aside class="col-3">
+        <aside class="col-lg-3">
           <div class="d-none  d-lg-flex flex-column stickyWithNav d-none">
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">塑身系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">增肌系列</button>
@@ -65,36 +68,11 @@
           </div>
         </aside>
 
-        <div class="col-9">
-          <div class="row">
-
-            <div class="col-6 mb-7">
-              <!-- 尚未製作，延伸連結效果及其功能 -->
-              <div class="ratio ratio-1x1">
-                <img src="/DealMeal/assets/塑身＿清爽豆蔬雞胸-eda72091.jpg" alt="塑身＿清爽豆蔬雞胸">
-              </div>
-              <div class="mt-2 p-5 border border-primary">
-                <div class="d-flex justify-content-between">
-                  <a href="（暫）清爽豆蔬雞胸.html"><h3 class="fs-4">清爽豆蔬雞胸</h3></a>
-                  <p>即時庫存：18份</p>
-                </div>
-                <div class="mt-4 d-flex justify-content-between align-items-end">
-                  <div>
-                    <p>熱量：大卡
-                    <br>碳水化合物：公克
-                    <br>蛋白質：公克
-                    <br>脂肪：公克 </p>
-                  </div>
-                  <p class="fs-4 fw-bold">售價：160元</p>
-                </div>
-              </div>
-            </div>
-            
-            
-            
-
+        <div class="col-lg-9">
+          <div class="row pt-3 pt-lg-0 productsList">
           </div>
         </div>
+
       </div>
     </div>
 
@@ -117,7 +95,8 @@
         <p class="mt-5 text-light-brown">客服信箱：dealmeal@mail.com</p>
         <p class="mt-5 text-light-brown">客服電話：02-12345678</p>
     </div>
-</footer>
+</footer>    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
     
   </body>
 </html>

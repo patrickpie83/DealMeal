@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/login-95b76f56.js"></script>
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-55b080cb.js">
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-60f773dc.css">
+    <script type="module" crossorigin src="/DealMeal/assets/login-461752bb.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-9e46bc63.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-9942e009.css">
   </head>
 
   <body>
     <!-- aos -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- VALIDATE.JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
     
 <nav class="navbar bg-dark-brown py-2 sticky-top shadow-sm navbar-expand-lg">
     <div class="container">
@@ -71,20 +73,27 @@
                         <a href="member.html">開發用，進入會員資料</a>
                     </div>
                     <!-- 註冊會員 -->
+                    
                     <div class="tab-pane fade w-50" id="signUp" role="tabpanel">
+                      <form class="signUpForm">
                         <label for="signUpName" class="form-label">用戶名稱</label>
-                        <input type="text" class="form-control rounded-0 border-primary mb-4" id="signUpName" placeholder="請輸入用戶大名">
+                        <input type="text" class="form-control rounded-0 border-primary" id="signUpName" placeholder="請輸入用戶大名" name="用戶名稱">
+                        <p class="signUpNameContent text-danger"></p>
 
-                        <label for="signUpAddress" class="form-label">配送地址</label>
-                        <input type="text" class="form-control rounded-0 border-primary mb-4" id="signUpAddress" placeholder="請輸入常用地址">
+                        <label for="signUpAddress" class="form-label mt-4">配送地址</label>
+                        <input type="text" class="form-control rounded-0 border-primary" id="signUpAddress" placeholder="請輸入常用地址" name="配送地址">
+                        <p class="signUpAddressContent text-danger"></p>
                         
-                        <label for="signUpEmail" class="form-label">電子信箱</label>
-                        <input type="email" class="form-control rounded-0 border-primary mb-4" id="signUpEmail" placeholder="請輸入電子信箱">
+                        <label for="signUpEmail" class="form-label mt-4">電子信箱</label>
+                        <input type="email" class="form-control rounded-0 border-primary" id="signUpEmail" placeholder="請輸入電子信箱" name="電子信箱">
+                        <p class="signUpEmailContent text-danger"></p>
 
-                        <label for="signUpPassword" class="form-label">密碼</label>
-                        <input type="password" class="form-control rounded-0 border-primary mb-5" id="signUpPassword" placeholder="請輸入密碼">
+                        <label for="signUpPassword" class="form-label mt-4">密碼</label>
+                        <input type="password" class="form-control rounded-0 border-primary" id="signUpPassword" placeholder="請輸入密碼" name="密碼">
+                        <p class="signUpPasswordContent text-danger"></p>
                         
-                        <button type="button" class="signUpBtn py-2 btn btn-primary text-light-brown w-100 rounded-0">註冊</button>
+                        <button type="submit" class="signUpBtn mt-5 py-2 btn btn-primary text-light-brown w-100 rounded-0">註冊</button>
+                      </form>
                     </div>
                 </div>
 

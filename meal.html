@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/bootstrap.min-55b080cb.js"></script>
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-60f773dc.css">
+    <script type="module" crossorigin src="/DealMeal/assets/meal-6006d447.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-9e46bc63.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-9942e009.css">
   </head>
 
   <body>
@@ -43,57 +44,67 @@
 </nav>
 
 
-    <section class="container my-7">
+    <section class="container my-3 my-lg-7">
         <div class="row justify-content-center">
-            <div class="col-10 ">
+            <div class="col-10 mealDetail">
 
-                <div class="row justify-content-between mb-7">
-                    <div class="col-6">
+                <!-- <div class="row justify-content-between mb-7">
+                    <div class="col-lg-6">
                         <div class="ratio ratio-1x1">
-                            <img src="/DealMeal/assets/塑身＿清爽豆蔬雞胸-eda72091.jpg" alt="塑身＿清爽豆蔬雞胸">
+                            <img src="../assets/images/塑身＿清爽豆蔬雞胸.jpg" alt="塑身＿清爽豆蔬雞胸">
                         </div>
                     </div>
-                    <div class="col-6 d-flex flex-column justify-content-between">
+                    <div class="col-lg-6 d-flex flex-column justify-content-between mt-3 mt-lg-0">
                         <div>
                             <span class="mb-3">塑身系列</span>
-                            <h1 class="fs-1 mb-4">清爽豆蔬雞胸胸胸胸胸</h1>
-                            <p class="fs-4 mb-4">即時庫存：18份</p>
-                            <p class="fs-4 fw-bold">售價：160元</p>
+                            <h1 class="mealName mb-3 mb-lg-4">清爽豆蔬雞胸胸胸胸胸</h1>
+                            <p class="mealStorage mb-lg-4">即時庫存：18份</p>
+                            <p class="mealPrice fw-bold">售價：160元</p>
                         </div>
-                        <div>
-                            <div class="d-flex">
-                                <p class="fs-4">數量</p>
-                                <!-- 尚未製作，數量按鈕 -->
+                        <div class="mt-3 mt-lg-0">
+                            <div class="d-lg-flex align-items-center">
+                                <p class="mealQuatity me-3 mb-1">數量</p>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
+                                        <img class="d-block" src="../assets/images/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                                    </button>
+                                    <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1">
+                                    <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
+                                        <img class="d-block" src="../assets/images/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                                    </button>
+                                </div>
+                                
                             </div>
-                            <button type="button" class="py-4 mt-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
+                            <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
                         </div>
                     </div>
                 </div>
 
-                <h2 class="bg-light-brown fs-4 fw-normal py-2 text-center">內容物</h2>
-                <p class="py-5 text-center fs-4">雞胸肉、甜豆、鹽、橄欖油</p>
+                <h2 class="bg-light-brown fs-5 fw-normal py-2 text-lg-center">內容物</h2>
+                <p class="py-5 text-lg-center fs-6">雞胸肉、甜豆、鹽、橄欖油</p>
                 <div class="row justify-content-between mb-7">
-                    <div class="col-6 text-center">
-                        <h2 class="bg-normal-brown fs-4 fw-normal py-2">營養標示</h2>
-                        <h3 class="fs-5 fw-bold pt-5 mb-1">每一份量</h3>
+                    <div class="col-lg-6 text-lg-center mb-5 mb-lg-0">
+                        <h2 class="bg-normal-brown fs-5 fw-normal py-2">營養標示</h2>
+                        <h3 class="fs-6 fw-bold pt-5 mb-1">每一份量</h3>
                         <p>350公克</p>
-                        <h3 class="fs-5 fw-bold pt-4 mb-1">熱量</h3>
+                        <h3 class="fs-6 fw-bold pt-4 mb-1">熱量</h3>
                         <p>410大卡</p>
-                        <h3 class="fs-5 fw-bold pt-4 mb-1">碳水化合物</h3>
+                        <h3 class="fs-6 fw-bold pt-4 mb-1">碳水化合物</h3>
                         <p>80公克</p>
-                        <h3 class="fs-5 fw-bold pt-4 mb-1">蛋白質</h3>
+                        <h3 class="fs-6 fw-bold pt-4 mb-1">蛋白質</h3>
                         <p>18公克</p>
-                        <h3 class="fs-5 fw-bold pt-4 mb-1">脂肪</h3>
+                        <h3 class="fs-6 fw-bold pt-4 mb-1">脂肪</h3>
                         <p>10.5公克</p>
                     </div>
-                    <div class="col-6 text-center">
-                        <h2 class="bg-normal-brown fs-4 fw-normal py-2">加熱方式</h2>
-                        <h3 class="fs-5 fw-bold pt-5 mb-1">微波</h3>
+                    <div class="col-lg-6 text-lg-center">
+                        <h2 class="bg-normal-brown fs-5 fw-normal py-2">加熱方式</h2>
+                        <h3 class="fs-6 fw-bold pt-5 mb-1">微波</h3>
                         <p>撕開包裝一角，放入微波爐加熱10分鐘</p>
-                        <h3 class="fs-5 fw-bold pt-4 mb-1">烤箱</h3>
+                        <h3 class="fs-6 fw-bold pt-4 mb-1">烤箱</h3>
                         <p>將包裝拆除移到盤中，170度加熱7分鐘</p>
                     </div>
-                </div>
+                </div> -->
 
 
             </div>
@@ -120,7 +131,8 @@
         <p class="mt-5 text-light-brown">客服信箱：dealmeal@mail.com</p>
         <p class="mt-5 text-light-brown">客服電話：02-12345678</p>
     </div>
-</footer>
+</footer>    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
     
   </body>
 </html>
