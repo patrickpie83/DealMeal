@@ -1,4 +1,4 @@
-import"./bootstrap.min-9e46bc63.js";const n=document.querySelector(".productsList"),o="https://dealmealserver.onrender.com";function s(r){let d="";r.forEach(function(t){d+=`
+import"./bootstrap.min-9e46bc63.js";import"./header-fe8da8f2.js";const n=document.querySelector(".productsList"),o="https://dealmealserver.onrender.com";function s(r){let d="";r.forEach(function(t){d+=`
         <div class="col-6 mb-5 mb-lg-7" data-page="${t.page}">
               <div class="card rounded-0 border-0">
                 <div class="position-relative">

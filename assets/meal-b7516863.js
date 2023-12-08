@@ -1,4 +1,4 @@
-import"./bootstrap.min-9e46bc63.js";const l=location.href.split("=")[1],n=document.querySelector(".mealDetail"),i="https://dealmealserver.onrender.com";function a(s){let e="",t=s[0];console.log(t),e+=`
+import"./bootstrap.min-9e46bc63.js";import"./header-fe8da8f2.js";const l=location.href.split("=")[1],n=document.querySelector(".mealDetail"),i="https://dealmealserver.onrender.com";function o(s){let e="",t=s[0];console.log(t),e+=`
     <div class="row justify-content-between mb-7">
         <div class="col-lg-6">
             <div class="ratio ratio-1x1">
@@ -18,11 +18,11 @@ import"./bootstrap.min-9e46bc63.js";const l=location.href.split("=")[1],n=docume
                     
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/images/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                            <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
                         </button>
-                        <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1">
+                        <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1">
                         <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/images/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                            <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
                         </button>
                     </div>
                     
@@ -60,4 +60,4 @@ import"./bootstrap.min-9e46bc63.js";const l=location.href.split("=")[1],n=docume
             <p>${t.heat.pan}</p>
         </div>
     </div>
-    `,n.innerHTML=e}function o(){axios.get(`${i}/products?id=${l}`).then(function(s){a(s.data)}).catch(function(s){console.log(s)})}o();
+    `,n.innerHTML=e}function a(){axios.get(`${i}/products?id=${l}`).then(function(s){o(s.data)}).catch(function(s){console.log(s)})}a();
