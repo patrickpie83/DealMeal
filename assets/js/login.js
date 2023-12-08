@@ -16,8 +16,8 @@ const loginPassword=document.querySelector("#loginPassword");
 const loginBtn=document.querySelector(".loginBtn");
 
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
+// const _url="https://dealmealserver.onrender.com";
+const _url="http://localhost:3000";
 
 // 註冊會員API
 function apiSignUp(){

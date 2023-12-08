@@ -122,35 +122,952 @@
   ],
   "products": [
     {
-      "page": "",
-      "productId": "",
-      "image": "",
-      "series": "",
-      "name": "",
-      "storage": "",
-      "price": "",
-      "state": "",
+      "id": "4c722f95-050b-4403-b365-25efbb8443e8",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E4%B9%9D%E5%B1%A4%E5%A1%94%E7%BE%A9%E5%A4%A7%E5%88%A9%E9%BA%B5.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "九層塔義大利麵",
+      "storage": 20,
+      "price": 120,
+      "state": "完售中",
+      "ingredient": "義大利麵條、九層塔、油漬番茄、蒜末",
       "nutrition": {
-        "calories": "",
-        "carb": "",
-        "protein": "",
-        "fat": ""
+        "size": 300,
+        "calories": 190,
+        "carb": 78,
+        "protein": 26,
+        "fat": 13.3
       },
       "heat": {
-        "microwave": "",
-        "oven": "",
-        "electricPot": "",
-        "pan": ""
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3~5分鐘"
       }
     },
-    {},
-    {},
-    {}
+    {
+      "id": "e336f400-913d-4763-871b-66e1c67189dc",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E4%BD%8E%E8%84%82%E8%B1%AC%E8%82%89%E6%B0%B4%E9%A4%83.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "低脂豬肉水餃",
+      "storage": 20,
+      "price": 110,
+      "state": "完售中",
+      "ingredient": "餃子皮、高麗菜、豬絞肉",
+      "nutrition": {
+        "size": 260,
+        "calories": 110,
+        "carb": 72,
+        "protein": 24.2,
+        "fat": 10.1
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "b1fdf854-8b58-42ca-b6f9-d58fc4fe9708",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E5%9D%87%E8%A1%A1%E9%9B%9E%E8%82%89%E8%92%9F%E8%92%BB%E9%BA%B5.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "均衡雞肉蒟蒻麵",
+      "storage": 10,
+      "price": 230,
+      "state": "完售中",
+      "ingredient": "蒟蒻麵、碳烤雞肉、水煮蛋、玉米、青江菜、扁豆、洋蔥",
+      "nutrition": {
+        "size": 380,
+        "calories": 190,
+        "carb": 98,
+        "protein": 36.8,
+        "fat": 17
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "be1550ba-8968-40e8-abba-c9214b01136d",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E5%A4%8F%E5%A8%81%E5%A4%B7%E8%9B%8B%E6%B2%99%E6%8B%89poke.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "夏威夷蛋沙拉poke",
+      "storage": 10,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "雞蛋、杏仁果、花椰菜、小黃瓜、青豆、酪梨、馬鈴薯",
+      "nutrition": {
+        "size": 320,
+        "calories": 170,
+        "carb": 82,
+        "protein": 38,
+        "fat": 15.2
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱3分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "fa24401e-5f4c-402c-b753-8d0571d16d4a",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E6%99%82%E8%94%AC%E7%83%A4%E8%82%89%E4%B8%B8.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "時蔬烤肉丸",
+      "storage": 20,
+      "price": 170,
+      "state": "完售中",
+      "ingredient": "當令時蔬、醬油豬肉丸",
+      "nutrition": {
+        "size": 312,
+        "calories": 290,
+        "carb": 12,
+        "protein": 58,
+        "fat": 10
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱3分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3分鐘"
+      }
+    },
+    {
+      "id": "6f3686fd-76bf-4109-9163-090c15d10713",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E6%B0%B4%E7%85%AE%E8%9B%8B%E4%BD%90%E9%87%8E%E8%8F%9C%E9%9B%9E%E8%82%89.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "水煮蛋佐野菜雞肉",
+      "storage": 20,
+      "price": 190,
+      "state": "完售中",
+      "ingredient": "手撕雞胸肉、水煮蛋、野菜、番茄、夏威夷醬",
+      "nutrition": {
+        "size": 290,
+        "calories": 190,
+        "carb": 0,
+        "protein": 52,
+        "fat": 4
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱3分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3分鐘"
+      }
+    },
+    {
+      "id": "961353cd-3af7-4bf6-9be1-a28f7ebed15c",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E6%B4%BB%E5%8A%9B%E5%AB%A9%E8%9B%8B%E9%9D%92%E9%86%AC%E7%87%89%E9%A3%AF.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "活力嫩蛋青醬燉飯",
+      "storage": 20,
+      "price": 220,
+      "state": "完售中",
+      "ingredient": "水波嫩蛋、青醬、卡納羅利米、番茄、羅勒",
+      "nutrition": {
+        "size": 230,
+        "calories": 120,
+        "carb": 62,
+        "protein": 30,
+        "fat": 12
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，均勻翻炒3分鐘"
+      }
+    },
+    {
+      "id": "b8c3f8b9-2226-49b7-81db-d0823058168e",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E6%B8%85%E7%88%BD%E8%B1%86%E8%94%AC%E9%9B%9E%E8%83%B8.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "清爽豆蔬雞胸",
+      "storage": 20,
+      "price": 220,
+      "state": "完售中",
+      "ingredient": "碳烤雞胸肉、番茄、四季豆",
+      "nutrition": {
+        "size": 240,
+        "calories": 200,
+        "carb": 23,
+        "protein": 64,
+        "fat": 9.6
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，均勻翻炒3分鐘"
+      }
+    },
+    {
+      "id": "83494862-5dca-4e98-bb45-f11824a8ccd2",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E6%B8%9B%E8%84%82%E8%9B%8B%E7%99%BD%E9%A4%90.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "減脂蛋白餐",
+      "storage": 5,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "水煮鳥蛋、醬油豆腐、番茄、玉米、毛豆仁、小黃瓜、紫高麗菜",
+      "nutrition": {
+        "size": 400,
+        "calories": 328,
+        "carb": 34,
+        "protein": 40,
+        "fat": 12.3
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱3分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "0821f6f2-3562-4f12-a28e-96c424918074",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E7%83%A4%E8%98%86%E7%AD%8D%E4%BD%90%E6%AA%B8%E6%AA%AC%E9%AE%AD%E9%AD%9A.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "烤蘆筍佐檸檬鮭魚",
+      "storage": 5,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "烤蘆筍、檸檬鮭魚、紫洋蔥、蔥末",
+      "nutrition": {
+        "size": 240,
+        "calories": 480,
+        "carb": 6,
+        "protein": 42.2,
+        "fat": 57
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "efaa43c1-3619-4499-8a6f-840b4188ff6b",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E7%94%B0%E5%9C%92%E8%94%AC%E8%8F%9C%E7%88%BD%E8%BA%AB%E9%A4%83.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "田園蔬菜爽身餃",
+      "storage": 20,
+      "price": 130,
+      "state": "完售中",
+      "ingredient": "蔬菜餃子皮、高麗菜、玉米、豬絞肉",
+      "nutrition": {
+        "size": 280,
+        "calories": 140,
+        "carb": 70,
+        "protein": 32,
+        "fat": 18
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "8ae7fce7-77ed-4090-8069-1b0fde4c785e",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E8%94%AC%E8%8F%9C%E7%95%AA%E8%8C%84%E8%9D%B4%E8%9D%B6%E9%BA%B5.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "蔬菜番茄蝴蝶麵",
+      "storage": 20,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "蝴蝶麵、青醬、羅勒、番茄、烤時蔬",
+      "nutrition": {
+        "size": 280,
+        "calories": 230,
+        "carb": 22,
+        "protein": 16,
+        "fat": 9
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "a869a4a5-8b26-419e-b35c-056ed47020b3",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E8%96%84%E9%B9%BD%E9%9D%92%E8%B1%86%E9%A2%A8%E5%91%B3%E9%A3%AF.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "薄鹽青豆風味飯",
+      "storage": 20,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "糙米飯、青豆、七味粉",
+      "nutrition": {
+        "size": 330,
+        "calories": 280,
+        "carb": 34,
+        "protein": 16,
+        "fat": 8.2
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "ba11b676-c894-477d-ad09-6a02841e3544",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E9%BB%83%E9%87%91%E5%9C%B0%E7%93%9C%E7%83%A4%E9%AE%AD%E9%AD%9A.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "黃金地瓜烤鮭魚",
+      "storage": 5,
+      "price": 320,
+      "state": "完售中",
+      "ingredient": "黃金地瓜、烤挪威鮭魚、洋蔥、香菜",
+      "nutrition": {
+        "size": 500,
+        "calories": 420,
+        "carb": 48,
+        "protein": 33,
+        "fat": 21
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "3121489e-638c-4d2e-aaaa-9af1784a6381",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E9%BB%83%E9%87%91%E6%B5%81%E6%B2%99%E9%9B%9E%E8%82%89%E9%A3%AF.jpeg?raw=true",
+      "series": "塑身系列",
+      "name": "黃金流沙雞肉飯",
+      "storage": 5,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "流沙鹹蛋、雞肉、番茄、白飯、時蔬",
+      "nutrition": {
+        "size": 621,
+        "calories": 489,
+        "carb": 52,
+        "protein": 52,
+        "fat": 18
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，均勻翻炒3分鐘"
+      }
+    },
+    {
+      "id": "4460015f-e713-405e-96c4-fbcbc5aca81b",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A1%91%E8%BA%AB%EF%BC%BF%E4%BD%8E%E6%B2%B9%E8%88%9E%E8%8F%87%E7%87%89%E9%A3%AF.jpg?raw=true",
+      "series": "塑身系列",
+      "name": "低油舞菇燉飯",
+      "storage": 20,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "白飯、舞菇、紅蘿蔔、山藥、柴魚",
+      "nutrition": {
+        "size": 320,
+        "calories": 280,
+        "carb": 60,
+        "protein": 32,
+        "fat": 16.7
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將包裝拆除倒入平底鍋，翻炒3~5分鐘"
+      }
+    },
+    {
+      "id": "e64da803-0e56-4a25-a47e-ade1cd0578a7",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E4%BA%94%E7%A9%80%E8%98%BF%E8%94%94%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "五穀蘿蔔飯",
+      "storage": 20,
+      "price": 220,
+      "state": "完售中",
+      "ingredient": "五穀飯、紅蘿蔔、炒雞蛋、玉米",
+      "nutrition": {
+        "size": 720,
+        "calories": 700,
+        "carb": 75,
+        "protein": 31,
+        "fat": 24
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3~5分鐘"
+      }
+    },
+    {
+      "id": "26868288-c0a7-4f6e-b678-9e49e5015b54",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E4%BA%94%E7%A9%80%E8%9D%A6%E4%BB%81%E9%A2%A8%E5%91%B3%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "五穀蝦仁風味飯",
+      "storage": 20,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "五穀飯、草蝦仁、炒雞蛋、番茄、蔥末",
+      "nutrition": {
+        "size": 800,
+        "calories": 780,
+        "carb": 84,
+        "protein": 46,
+        "fat": 28
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3~5分鐘"
+      }
+    },
+    {
+      "id": "10136e86-6f55-4a88-ba1e-37a149849e7c",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E4%BD%8E%E6%B2%B9%E9%9B%9E%E7%B5%B2%E7%87%89%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "低油雞絲燉飯",
+      "storage": 10,
+      "price": 220,
+      "state": "完售中",
+      "ingredient": "白飯、紅醬、匈牙利雞絲、花椰菜、香菇",
+      "nutrition": {
+        "size": 762,
+        "calories": 802,
+        "carb": 84,
+        "protein": 44,
+        "fat": 32
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，翻炒3~5分鐘"
+      }
+    },
+    {
+      "id": "c0fe8b87-b5c1-43e7-a903-e76c8110b860",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E4%BD%8E%E8%84%82%E7%89%9B%E8%82%89%E7%87%89%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "低脂牛肉燉飯",
+      "storage": 10,
+      "price": 320,
+      "state": "完售中",
+      "ingredient": "紅酒、牛肉、燉飯、蘑菇、馬鈴薯",
+      "nutrition": {
+        "size": 880,
+        "calories": 802,
+        "carb": 76,
+        "protein": 48.6,
+        "fat": 36
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "ced9ca64-9f73-4eeb-9a37-f0add7ad2562",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E4%BD%8E%E9%B9%BD%E9%87%91%E6%B2%99%E8%9D%A6%E4%BB%81%E7%87%89%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "低鹽金沙蝦仁燉飯",
+      "storage": 15,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "金沙鹹蛋、蝦仁、燉飯、蘑菇、玉米",
+      "nutrition": {
+        "size": 720,
+        "calories": 802,
+        "carb": 69,
+        "protein": 43,
+        "fat": 28
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱150度加熱5分鐘",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "f800b2cf-d99b-47a8-95a0-31abad9c91c0",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E6%B3%B0%E5%BC%8F%E6%89%93%E6%8B%8B%E8%B1%AC%E9%A3%AF.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "泰式打拋豬飯",
+      "storage": 15,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "金沙鹹蛋、蝦仁、燉飯、蘑菇、玉米",
+      "nutrition": {
+        "size": 763,
+        "calories": 720,
+        "carb": 73.2,
+        "protein": 42,
+        "fat": 25
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱150度加熱5分鐘",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "ccb776b7-9e82-476e-bc5b-d8235edeb088",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E6%B8%85%E7%87%89%E9%A2%A8%E5%91%B3%E8%B1%AC%E8%82%89%E6%B9%AF%E9%A4%83.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "清燉風味豬肉湯餃",
+      "storage": 20,
+      "price": 220,
+      "state": "完售中",
+      "ingredient": "豬絞肉、高麗菜、薄鹽醬油、芹菜",
+      "nutrition": {
+        "size": 620,
+        "calories": 530,
+        "carb": 67,
+        "protein": 36,
+        "fat": 22
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "86d5443e-6926-4e08-8ba8-7ac25636b30f",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E7%83%A4%E8%94%AC%E8%8F%9C%E6%AA%B8%E6%AA%AC%E9%9B%9E.jpeg?raw=true",
+      "series": "增肌系列",
+      "name": "烤蔬菜檸檬雞",
+      "storage": 5,
+      "price": 320,
+      "state": "完售中",
+      "ingredient": "檸檬雞胸肉、烤茭白筍、馬鈴薯、四季豆、甜椒",
+      "nutrition": {
+        "size": 730,
+        "calories": 622,
+        "carb": 68,
+        "protein": 63,
+        "fat": 34
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "9a3afa77-287d-40ae-9bb7-9faed80f1d55",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E7%85%99%E7%87%BB%E9%AE%AD%E9%AD%9A%E6%99%82%E8%94%AC.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "煙燻鮭魚時蔬",
+      "storage": 5,
+      "price": 320,
+      "state": "完售中",
+      "ingredient": "煙燻挪威鮭魚、紅蘿蔔、時蔬",
+      "nutrition": {
+        "size": 680,
+        "calories": 549,
+        "carb": 55,
+        "protein": 50.5,
+        "fat": 46
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "fcaa17ae-2c01-4a03-ac0a-0b2506125cca",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E7%85%99%E7%87%BB%E9%AE%AD%E9%AD%9A%E6%99%82%E8%94%AC.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "燉煮菠菜佐鮭魚",
+      "storage": 10,
+      "price": 360,
+      "state": "完售中",
+      "ingredient": "挪威鮭魚、菠菜、番茄、馬鈴薯",
+      "nutrition": {
+        "size": 720,
+        "calories": 667,
+        "carb": 55,
+        "protein": 58,
+        "fat": 47
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "76ec2934-ad04-4812-ba02-805d4c4a496f",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E7%85%99%E7%87%BB%E9%AE%AD%E9%AD%9A%E6%99%82%E8%94%AC.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "牛豬雙響馬鈴薯",
+      "storage": 20,
+      "price": 300,
+      "state": "完售中",
+      "ingredient": "烤牛肉、烤豬里肌、馬鈴薯、茄子、櫛瓜",
+      "nutrition": {
+        "size": 789,
+        "calories": 711,
+        "carb": 63,
+        "protein": 60,
+        "fat": 42
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "437e8ce9-8161-4783-9ffc-6edc0a80737a",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E8%96%84%E9%86%AC%E7%95%AA%E8%8C%84%E7%89%9B%E8%82%89.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "薄醬番茄牛肉",
+      "storage": 5,
+      "price": 360,
+      "state": "完售中",
+      "ingredient": "燉牛肉、甜椒、番茄、馬鈴薯、櫛瓜",
+      "nutrition": {
+        "size": 832,
+        "calories": 806,
+        "carb": 66,
+        "protein": 66,
+        "fat": 47
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "2e9aeacc-7535-4e37-bb18-a2d16111957b",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E5%A2%9E%E8%82%8C%EF%BC%BF%E9%86%AC%E9%A6%99%E9%AE%AD%E9%AD%9A%E6%99%82%E8%94%AC.jpg?raw=true",
+      "series": "增肌系列",
+      "name": "醬香鮭魚時蔬",
+      "storage": 10,
+      "price": 330,
+      "state": "完售中",
+      "ingredient": "挪威鮭魚、櫛瓜、時蔬、紅蘿蔔、番茄、日產大豆醬油",
+      "nutrition": {
+        "size": 760,
+        "calories": 650,
+        "carb": 59,
+        "protein": 44,
+        "fat": 44
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱7分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "ca38a3d4-cad0-4eaa-90eb-4487babeb016",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E5%84%AA%E6%A0%BC%E9%BB%83%E9%87%91%E5%9C%B0%E7%93%9C.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "優格黃金地瓜",
+      "storage": 20,
+      "price": 180,
+      "state": "完售中",
+      "ingredient": "黃金地瓜、希臘優格",
+      "nutrition": {
+        "size": 320,
+        "calories": 280,
+        "carb": 28,
+        "protein": 13,
+        "fat": 11
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "4233eb93-1e4f-4d65-9fb7-1595ab9c5f07",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E5%84%AA%E6%A0%BC%E9%BB%83%E9%87%91%E5%9C%B0%E7%93%9C.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "小麥麵包歐姆蛋馬鈴薯",
+      "storage": 10,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "小麥麵包、歐姆蛋、時蔬、烤馬鈴薯、辣椒",
+      "nutrition": {
+        "size": 400,
+        "calories": 312,
+        "carb": 36,
+        "protein": 20,
+        "fat": 13.3
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱150度加熱7分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "c350c318-35b0-4f53-9bc1-acc5fb800aef",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E6%97%A9%E5%AE%89%E9%85%AA%E6%A2%A8%E8%98%91%E8%8F%87.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "早安酪梨蘑菇",
+      "storage": 10,
+      "price": 180,
+      "state": "完售中",
+      "ingredient": "酪梨、蘑菇、時蔬、甜椒",
+      "nutrition": {
+        "size": 400,
+        "calories": 312,
+        "carb": 36,
+        "protein": 20,
+        "fat": 18
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱3分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱150度加熱5分鐘",
+        "electricPot": "不建議電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "6ff7225a-ba00-45b4-8a3c-c9036bed8391",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E6%A4%B0%E8%8F%9C%E9%88%B4%E8%96%AF%E6%B3%A5%E4%BD%90%E5%8D%97%E7%93%9C%E9%AE%AD%E9%AD%9A.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "椰菜鈴薯泥佐南瓜鮭魚",
+      "storage": 12,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "炙燒挪威鮭魚、馬鈴薯泥、花椰菜、濃南瓜醬",
+      "nutrition": {
+        "size": 480,
+        "calories": 411,
+        "carb": 42,
+        "protein": 27,
+        "fat": 20
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱7分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議平底鍋加熱"
+      }
+    },
+    {
+      "id": "052bdf59-7fa1-4406-852e-0b123e878ac7",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E6%B4%BB%E5%8A%9B%E9%BA%B5%E5%8C%85%E4%BD%90%E7%83%A4%E9%86%AC%E7%89%9B%E6%8E%92.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "活力麵包佐烤醬牛排",
+      "storage": 3,
+      "price": 280,
+      "state": "完售中",
+      "ingredient": "烤醬牛排、時蔬、蜂蜜麵包",
+      "nutrition": {
+        "size": 552,
+        "calories": 511,
+        "carb": 47.6,
+        "protein": 30.8,
+        "fat": 20
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "0b3c83c5-e55b-4e08-933c-ea51566a28be",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E6%B8%85%E7%88%BD%E5%AB%A9%E9%9B%9E%E4%B8%89%E6%98%8E%E6%B2%BB.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "清爽嫩雞三明治",
+      "storage": 12,
+      "price": 130,
+      "state": "完售中",
+      "ingredient": "全麥土司、嫩雞肉片、番茄、美生菜、美乃滋",
+      "nutrition": {
+        "size": 420,
+        "calories": 360,
+        "carb": 40.3,
+        "protein": 25,
+        "fat": 13.3
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議使用平底鍋加熱"
+      }
+    },
+    {
+      "id": "27c04a06-6960-402b-b8b5-63e2eabe027c",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E7%83%98%E8%9B%8B%E9%A6%AC%E8%8A%AC.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "烘蛋馬芬",
+      "storage": 25,
+      "price": 89,
+      "state": "完售中",
+      "ingredient": "雞蛋、菠菜、番茄、香蔥、火腿",
+      "nutrition": {
+        "size": 110,
+        "calories": 89,
+        "carb": 12,
+        "protein": 6.8,
+        "fat": 3
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱3分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱150度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議使用平底鍋加熱"
+      }
+    },
+    {
+      "id": "21d0cf55-583d-4d50-9d45-2e5f1a18e720",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E7%83%A4%E8%8A%B1%E6%A4%B0%E8%8F%9C%E4%BD%90%E7%95%AA%E8%8C%84%E9%A6%AC%E9%88%B4%E8%96%AF.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "烤花椰菜佐番茄馬鈴薯",
+      "storage": 20,
+      "price": 130,
+      "state": "完售中",
+      "ingredient": "烤馬鈴薯、紅蘿蔔、醃漬小番茄、烤花椰菜",
+      "nutrition": {
+        "size": 389,
+        "calories": 334,
+        "carb": 40,
+        "protein": 23,
+        "fat": 15
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "35beccd6-8038-4ae0-8eb9-6222c94afa8f",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E8%8F%A0%E8%8F%9C%E4%B9%B3%E9%85%AA%E7%83%98%E8%9B%8B.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "菠菜乳酪烘蛋",
+      "storage": 12,
+      "price": 230,
+      "state": "完售中",
+      "ingredient": "新鮮雞蛋、菠菜、玉米、乳酪",
+      "nutrition": {
+        "size": 422,
+        "calories": 389,
+        "carb": 56,
+        "protein": 26,
+        "fat": 20.5
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "將食品倒入烤盤，放入烤箱170度加熱5分鐘",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "0d4e8cd8-6363-4b86-8b2d-e532880723af",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E8%98%BF%E8%94%94%E8%9B%A4%E8%9C%8A%E8%98%91%E8%8F%87%E6%BF%83%E6%B9%AF.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "蘿蔔蛤蜊蘑菇濃湯",
+      "storage": 20,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "蘑菇、蛤蜊、時蔬、紅蘿、洋蔥濃湯",
+      "nutrition": {
+        "size": 400,
+        "calories": 389,
+        "carb": 37,
+        "protein": 12,
+        "fat": 8
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議使用烤箱加熱",
+        "electricPot": "先在電鍋中加入半碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "將食品倒入平底鍋，加熱至所需溫度"
+      }
+    },
+    {
+      "id": "2e88ccbc-0560-4fa7-ad17-1c1efceb194b",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E9%AB%98%E8%9B%8B%E7%99%BD%E6%99%82%E8%94%AC%E6%89%8B%E6%8D%B2.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "高蛋白時蔬手捲",
+      "storage": 20,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "海苔、醋飯、雞柳條、白蝦、時蔬",
+      "nutrition": {
+        "size": 420,
+        "calories": 333,
+        "carb": 46,
+        "protein": 23,
+        "fat": 12
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議使用烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議使用平底鍋加熱"
+      }
+    },
+    {
+      "id": "3e10eae3-1c6e-4a3b-980a-fd60584da484",
+      "image": "https://github.com/patrickpie83/DealMeal/blob/main/assets/images/%E6%97%A9%E9%A4%90%EF%BC%BF%E9%BB%83%E9%87%91%E5%9C%B0%E7%93%9C%E6%B2%99%E6%8B%89%E7%83%A4%E8%82%89%E4%B8%B8.jpg?raw=true",
+      "series": "早餐系列",
+      "name": "黃金地瓜沙拉烤肉丸",
+      "storage": 2,
+      "price": 160,
+      "state": "完售中",
+      "ingredient": "黃金地瓜、紅蘿蔔玉米沙拉、瑞典烤肉丸",
+      "nutrition": {
+        "size": 444,
+        "calories": 333,
+        "carb": 33,
+        "protein": 20,
+        "fat": 10
+      },
+      "heat": {
+        "microwave": "撕開包裝一角，放入微波爐加熱5分鐘",
+        "oven": "不建議使用烤箱加熱",
+        "electricPot": "先在電鍋中加入1/3碗水，再將食品倒入盤內，放入電鍋加熱",
+        "pan": "不建議使用平底鍋加熱"
+      }
+    }
   ],
   "previewProducts": [
     {
-      "page": "",
-      "productId": "",
+      "id": "",
       "image": "",
       "series": "",
       "name": "",

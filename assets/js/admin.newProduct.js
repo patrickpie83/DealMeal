@@ -26,20 +26,15 @@ const microwave=document.querySelector("#microwave");
 const oven=document.querySelector("#oven");
 const electricPot=document.querySelector("#electricPot");
 const pan=document.querySelector("#pan");
-
-
-
-
-
 //完成按鈕
 const finishBtn=document.querySelector(".finishBtn");
 
-
 const _url="https://dealmealserver.onrender.com";
+//本地測試
+// const _url="http://localhost:3000";
 
 let checkNameOK = false;
 let checkImgOK = false;
-
 
 //圖片上傳
 imgUpload.addEventListener("click",function(e){
@@ -113,30 +108,11 @@ function checkName(newName){
     })
 }
 
-
 //登錄新商品
-function apiCheckProductPages(){
-    
-    //先確認目前商品筆數
-    axios.get(`${_url}/products`)
-    .then(function(res){
-        let page;
-        let len=res.data.length;
-        //每四筆商品會是一頁
-        page = Math.floor( ( len - 1 ) / 4 ) + 1;
-        apiNewProduct(page);
-    })
-    .catch(function(err){
-        console.log(err);
-    })
-
-}
-
-function apiNewProduct(page){
+function apiNewProduct(){
     let randomId = crypto.randomUUID();
 
     axios.post( `${_url}/products` , {
-        "page":page,
         "id": randomId,
         "image": imgInput.value,
         "series": productSeries.value,
@@ -167,8 +143,6 @@ function apiNewProduct(page){
         console.log(err);
     })
 }
-
-
 
 // 送出按鈕監聽
 finishBtn.addEventListener("click",function(e){
@@ -219,7 +193,7 @@ finishBtn.addEventListener("click",function(e){
         alert("加熱方式不可為空");
 
     }else{
-        apiCheckProductPages();
+        apiNewProduct()
         alert("成功送出");
     }
     

@@ -9,7 +9,7 @@ const id = location.href.split("=")[1];
 const mealDetail=document.querySelector(".mealDetail");
 
 const _url="https://dealmealserver.onrender.com";
-
+// const _url="http://localhost:3000";
 
 function renderData(data){
     let str="";
@@ -35,11 +35,11 @@ function renderData(data){
                     
                     <div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/images/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                            <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
                         </button>
-                        <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1">
+                        <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1">
                         <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/images/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                            <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
                         </button>
                     </div>
                     
