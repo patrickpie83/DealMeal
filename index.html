@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
-    <script type="module" crossorigin src="/DealMeal/assets/index-826cebf7.js"></script>
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-9e46bc63.js">
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-fe8da8f2.js">
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-9942e009.css">
+    <script type="module" crossorigin src="/DealMeal/assets/index-53dd9adb.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-275429c0.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-d5d66ed4.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-4b9cc774.css">
   </head>
   <body>
     <!-- aos -->
@@ -24,6 +24,10 @@
 <nav class="navbar bg-dark-brown py-2 sticky-top shadow-sm navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="index.html"><img src="/DealMeal/assets/logo_blue 1-4f87adcf.png" alt="logo" style="width: 86px;height: 86px;"></a>
+
+        <div class="memberWelcome"></div>
+
+
         <!-- 收合按鈕及視窗待調整 -->
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="material-icons-round fs-1 text-light-brown menu-icon">menu</span>
@@ -36,20 +40,17 @@
                 </li>
                 <!-- 尚未製作，判斷是否登入呈現登入或帳戶資料 -->
                 <li class="nav-item">
-                    <a class="nav-link text-center text-light-brown" href="login.html">會員中心</a>
+                    <a class="nav-link text-center text-light-brown memberBtn" href="">會員中心</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item memberCart">
                     <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-center text-light-brown" href="admin-login.html">後台測試用連結</a>
-                </li>
-                <li class="nav-item memberWelcome">
+                    <a class="nav-link text-center text-light-brown" href="admin.html">後台測試用連結</a>
                 </li>
             </ul>
         </div>
-
+        
     </div>
 </nav>
 
@@ -88,13 +89,45 @@
           
           <!-- 第一張 -->
           <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
-            <img class="carouselImg" src="/DealMeal/assets/增肌＿煙燻鮭魚時蔬-fad9fe8e.jpg" alt="增肌＿煙燻鮭魚時蔬">
+            <img class="carouselImg" src="/DealMeal/assets/增肌＿煙燻鮭魚時蔬-7d94a1c2.jpg" alt="增肌＿煙燻鮭魚時蔬">
             <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
               <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">增肌系列</h3>
                 <h2 class="fs-2 text-white mt-4">煙燻鮭魚時蔬</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
-                <p class="fs-4 text-white text-start">熱量約222大卡</p>
+                <p class="fs-4 text-white text-start mt-4">每一份量680公克</p>
+                <p class="fs-4 text-white text-start">熱量約549大卡</p>
+              </div>
+              <div class="w-100 mt-4">
+                <table class="table table-bordered border-white carouselTable w-100">
+                  <tbody>
+                    <tr>
+                      <td class="text-white">碳水化合物</td>
+                      <td class="text-white">55公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">蛋白質</td>
+                      <td class="text-white">50.5公克</td>
+                    </tr>
+                    <tr>
+                      <td class="text-white">脂肪</td>
+                      <td class="text-white">46公克</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <a href="http://localhost:5173/DealMeal/pages/meal.html?id=9a3afa77-287d-40ae-9bb7-9faed80f1d55" type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二張 -->
+          <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
+            <img class="carouselImg" src="/DealMeal/assets/塑身＿田園蔬菜爽身餃-1dab1bdf.jpg" alt="塑身＿田園蔬菜爽身餃">
+            <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
+              <div class="d-flex flex-column align-items-center align-items-lg-start">
+                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">塑身系列</h3>
+                <h2 class="fs-2 text-white mt-4">田園蔬菜爽身餃</h2>
+                <p class="fs-4 text-white text-start mt-4">每一份量280公克</p>
+                <p class="fs-4 text-white text-start">熱量約140大卡</p>
               </div>
               <div class="w-100 mt-4">
                 <table class="table table-bordered border-white carouselTable w-100">
@@ -105,79 +138,47 @@
                     </tr>
                     <tr>
                       <td class="text-white">蛋白質</td>
-                      <td class="text-white">30公克</td>
+                      <td class="text-white">32公克</td>
                     </tr>
                     <tr>
                       <td class="text-white">脂肪</td>
-                      <td class="text-white">10公克</td>
+                      <td class="text-white">18公克</td>
                     </tr>
                   </tbody>
                 </table>
-                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- 第二張 -->
-          <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
-            <img class="carouselImg" src="/DealMeal/assets/塑身＿田園蔬菜爽身餃-319011d1.jpg" alt="塑身＿田園蔬菜爽身餃">
-            <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
-              <div class="d-flex flex-column align-items-center align-items-lg-start">
-                <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">塑身系列</h3>
-                <h2 class="fs-2 text-white mt-4">田園蔬菜爽身餃</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
-                <p class="fs-4 text-white text-start">熱量約222大卡</p>
-              </div>
-              <div class="w-100 mt-4">
-                <table class="table table-bordered border-white carouselTable w-100">
-                  <tbody>
-                    <tr>
-                      <td class="text-white">碳水化合物</td>
-                      <td class="text-white">公克</td>
-                    </tr>
-                    <tr>
-                      <td class="text-white">蛋白質</td>
-                      <td class="text-white">公克</td>
-                    </tr>
-                    <tr>
-                      <td class="text-white">脂肪</td>
-                      <td class="text-white">公克</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+                <a href="http://localhost:5173/DealMeal/pages/meal.html?id=efaa43c1-3619-4499-8a6f-840b4188ff6b" type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</a>
               </div>
             </div>
           </div>
 
           <!-- 第三張 -->
           <div class="swiper-slide d-flex flex-column align-items-center flex-lg-row justify-content-lg-start align-items-lg-start">
-            <img class="carouselImg" src="/DealMeal/assets/早餐＿烘蛋馬芬-ee1fd420.jpg" alt="早餐＿烘蛋馬芬">
+            <img class="carouselImg" src="/DealMeal/assets/早餐＿烘蛋馬芬-4df862bf.jpg" alt="早餐＿烘蛋馬芬">
             <div class="carouselContent pt-3 pt-lg-7 ms-lg-7">
               <div class="d-flex flex-column align-items-center align-items-lg-start">
                 <h3 class="fs-4 text-normal-brown border border-normal-brown rounded-24 p-3">早餐系列</h3>
                 <h2 class="fs-2 text-white mt-4">烘蛋馬芬</h2>
-                <p class="fs-4 text-white text-start mt-4">每一份量666公克</p>
-                <p class="fs-4 text-white text-start">熱量約222大卡</p>
+                <p class="fs-4 text-white text-start mt-4">每一份量110公克</p>
+                <p class="fs-4 text-white text-start">熱量約89大卡</p>
               </div>
               <div class="w-100 mt-4">
                 <table class="table table-bordered border-white carouselTable w-100">
                   <tbody>
                     <tr>
                       <td class="text-white">碳水化合物</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">12公克</td>
                     </tr>
                     <tr>
                       <td class="text-white">蛋白質</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">6.8公克</td>
                     </tr>
                     <tr>
                       <td class="text-white">脂肪</td>
-                      <td class="text-white">公克</td>
+                      <td class="text-white">3公克</td>
                     </tr>
                   </tbody>
                 </table>
-                <button type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</button>
+                <a href="http://localhost:5173/DealMeal/pages/meal.html?id=27c04a06-6960-402b-b8b5-63e2eabe027c" type="button" class="btn btn-light btn-product text-primary fs-5 w-100 rounded-0 mt-4">餐點內容</a>
               </div>
             </div>
           </div>
@@ -213,74 +214,79 @@
 
     <section class="bg-light-brown py-7">
       <div class="container p-7 border border-primary border-4 rounded-80">
-        <h2 class="fs-1 mb-6">如何享用？</h2>
-        <div class="row justify-content-between">
-          <div class="col-2 ">
+        <h2 class="fs-1 mb-7 text-center text-md-start">如何享用？</h2>
+        <div class="row justify-content-between gx-lg-0">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">1.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKgAAACoCAYAAAB0S6W0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAhLSURBVHgB7d1bsFdTHAfwL6V015gJCV1mXLqYcgnlMsb0ktEYJjJkhpfy4IEnD568kocagzGU3KJSTUpGuZQmEwpNMu5EEipKlDh+31nnzJypjnP23mvtvdbe38/Mb3qgM+3z//3XXpffWgsQERERERERERERERERERERERERERERERERERFpuEEWuyxaCsQ/FnssNlk8bnGrxckQ8cBHgh4r9ls8ZXEqRAoIlaBtwZZ1OkRyCp2gbcHWtA9EMiorQRlPWPSASAZlJijjfohkUHaC/m4xGtI4xyMN/SxmQRonlQSlSVAr2jgpJehxFvdBpAvK7oO2xV8WAyCNkVILSj0tZkIaI7UEpRnQvGhjdEc+/1r8Cvfazau/xYnIbpjF1RavQWrvOOQ3CMWwJXwA+Sy3mAKRgM602It8g6VfLIZDaq8bqvObxZjWyKo33L/9VYgENM7iIPK1ol/BrTCJBMNWcDPyJSgHandBJDAmWd6J+41Ic6pMEjLQYgfyJeifFhMgtVXlIKkNly9PsZiI7Lq3/v2VEAmIVUoc1edpRblgcAZEAuKCASff8/ZF74VIYJPh9srnSdBPofV5CayXxQfIl6B/W0yD1E4Mg6Q2h+FqPSchO041sQVdAKmVIsUiIZwON7c5GNnxVJJrLL6BVIVdtL2tf3oRW4LSSxZTkQ9PJDkMqQqXrbdbvGsxGzVtLK6Am9tsUSQd31rciZpai7Q+DMWx4xAKJmlMg6T2OOhRQXL6mF8XWyyEO3yjNljvyaLklFoLRcfxKHKKtRLogMWzkLq4FDlzLeZStTlwNZ+SPh5I3Bc5xJygX0I7N+ukdi0ozYbUwU7kHCTFnqBsQT+DpO4d5OyuxZ6gHAE+B0kZV/bmI6cYlzqPxA42+6O9ISnisid3S9SyBSX2X56BpIqfXe7ZmFR2ROo1nyYutryCAlJJ0HVwHW1Jy1sW36GAlPaUz4WkhIOjJ1FQCoOkNhwksT+q427SwKOJRsGVTuaWUgvK9flHIKlgLUWh5KSUWlA622IbdNxN7Dh/zYPhPkJBqX3QXFV6HRK7rRYfw4MUW6IHIbF7GK4VLSy1VzzxS8WWdAQkRux3DoE7kqiwFFtQrkposBQvHmHkJTkp1cHGCrijFyU+c+BRqgnKV/wLkNjwnNeN8Cjl6Zp58HiChXjBuc+D8CjlBOU3dQMkFhy1Pw/PUk5QflO99nekEDYYXuY+20t9RYYVTjsgMXganuY+20s9QZmc3l8rkhlnVBYigDqsaXM0X7goQQpZDFec7F0dEvRDi1WQKgU7BaYOCcqVJRbGeu//SJf8iIAFPHUpW3sDHkq7JJclCHhEUazHL2bFSxT6I9/59pIfE/M2i90IJMVqpo6cZvG5RR9IWTj3eQkCqlNlOvtCuj++XJriy4jbDLibMIVDXVMPHgY2FIHVbW8PtxpsgZRhDUq4xaNuCcpD+x+ChMYWtPCe96bibXW8AiWl12Vq8QXcrElwddy+y2u9l0JCehEl3dpR1/3lc6H1+VBY5rgYJalrgrIucQ0khM0IUPfZkbomqNbnw+GdR7oP1YOecN/0lAYfscfPKGHus706n3HEvpKmQvxajZJvMK77IVystNkF8YEt6MsoWd0TlKf7rof4wFMFV6JkTTjGkMfkHIAUxZrbPyBB8Iz7lAYjsQVnRc5HBZpyEOwi6GLaIrjv6xNIML0svkZarVZMcTcq0pQWlPu2l0Py4HTdAkhwPPA2pVYrlliCCjXpMgLe97kakgUTVIcFl2gy0mq9qo4fUPElvk27zoX3z+uwsa7jprhK55CblqA88HYWpCu4fabQRbCSz0C4gx5SetVWEe9bdEfFmnhj2x6L+ZDOPIYI6j6beqUg759vgXSE+7rWQSrDI3+0Pt9xRFNH29QWlB/CPMix8HejwVEEToKb50upZSsjeM97KXveu6LJ11rvRcCTgRPG1rOUPe/SucFw++dTauFCxvcWwyBRuRlpJVGo4MT8TEiUeEpwk/ujXP6djgi7fHU6YbkovtrusRgLt/e7J+qNq2n8Ur5pMRuR1igoQY92gkXf1j/rjAm6v/VPEREREREREZGCNM10NP5OLrO4zmKixWiLfhb74A7QWgt3BTivu2lBvMZb3GgxwWIk3OUSbc/wNtx24o2QpHDvPM9f596l/1t54TE6/IBjXLfmMyxD1y4043GKZ0GScBNcC5NliZD///WIx7Vwp6hkfYZbIFFjwUjejXSHWv9+1YoUvbD0cAYkSufA1T8WKbbgkuEIVOc8uLX0Is/wE1x/WyLCARGvq2nxEItQzaCzG1y/2cczrIBEhYeycsDj48PlwOoilI/3tR+En2fgm2AiItLkLR/EwYGvVo+/yxtQvtstesCPPhZ3ICJNT9Ar4dcElIuvd9/9xrGISNMTdCT8GoVyscUbAr8GwZ1IHYWmJ2hf+DUA5WLVfx/4xZ9Z6ZGL7TU9QffBL98/rzOcu/V9q3OIn5lb0xN0C/zahnLxC7Edfu1ERPchNT1BN8CvtSgXp7beg1++f54UcCH8zYPy54xB+ThzcAh+noGv9/GQaHAOlKVnPj7cxahuJWkZ/DzDUtR/N2tyuIaetYrpyOBafpWldxfA3eVe5BlYMOJ72k08mYr0q5mmwA1u8jwDa0dVchc5JmnWqqbY6kG51Lob2Z6BU0pTIEkYCldl3llFPf87+5zDER/+m1ahaxX1fIZzETHtSToafyfs03E/z1VwHyAPdOXlC7zxl1NTLK3bBPchx2qcxTSLy+Gegfuq+IbYarEebkCkPUkiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiJl+Q/2q+zKYiratgAAAABJRU5ErkJggg==" alt="icon_cart">
             </div>
-            <p class="mt-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">2.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="data:image/png;base64,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" alt="icon_deliver">
             </div>
-            <p class="mt-6 fs-5 fw-bold">記得填寫配送方式</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">結帳，填寫配送方式</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">3.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="data:image/png;base64,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" alt="icon_pay">
             </div>
-            <p class="mt-6 fs-5 fw-bold">結帳付款，進入配送流程</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">付款進入配送流程</p>
           </div>
-          <div class="col-2">
+          
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">4.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="data:image/png;base64,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" alt="icon_freezer">
             </div>
-            <p class="mt-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">5.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="/DealMeal/assets/icon_eat-adabbaa8.png" alt="icon_eat">
             </div>
-            <p class="mt-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="position-relative">
+    <section class="position-relative bg-normal-brown py-7 py-md-0">
       <!-- 底圖 -->
-      <img src="/DealMeal/assets/index_coupon-d16bad41.png" alt="index_coupon" style="width: 100%;height: 802px;">
+      <img class="couponAreaImg" src="/DealMeal/assets/index_coupon-d16bad41.png" alt="index_coupon">
+
       <!-- 透明白底 -->
-      <div class="container bg-white h-75 opacity-80 rounded-80 position-absolute top-50 start-50 translate-middle">
+      <div class="couponAreaUnder container bg-white h-75 opacity-80 d-none d-md-block rounded-80">
       </div>
+
       <!-- 內容 -->
-      <div class="container px-7  position-absolute top-50 start-50 translate-middle">
-        <h2 class="fs-1 mb-6">領取優惠碼</h2>
-        <p class="mt-7 mb-5 fs-2 fw-bold">DealMeal感謝祭！筆筆訂單皆享9折優惠折扣碼</p>
-        <div class="d-flex">
-          <div class="bg-white d-flex w-75 py-5 ps-6">
-            <p class="fs-4">dealmealthanks</p>
+      <div class="container px-7 couponAreaContent">
+
+        <h2 class="fs-1 mb-7 text-center text-md-start">領取優惠碼</h2>
+        <p class="mb-3 mb-md-5 fw-bold">DealMeal感謝祭！<br>筆筆訂單皆享9折</p>
+        
+        <div class="d-md-flex">
+          <div class="bg-white d-flex couponCode">
+            <input class="border-0 w-100 couponText bg-white text-center" type="text" value="dealmealthanks" disabled>
           </div>
-          <!-- 尚未製作，複製功能 -->
-          <button type="button" class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4">立即複製</button>
+          <button type="button" class="btn btn-primary text-light-brown rounded-0 py-2 py-md-4 copyCouponBtn">立即複製</button>
         </div>
 
-        <!-- <div class="d-flex justify-content-center">
-          <a class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
-            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
-          </a>
-        </div> -->
         <div class="row justify-content-center">
-          <a class="col-4 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
-            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
-          </a>
+          <div class="col-md-4">
+            <a href="products.html" class="w-100 btn btn-primary text-light-brown rounded-0 py-3 py-md-4 fs-5 mt-7">馬上挑選餐點
+              <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+            </a>
+          </div>
         </div>
 
         

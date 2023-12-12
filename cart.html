@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/bootstrap.min-9e46bc63.js"></script>
-    <script type="module" crossorigin src="/DealMeal/assets/header-fe8da8f2.js"></script>
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-9942e009.css">
+    <script type="module" crossorigin src="/DealMeal/assets/cart-ca545c3d.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-275429c0.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-d5d66ed4.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-4b9cc774.css">
   </head>
 
   <body>
@@ -16,6 +17,10 @@
 <nav class="navbar bg-dark-brown py-2 sticky-top shadow-sm navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="index.html"><img src="/DealMeal/assets/logo_blue 1-4f87adcf.png" alt="logo" style="width: 86px;height: 86px;"></a>
+
+        <div class="memberWelcome"></div>
+
+
         <!-- 收合按鈕及視窗待調整 -->
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="material-icons-round fs-1 text-light-brown menu-icon">menu</span>
@@ -28,27 +33,25 @@
                 </li>
                 <!-- 尚未製作，判斷是否登入呈現登入或帳戶資料 -->
                 <li class="nav-item">
-                    <a class="nav-link text-center text-light-brown" href="login.html">會員中心</a>
+                    <a class="nav-link text-center text-light-brown memberBtn" href="">會員中心</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item memberCart">
                     <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-center text-light-brown" href="admin-login.html">後台測試用連結</a>
-                </li>
-                <li class="nav-item memberWelcome">
+                    <a class="nav-link text-center text-light-brown" href="admin.html">後台測試用連結</a>
                 </li>
             </ul>
         </div>
-
+        
     </div>
 </nav>
 
 
 <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <section class="container my-7">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center cartFirstStep">
+
         <div class="col-10 col-lg-6">
           <ol class="pay-list d-flex justify-content-between list-unstyled position-relative">
             <!-- 當前的狀態會為number-active -->
@@ -80,93 +83,46 @@
             <div class="col-2">小計</div>
             <div class="col-1">移除</div>
           </div>
+
+          <div class="cartItemsContent">
+          </div>
           
-          <!-- 第一筆 -->
-          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
-            <div class="col-md-5 d-flex align-items-center">
-              <div class="w-50">
-                <div class=" ratio ratio-1x1">
-                  <img src="/DealMeal/assets/早餐＿蘿蔔蛤蜊蘑菇濃湯-a9c0c722.jpg" alt="">
-                </div>
-              </div>
-              <div class="w-50 text-center">
-                <p>蘿蔔蛤蜊蘑菇濃湯湯湯</p>
-              </div>
-            </div>
-
-            <div class="col-md-2 my-auto text-end text-md-center">
-              <p>160元</p>
-            </div>
-
-            <div class="col-7 col-md-2 my-auto">
-              <input class="w-100" type="number" value="3">
-            </div>
-            <div class="col-5 col-md-2 my-auto text-end text-md-center">
-              <p>共 480元</p>
-            </div>
-            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
-              <img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIJSURBVHgB7VdLUsJAEO18Fik2GuAA4QZ6AvEExhOAJ7BcuoMbuGRnOIHcQNix9AYOez5xBRuIry1CDSEwmQTKsuRVpXqm05nu6e50zxikgUvAtu2rKIq8tPeGYYjxeNwnDRhZBaH7EQpaPFSICtM025PJJKAMsLIIVSqVJkgHj5NB/BIe8kul0td8Ph+qhDN5wHXdTxCP9BDCkFoIHBKySQG4vp5QHiIUvaQclHFoWDYO0U++gPapiAGWZXmr1UpmDabT6UOabLlcDmBIQzLKIwU2IcBOG9jZC6mTrCgEDGshMt0tA3LGOS/C2Wzm8sCUmKfe+ZYB8WBjANzyBCLo9OC/o733Lf/zCEcUP0isV8oJTkp5rXU92YJJvwxtA7gfYCc+iJfgNWVeVijrgAxWjJrwxnWBGw8UXrN+jN/B80CpWq3e6jQkLQ9wjZemHoqUj4ernRczYUiDNHCMHCj0+/69JDwbcDbgfxuAIiPk+XK57OPpJWQGpAGtUoxTTAvll4/dN1DUxVwwH7x78O7AG4EXaCypZ8DaiAAkSPDYCz3KgZPmAHrHhUpmxwOIqeCuJi3i4zDBHS8kTeDbujznDpqU2bmYcG+HIB9Qj31GFDiI1pLMnRDwTebgmS0n9q2ZejdcLBZDx3FG8AT3+qKe4A09Y1+dtJfKuyFfzfh2RDnA+QTyceh++A1cL9HEDk9hlAAAAABJRU5ErkJggg==" alt="icon_trash">
-            </div>
-          </div>
-
-          <!-- 第二筆 -->
-          <div class="row py-4 justify-content-center border border-top-0 border-dark-brown">
-            <div class="col-md-5 d-flex align-items-center">
-              <div class="w-50">
-                <div class=" ratio ratio-1x1">
-                  <img src="/DealMeal/assets/增肌＿牛豬雙響馬鈴薯-dae71737.jpeg" alt="增肌＿牛豬雙響馬鈴薯">
-                </div>
-              </div>
-              <div class="w-50 text-center">
-                <p>牛豬雙響馬鈴薯</p>
-              </div>
-            </div>
-
-            <div class="col-md-2 my-auto text-end text-md-center">
-              <p>300元</p>
-            </div>
-
-            <div class="col-7 col-md-2 my-auto">
-              <input class="w-100" type="number" value="2">
-            </div>
-            <div class="col-5 col-md-2 my-auto text-end text-md-center">
-              <p>共 600元</p>
-            </div>
-            <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
-              <img width="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIJSURBVHgB7VdLUsJAEO18Fik2GuAA4QZ6AvEExhOAJ7BcuoMbuGRnOIHcQNix9AYOez5xBRuIry1CDSEwmQTKsuRVpXqm05nu6e50zxikgUvAtu2rKIq8tPeGYYjxeNwnDRhZBaH7EQpaPFSICtM025PJJKAMsLIIVSqVJkgHj5NB/BIe8kul0td8Ph+qhDN5wHXdTxCP9BDCkFoIHBKySQG4vp5QHiIUvaQclHFoWDYO0U++gPapiAGWZXmr1UpmDabT6UOabLlcDmBIQzLKIwU2IcBOG9jZC6mTrCgEDGshMt0tA3LGOS/C2Wzm8sCUmKfe+ZYB8WBjANzyBCLo9OC/o733Lf/zCEcUP0isV8oJTkp5rXU92YJJvwxtA7gfYCc+iJfgNWVeVijrgAxWjJrwxnWBGw8UXrN+jN/B80CpWq3e6jQkLQ9wjZemHoqUj4ernRczYUiDNHCMHCj0+/69JDwbcDbgfxuAIiPk+XK57OPpJWQGpAGtUoxTTAvll4/dN1DUxVwwH7x78O7AG4EXaCypZ8DaiAAkSPDYCz3KgZPmAHrHhUpmxwOIqeCuJi3i4zDBHS8kTeDbujznDpqU2bmYcG+HIB9Qj31GFDiI1pLMnRDwTebgmS0n9q2ZejdcLBZDx3FG8AT3+qKe4A09Y1+dtJfKuyFfzfh2RDnA+QTyceh++A1cL9HEDk9hlAAAAABJRU5ErkJggg==" alt="icon_trash">
-            </div>
-          </div>
+          
         </div>
 
         <div class="col-10">
           <div class="row">
             <div class="col-md-6 mb-6 mb-md-0">
-              <span class="d-block mb-2">優惠折扣碼</span>
-              <div class="d-flex">
+
+              <span>優惠折扣碼</span>
+              <span class="text-dark-brown fs-7">需按下使用才會生效</span>
+              <div class="d-flex mt-2">
                 <div class="d-flex flex-column w-75 pe-4">
-                  <input class="mb-2 py-2" type="text" placeholder="在此輸入優惠碼後按下按鈕">
-                  <span>套用優惠碼：整筆訂單9折</span>
+                  <input class="mb-2 py-2 couponInput" type="text" placeholder="在此輸入要使用的優惠碼">
+                  <span class="couponDiscount"></span>
                 </div>
-                <button class="mb-auto py-2 btn btn-normal-brown w-25" type="button">使用</button>
+                <button class="mb-auto py-2 btn btn-normal-brown w-25 useCouponBtn" type="button">使用</button>
               </div>
+
             </div>
 
+
             <div class="col-6 col-md-3 text-center">
-              <span class="d-block mb-2">運費</span>
+              <span class="d-block mb-2">+運費(不列入折扣)</span>
               <p>80元</p>
             </div>
 
             <div class="col-6 col-md-3 text-center">
               <span class="d-block mb-2">合計</span>
-              <p class="fs-4 fw-bold">1420元</p>
+              <p class="fs-4 fw-bold cartTotal"></p>
             </div>
           </div>
         </div>
 
         <div class="col-4">
-          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0">下一步</button>
+          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0 cartNextBtn">結帳</button>
         </div>
-        <a class="text-center" href="deliver.html">測試用連結 下一步</a>
+        
       </div>
     </section>
 
@@ -189,6 +145,8 @@
         <p class="mt-5 text-light-brown">客服電話：02-12345678</p>
     </div>
 </footer>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    
     
   </body>
 </html>
