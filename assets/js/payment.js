@@ -18,8 +18,8 @@ const confrimBtn=document.querySelector(".confrimBtn");
 const sendOrderBtn=document.querySelector(".sendOrderBtn");
 
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
 

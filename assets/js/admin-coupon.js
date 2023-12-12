@@ -10,8 +10,8 @@ const couponList=document.querySelector(".couponList");
 //送出按鈕
 const checkCouponBtn=document.querySelector(".checkCouponBtn");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //初始
 init();

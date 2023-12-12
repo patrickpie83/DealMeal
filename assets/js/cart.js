@@ -12,8 +12,8 @@ const couponDiscount=document.querySelector(".couponDiscount");
 const cartNextBtn=document.querySelector(".cartNextBtn");
 
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
 //初始

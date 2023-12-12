@@ -1,8 +1,8 @@
 //產品列表頁面
 const productsList=document.querySelector(".productsList");
-// const _url="https://dealmealserver.onrender.com";
+const _url="https://dealmealserver.onrender.com";
 
-const _url="http://localhost:3000";
+// const _url="http://localhost:3000";
 
 //渲染內容
 function renderProducts(data){

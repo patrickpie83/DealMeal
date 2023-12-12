@@ -8,8 +8,8 @@ const deliverInfoAddress=document.querySelector(".deliverInfoAddress");
 const deliverNextBtn=document.querySelector(".deliverNextBtn");
 
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
 //初始

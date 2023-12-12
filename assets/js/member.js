@@ -11,9 +11,9 @@ const historyOrderContent = document.querySelector(".historyOrderContent");
 
 
 let userId ;
-// const _url="https://dealmealserver.onrender.com";
+const _url="https://dealmealserver.onrender.com";
 
-const _url="http://localhost:3000";
+// const _url="http://localhost:3000";
 
 //會員中心初始
 init()

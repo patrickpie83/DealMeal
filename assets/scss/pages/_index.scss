@@ -51,7 +51,7 @@
 
 .bannerTextArea{
   width: 50%;
-  font-size: 32px;
+  font-size: 28px;
   @include sm{
     width: 40%;
   }
@@ -168,15 +168,87 @@
 }
 
 
-
-
 .btn-product:hover{
   background-color: $light-brown !important;
 }
 
+
 .how-icon{
   width: 84px;
   height: 84px;
-  margin-top: 84px;
-  margin-bottom: 84px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  @include pc{
+    width: 84px;
+    height: 84px;
+    margin-top: 84px;
+    margin-bottom: 84px;
+  }
+
+
+}
+
+
+.couponAreaImg{
+  height: 0px;
+
+  @include pad{
+    width: 100%;
+    height: 902px;
+  }
+
+}
+
+.couponAreaUnder{
+  
+  @include pad{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+  }
+
+}
+
+.couponAreaContent{
+  border: 4px solid $primary;
+  border-radius: 80px;
+  padding: 72px 0px 72px 0px;
+  @include pad{
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+  }
+
+  p{
+    font-size: 20px;
+    @include pad{
+      font-size: 36px;
+    }
+  }
+
+}
+
+.couponCode{
+  font-size: 20px;
+  width: 100%;
+  padding: 8px 0px;
+  @include pad{
+    font-size: 36px;
+    width: 75%;
+  }
+
+}
+
+
+.copyCouponBtn{
+  width: 100%;
+  @include pad{
+    width: 25%;
+  }
+
 }

@@ -175,68 +175,79 @@
 
     <section class="bg-light-brown py-7">
       <div class="container p-7 border border-primary border-4 rounded-80">
-        <h2 class="fs-1 mb-6">如何享用？</h2>
-        <div class="row justify-content-between">
-          <div class="col-2 ">
+        <h2 class="fs-1 mb-7 text-center text-md-start">如何享用？</h2>
+        <div class="row justify-content-between gx-lg-0">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">1.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="../assets/images/icon_cart.png" alt="icon_cart">
             </div>
-            <p class="mt-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">選擇你喜愛的餐點類型，加入購物車</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">2.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="../assets/images/icon_deliver.png" alt="icon_deliver">
             </div>
-            <p class="mt-6 fs-5 fw-bold">記得填寫配送方式</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">結帳，填寫配送方式</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">3.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="../assets/images/icon_pay.png" alt="icon_pay">
             </div>
-            <p class="mt-6 fs-5 fw-bold">結帳付款，進入配送流程</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">付款進入配送流程</p>
           </div>
-          <div class="col-2">
+          
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">4.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="../assets/images/icon_freezer.png" alt="icon_freezer">
             </div>
-            <p class="mt-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">餐點配送到府後，記得先冷藏</p>
           </div>
-          <div class="col-2">
+
+          <div class="col-sm-6 col-lg-2 mb-6">
             <p class="fs-2 fw-bold text-center">5.</p>
-            <div class="bg-normal-brown text-center mt-3">
+            <div class="bg-normal-brown text-center mt-2 mt-lg-3">
               <img class="how-icon" src="../assets/images/icon_eat.png" alt="icon_eat">
             </div>
-            <p class="mt-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
+            <p class="mt-2 mt-lg-6 fs-5 fw-bold">想吃的時候，依照建議方式加熱後，即可享用！</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="position-relative">
+    <section class="position-relative bg-normal-brown py-7 py-md-0">
       <!-- 底圖 -->
-      <img src="../assets/images/index_coupon.png" alt="index_coupon" style="width: 100%;height: 802px;">
+      <img class="couponAreaImg" src="../assets/images/index_coupon.png" alt="index_coupon">
+
       <!-- 透明白底 -->
-      <div class="container bg-white h-75 opacity-80 rounded-80 position-absolute top-50 start-50 translate-middle">
+      <div class="couponAreaUnder container bg-white h-75 opacity-80 d-none d-md-block rounded-80">
       </div>
+
       <!-- 內容 -->
-      <div class="container px-7  position-absolute top-50 start-50 translate-middle">
-        <h2 class="fs-1 mb-6">領取優惠碼</h2>
-        <p class="mt-7 mb-5 fs-2 fw-bold">DealMeal感謝祭！筆筆訂單皆享9折優惠折扣碼</p>
-        <div class="d-flex">
-          <div class="bg-white d-flex w-75 ps-5">
-            <input class="fs-4 border-0 w-100 couponText bg-white" type="text" value="dealmealthanks" disabled>
+      <div class="container px-7 couponAreaContent">
+
+        <h2 class="fs-1 mb-7 text-center text-md-start">領取優惠碼</h2>
+        <p class="mb-3 mb-md-5 fw-bold">DealMeal感謝祭！<br>筆筆訂單皆享9折</p>
+        
+        <div class="d-md-flex">
+          <div class="bg-white d-flex couponCode">
+            <input class="border-0 w-100 couponText bg-white text-center" type="text" value="dealmealthanks" disabled>
           </div>
-          <button type="button" class="w-25 btn btn-primary text-light-brown rounded-0 py-5 fs-4 copyCouponBtn">立即複製</button>
+          <button type="button" class="btn btn-primary text-light-brown rounded-0 py-2 py-md-4 copyCouponBtn">立即複製</button>
         </div>
 
         <div class="row justify-content-center">
-          <a href="products.html" class="col-4 btn btn-primary text-light-brown rounded-0 py-5 fs-4 mt-7">馬上挑選餐點
-            <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
-          </a>
+          <div class="col-md-4">
+            <a href="products.html" class="w-100 btn btn-primary text-light-brown rounded-0 py-3 py-md-4 fs-5 mt-7">馬上挑選餐點
+              <span class="material-icons-round text-light-brown align-bottom fs-2">arrow_forward</span>
+            </a>
+          </div>
         </div>
 
         

@@ -1,7 +1,7 @@
 const productListContent=document.querySelector(".productListContent");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 
 //初始
