@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <!-- VALIDATE.JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+
     <%- include('./layout/header'); -%>
     <section class="container my-7">
       <div class="row justify-content-center">
@@ -32,70 +35,65 @@
         
         <div class="col-10 mt-5">
           <div class="row bg-normal-brown py-2">
-            <span class="d-block text-center">顧客資訊</span>
+            <span class="d-block text-center">配送資訊</span>
           </div>
 
-          <!-- 姓名、電子信箱、電話號碼、配送地址為自動帶入，若要更改可更改。 -->
-          <div class="row py-5 border border-dark-brown border-top-0">
+          <form class="row py-5 border border-dark-brown border-top-0 deliverInfoForm">
             <div class="col-lg-4">
               <div class="row">
-                <div class="col-lg-3 text-lg-end">
-                  <span>姓名</span>
-                </div>
-                <div class="col-lg-9">
-                  <input class="w-100 mb-3 mb-md-4" type="text" value="金城武">
-                </div>
+                  <div class="col-lg-3 text-lg-end">
+                      <span>姓名</span>
+                  </div>
+                  <div class="col-lg-9">
+                      <input class="w-100 mb-3 mb-md-4 deliverInfoName" type="text" name="姓名">
+                  </div>
               </div>
-            </div>
-            <div class="col-lg-8">
-              <div class="row">
-                <div class="col-lg-2 text-lg-end">
-                  <span>電子信箱</span>
-                </div>
-                <div class="col-lg-10">
-                  <input class="w-100 mb-3 mb-md-4" type="email" value="patrickpie@mail.com">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="row">
-                <div class="col-lg-3 text-lg-end">
-                  <span>電話號碼</span>
-                </div>
-                <div class="col-lg-9">
-                  <input class="w-100 mb-3 mb-md-4" type="tel" value="0912-345-678">
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8">
-              <div class="row">
-                <div class="col-lg-2 text-lg-end">
-                  <span>配送地址</span>
-                </div>
-                <div class="col-lg-10">
-                  <input class="w-100 mb-3 mb-md-4" type="text" value="高雄市新興區中華一路111巷1號">
-                </div>
-              </div>
-            </div>
-            
-            <div class="col d-flex justify-content-end align-items-center">
-              <span>合計</span>
-              <p class="fs-4 fw-bold mx-4">1420元</p>
-            </div>
           </div>
+          <div class="col-lg-8">
+              <div class="row">
+                  <div class="col-lg-2 text-lg-end">
+                      <span>電子信箱</span>
+                  </div>
+                  <div class="col-lg-10">
+                      <input class="w-100 mb-3 mb-md-4 deliverInfoEmail" type="email" name="電子信箱">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="row">
+                  <div class="col-lg-3 text-lg-end">
+                      <span>電話號碼</span>
+                  </div>
+                  <div class="col-lg-9">
+                      <input class="w-100 mb-3 mb-md-4 deliverInfoTel" type="tel" placeholder="請填入聯絡電話" name="電話號碼">
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-8">
+              <div class="row">
+                  <div class="col-lg-2 text-lg-end">
+                      <span>配送地址</span>
+                  </div>
+                  <div class="col-lg-10">
+                      <input class="w-100 mb-3 mb-md-4 deliverInfoAddress" type="text" name="配送地址">
+                  </div>
+              </div>
+          </div>
+          </form>
           
         </div>
 
 
         <div class="col-4">
-          <button type="button" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0">下一步</button>
+          <button type="submit" class="mt-7 py-2 btn btn-primary text-light-brown w-100 rounded-0 deliverNextBtn">下一步</button>
         </div>
-        <a class="text-center" href="payment.html">測試用連結 下一步</a>
       </div>
     </section>
 
     <%- include('./layout/footer'); -%>
 
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/deliver.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
-// Get the button:
+// 回到最上面按鈕
 const backToTopBtn=document.querySelector(".backToTopBtn");
 
-// When the user scrolls down 200px from the top of the document, show the button
+// 往下滑200px即出現
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -21,13 +21,19 @@ if(backToTopBtn){
   console.error('Element with ID "myButton" not found.');
 }
 
-// backToTopBtn.addEventListener("click",function() {
-//   document.body.scrollTop = 0; // For Safari
-//   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-// })
 
-// When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0; // For Safari
-//   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-// }
+
+//複製優惠碼
+const couponText=document.querySelector(".couponText");
+const copyCouponBtn=document.querySelector(".copyCouponBtn");
+
+
+copyCouponBtn.addEventListener("click",function(){
+  navigator.clipboard.writeText(couponText.value)
+        .then(function() {
+            alert(`已複製${couponText.value}`);
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+})

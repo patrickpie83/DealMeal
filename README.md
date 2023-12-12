@@ -14,6 +14,7 @@
   - 動畫套件 - [AOS](https://michalsnik.github.io/aos/)
   - 輪播套件 - [Swiper](https://swiperjs.com/)
   - 網路請求套件 - [axios](https://github.com/axios/axios)
+  - 表單驗證套件 - [validate.js](https://validatejs.org/)
   - 圖表套件 - 待完成
 
 ## 規劃

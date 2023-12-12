@@ -1,6 +1,8 @@
 //產品列表頁面
 const productsList=document.querySelector(".productsList");
-const _url="https://dealmealserver.onrender.com";
+// const _url="https://dealmealserver.onrender.com";
+
+const _url="http://localhost:3000";
 
 //渲染內容
 function renderProducts(data){
@@ -10,13 +12,13 @@ function renderProducts(data){
 
         //要判斷狀態，若完售中，文字要改變。若販售中，要顯示庫存
         str+=`
-        <div class="col-6 mb-5 mb-lg-7" data-page="${item.page}">
+        <div class="col-6 mb-5 mb-lg-7">
               <div class="card rounded-0 border-0">
                 <div class="position-relative">
                   <div class="ratio ratio-1x1">
                     <img src="${item.image}" alt="${item.name}">
                   </div>
-                  <button class="cardBtn py-4" data-productId="${item.id}">加入購物車</button>
+                  <button class="cardBtn py-4" data-js="addCartBtn" data-productId="${item.id}" >加入購物車</button>
                 </div>
                 <div class="mt-1 mt-lg-2 p-2 p-lg-3 border border-primary">
                   <div class="d-lg-flex justify-content-lg-between">
@@ -32,12 +34,13 @@ function renderProducts(data){
                       </p>
                     </div>
                     <p class="productPrice fw-bold mt-3 mt-lg-0">售價：${item.price}元</p>
-                    <div class="bg-light-brown text-center mt-3 d-lg-none">
-                      <img src="../assets/images/icon_cart.png" alt="icon_cart" data-productId="${item.id}" style="height: 16px;">
-                    </div>
+                    
                   </div>
                 </div>
               </div>
+              <button class="cartIcon text-center d-lg-none py-1 w-100 border-0" data-js="addCartBtn" data-productId="${item.id}" >
+                <img data-js="addCartBtn" src="../assets/images/icon_cart.png" alt="icon_cart" style="height: 16px;">
+              </button>
             </div>
         `
     })
@@ -45,6 +48,7 @@ function renderProducts(data){
     productsList.innerHTML=str;
 }
 
+//初始
 function apiGetProducts(){
     axios.get(`${_url}/products`)
     .then(function(res){
@@ -55,4 +59,150 @@ function apiGetProducts(){
     })
 }
 
+//初始
 apiGetProducts();
+
+//加入購物車
+function apiAddCart(productId){
+
+  let userId = localStorage.getItem("userId");
+
+  //登入會員判斷
+  if(!userId){
+    alert("請先登入會員");
+    window.location.href ="login.html";
+  }else{
+
+    let productImage;
+    let productSeries;
+    let productName;
+    let productPrice;
+    let total;
+
+    //取得商品資訊一起加入購物車
+    axios.get(`${_url}/products/${productId}`)
+    .then(function(res){
+      productImage = res.data.image;
+      productSeries = res.data.series;
+      productName = res.data.name;
+      productPrice = res.data.price;
+
+          //取得會員狀態
+          axios.get(`${_url}/users/${userId}`)
+          .then(function(res){
+
+            let cartItemuuid = crypto.randomUUID();
+
+            //判斷使用者是否已有使用購物車
+            if(res.data.cartExist){
+
+              //購物車已有商品
+              //先取得購物車資訊
+              //就修改(推入) cart內容
+              axios.get(`${_url}/carts/${userId}`)
+              .then(function(res){
+                
+                let cart = res.data.cart;
+                let newCart=[];
+                total = res.data.total;
+                let alreadyExist = false;
+
+                //判斷購物車內是否有此重複商品
+                cart.forEach(function(item){
+                  if(item.productId == productId){
+                    item.quantity+=1;
+                    alreadyExist = true;
+                  }
+                })
+
+                if(alreadyExist){
+                  newCart = cart;
+                }else{
+                  cart.push({
+                    "productId": productId,
+                    "cartItemId": cartItemuuid,
+                    "productImage":productImage,
+                    "productSeries":productSeries,
+                    "productName":productName,
+                    "productPrice":productPrice,
+                    "quantity": 1
+                  })
+                  newCart = cart;
+                }
+
+                
+                axios.patch(`${_url}/carts/${userId}`,{
+                  "cart":newCart,
+                  "total":total + productPrice
+                })
+                .then(function(res){
+                  alert("已加入購物車")
+                })
+                .catch(function(err){
+                  console.log(err);
+                })
+
+                
+
+              })
+              .catch(function(err){
+                console.log(err);
+              })
+
+            }else{
+              //購物車尚未有商品
+              axios.post(`${_url}/carts`,{
+                "id":userId,
+                "cart": [
+                  {
+                    "productId": productId,
+                    "cartItemId": cartItemuuid,
+                    "productImage":productImage,
+                    "productSeries":productSeries,
+                    "productName":productName,
+                    "productPrice":productPrice,
+                    "quantity": 1
+                  }
+                ],
+                "total":productPrice + 80
+              })
+              .then(function(res){
+                alert("已加入購物車")
+              })
+              .catch(function(err){
+                console.log(err);
+              })
+            }
+            
+            //新增入購物車成功，有物品在購物車的話，會員狀態會改為true
+            axios.patch(`${_url}/users/${userId}`,{
+              "cartExist":true
+            })
+
+              
+          })
+          .catch(function(err){
+            console.log(err);
+          })
+
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+
+
+
+
+  }
+}
+
+//商品列表頁的 加入購物車按鍵
+productsList.addEventListener("click",function(e){
+
+  if(e.target.getAttribute("data-js") !== "addCartBtn"){
+    return;
+  }else{
+    let productId = e.target.getAttribute("data-productId");
+    apiAddCart(productId)
+  }
+})

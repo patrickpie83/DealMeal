@@ -8,8 +8,9 @@ const id = location.href.split("=")[1];
 
 const mealDetail=document.querySelector(".mealDetail");
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
+// const _url="https://dealmealserver.onrender.com";
+console.log("js oK")
+const _url="http://localhost:3000";
 
 function renderData(data){
     let str="";
@@ -82,7 +83,7 @@ function renderData(data){
     mealDetail.innerHTML=str;
 }
 
-
+//取得商品資料
 function apiGetMeal(){
     axios.get(`${_url}/products?id=${id}`)
     .then(function(res){
@@ -94,5 +95,5 @@ function apiGetMeal(){
 
 }
 
-
+//初始
 apiGetMeal()

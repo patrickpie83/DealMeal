@@ -82,7 +82,7 @@ function checkName(newName){
             res.data.forEach(function(item){
                 if(item.name == newName){
                     existName = existName || true;
-                    
+                    return;
                 }else{
                     existName = existName || false;
                 }
