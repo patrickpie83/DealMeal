@@ -8,6 +8,7 @@
 
         <button class="navbar-toggler border-0 shadow-none burgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="material-icons-round fs-2 text-light-brown menu-icon">menu</span>
+            <!-- burgerBtn (alertBadgeBackground是relative, alertBadge是absolute -->
             <span class="cartAlertBurgerBadge alertBadge d-none">
                 <span class="visually-hidden">New alerts</span>
             </span>
@@ -21,12 +22,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-center text-light-brown memberBtn" href="">會員中心</a>
                 </li>
+                <!-- memberCar( alertBadgeBackground是relative, alertBadge是absolute -->
                 <li class="nav-item memberCart">
                     <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
                     <span class="cartAlertBadge alertBadge d-none">
                         <span class="visually-hidden">New alerts</span>
                     </span>
                 </li>
+
             </ul>
         </div>
         

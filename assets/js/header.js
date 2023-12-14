@@ -22,12 +22,9 @@ function init(){
     //如果有登入會員會顯示購物車連結
     if(userId){
         memberCart.classList.remove("d-none");
-        cartAlertBurgerBadge.classList.remove("d-none");
-        cartAlertBadge.classList.remove("d-none");
         apiGetUser(userId);
     }else{
         memberCart.classList.add("d-none");
-        cartAlertBurgerBadge.classList.add("d-none");
     }
 }
 
@@ -40,12 +37,17 @@ function apiGetUser(userId){
 
 
         if(res.data.cartExist){
+            cartAlertBurgerBadge.classList.remove("d-none");
+            cartAlertBadge.classList.remove("d-none");
+
+            //加上position-relative
             burgerBtn.classList.add("alertBadgeBackground");
             memberCart.classList.add("alertBadgeBackground");
             cartAlertBurgerBadge.classList.add("alertBadge");
             cartAlertBadge.classList.add("alertBadge");
             
         }else{
+            //移除position-relative
             burgerBtn.classList.remove("alertBadgeBackground");
             memberCart.classList.remove("alertBadgeBackground");
             cartAlertBurgerBadge.classList.remove("alertBadge");
