@@ -68,7 +68,7 @@ function renderProducts(data){
             </div>
           </div>
           <button class="${displayNoneStr} cartIcon text-center d-lg-none py-1 w-100 border-0" data-js="addCartBtn" data-productId="${item.id}" >
-            <img data-js="addCartBtn" src="../assets/images/icon_cart.png" alt="icon_cart" style="height: 16px;" data-js="addCartBtn" data-productId="${item.id}">
+            <img data-js="addCartBtn" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_cart.png?raw=true" alt="icon_cart" style="height: 16px;" data-js="addCartBtn" data-productId="${item.id}">
           </button>
         </div>
         `
