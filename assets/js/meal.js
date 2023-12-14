@@ -23,11 +23,11 @@ function renderData(data){
                         
             <div class="d-flex justify-content-between w-75">
                 <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_minus.png?raw=true" alt="icon_minus" style="width: 20px;height: 2px;">
                 </button>
                 <input type="number" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1" max="${item.storage}">
                 <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_add.png?raw=true" alt="icon_add" style="width: 20px;height: 20px;">
                 </button>
             </div>
         </div>

@@ -100,7 +100,7 @@ function renderCart(data){
             </div>
             <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
                 <a href="" >
-                    <img data-js="deleteItem"  data-cartItemId="${item.cartItemId}" width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+                    <img data-js="deleteItem"  data-cartItemId="${item.cartItemId}" width="16" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_trash.png?raw=true" alt="icon_trash">
                 </a>
                 
             </div>
