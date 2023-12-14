@@ -22,16 +22,32 @@ if(backToTopBtn){
 }
 
 
+//sweetalert2
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top",
+  showConfirmButton: false,
+  timer: 1200,
+  timerProgressBar: false,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  }
+});
 
 //複製優惠碼
 const couponText=document.querySelector(".couponText");
 const copyCouponBtn=document.querySelector(".copyCouponBtn");
 
-
 copyCouponBtn.addEventListener("click",function(){
   navigator.clipboard.writeText(couponText.value)
         .then(function() {
-            alert(`已複製${couponText.value}`);
+
+          //sweetalert2
+          Toast.fire({
+              icon: "success",
+              title: `已複製 ${couponText.value}`
+            })
         })
         .catch(function(err) {
             console.log(err);

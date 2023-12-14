@@ -1,0 +1,7 @@
+.tabPaneWidth{
+    width:80%;
+    @include pc{
+        width: 50%;
+    }
+    
+}

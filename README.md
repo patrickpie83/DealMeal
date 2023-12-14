@@ -12,6 +12,7 @@
   - 切版框架 - [Bootstrap](https://bootstrap5.hexschool.com/docs/5.1/getting-started/introduction/)
   - 樣式語言 - SCSS
   - 動畫套件 - [AOS](https://michalsnik.github.io/aos/)
+  - 彈窗套件 - [Sweetalert2](https://sweetalert2.github.io/)
   - 輪播套件 - [Swiper](https://swiperjs.com/)
   - 網路請求套件 - [axios](https://github.com/axios/axios)
   - 表單驗證套件 - [validate.js](https://validatejs.org/)

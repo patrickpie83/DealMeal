@@ -4,6 +4,11 @@
     z-index: 1;
 }
 
+.soldOutFilter{
+    opacity: 0.3;
+}
+
+//滑鼠移過時才會出現
 .cardBtn{
     display: none;
 }

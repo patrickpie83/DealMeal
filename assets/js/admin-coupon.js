@@ -5,13 +5,30 @@ const releaseCouponId=document.querySelector("#releaseCouponId");
 const releaseCouponName=document.querySelector("#releaseCouponName");
 const releaseCouponUsage=document.querySelector("#releaseCouponUsage");
 const releaseCouponDiscount=document.querySelector("#releaseCouponDiscount");
+const checkIdBtn=document.querySelector(".checkIdBtn");
+const checkIdText=document.querySelector(".checkIdText");
+
 //優惠碼列表
 const couponList=document.querySelector(".couponList");
 //送出按鈕
+const cancelCouponBtn=document.querySelector(".cancelCouponBtn");
 const checkCouponBtn=document.querySelector(".checkCouponBtn");
 
 const _url="https://dealmealserver.onrender.com";
 // const _url="http://localhost:3000";
+
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
 
 //初始
 init();
@@ -63,7 +80,7 @@ function renderCouponList(data){
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉"></button>
                             </div>
                             <div class="modal-body">
-                                按下確認後將切換此優惠碼可使用狀態
+                                按下確認後將切換 ${item.id} 優惠碼使用狀態
                             </div>
                             
                             <div class="modal-footer">
@@ -82,6 +99,32 @@ function renderCouponList(data){
     couponList.innerHTML=str;
 
 }
+
+//檢查優惠碼序號
+checkIdBtn.addEventListener("click",function(e){
+    axios.get(`${_url}/coupons`)
+    .then(function(res){
+        let checkIdOK = true;
+        res.data.forEach(function(item){
+            if(releaseCouponId.value == item.id){
+                checkIdOK = checkIdOK && false;
+            }
+        })
+        if(checkIdOK){
+            checkIdText.innerHTML =` <p class="fs-7 text-success">此序號可以使用</p>`
+        }else{
+            checkIdText.innerHTML =` <p class="fs-7 text-danger">此序號已重複</p>`
+        }
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+})
+
+//取消送出
+cancelCouponBtn.addEventListener("click",function(){
+    releaseCouponForm.reset();
+})
 
 //送出&驗證
 checkCouponBtn.addEventListener("click",function(e){
@@ -117,11 +160,21 @@ checkCouponBtn.addEventListener("click",function(e){
     const releaseCouponDiscountErrors = releaseCouponDiscount.value=="請選擇" ? true : false;
 
     if(releaseCouponDateErrors){
-        alert(`${releaseCouponDateErrors["發佈日期"]}`);
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: `${releaseCouponDateErrors["發佈日期"]}`
+        });
     }else if(releaseCouponIdErrors){
-        alert(`${releaseCouponIdErrors["優惠碼序號"]}`);
+        Toast.fire({
+            icon: "warning",
+            title: `${releaseCouponIdErrors["優惠碼序號"]}`
+        });
     }else if(releaseCouponNameErrors || releaseCouponUsageErrors || releaseCouponDiscountErrors){
-        alert("尚有欄位未選擇");
+        Toast.fire({
+            icon: "warning",
+            title: "尚有欄位未選擇"
+        });
     }else{
         apiReleaseCoupon();
     }
@@ -141,13 +194,21 @@ function apiReleaseCoupon(){
         "useCount": 0
     })
     .then(function(res){
-        alert("發佈成功");
-        window.location.href ="admin-coupon.html";
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: "發佈成功"
+        }).then((result) =>{
+            window.location.href ="admin-coupon.html";
+        })
         
     })
     .catch(function(err){
         console.log(err);
-        alert("發佈失敗");
+        Toast.fire({
+            icon: "error",
+            title: "發佈失敗"
+        })
     })
 }
 

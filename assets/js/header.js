@@ -2,8 +2,11 @@
 const memberWelcome = document.querySelector(".memberWelcome");
 //會員中心判斷
 const memberBtn = document.querySelector(".memberBtn");
-//購物車判斷
+//購物車連結判斷
 const memberCart = document.querySelector(".memberCart");
+const burgerBtn = document.querySelector(".burgerBtn");
+const cartAlertBurgerBadge = document.querySelector(".cartAlertBurgerBadge");
+const cartAlertBadge = document.querySelector(".cartAlertBadge");
 
 let userId ;
 
@@ -13,15 +16,16 @@ const _url="https://dealmealserver.onrender.com";
 
 //初始
 init();
-
 function init(){
     userId = localStorage.getItem("userId");
     
     if(userId){
         memberCart.classList.remove("d-none");
+        cartAlertBurgerBadge.classList.remove("d-none");
         apiGetUser(userId);
     }else{
         memberCart.classList.add("d-none");
+        cartAlertBurgerBadge.classList.add("d-none");
     }
 }
 
@@ -31,6 +35,19 @@ function apiGetUser(userId){
     .then(function(res){
         const memberName = res.data.name ;
         memberWelcome.innerHTML=`<p class="text-normal-brown">${memberName}，歡迎回來</p>`;
+
+
+        if(res.data.cartExist){
+            burgerBtn.classList.add("alertBadgeBackground");
+            memberCart.classList.add("alertBadgeBackground");
+            cartAlertBurgerBadge.classList.add("alertBadge");
+            cartAlertBadge.classList.add("alertBadge");
+        }else{
+            burgerBtn.classList.remove("alertBadgeBackground");
+            memberCart.classList.remove("alertBadgeBackground");
+            cartAlertBurgerBadge.classList.remove("alertBadge");
+            cartAlertBadge.classList.remove("alertBadge");
+        }
     })
     .catch(function(err){
         console.log(err);

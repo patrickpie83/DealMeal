@@ -12,6 +12,19 @@ const _url="https://dealmealserver.onrender.com";
 // const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
+
 //初始
 init();
 
@@ -89,13 +102,26 @@ deliverNextBtn.addEventListener("click",function(e){
 
 
     if(deliverNameErrors){
-        alert(deliverNameErrors["姓名"]);
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: `${deliverNameErrors["姓名"]}`
+        });
     }else if(deliverEmailErrors){
-        alert(deliverEmailErrors["電子信箱"]);
+        Toast.fire({
+            icon: "warning",
+            title: `${deliverEmailErrors["電子信箱"]}`
+        });
     }else if(deliverTelErrors){
-        alert(deliverTelErrors["電話號碼"]);
+        Toast.fire({
+            icon: "warning",
+            title: `${deliverTelErrors["電話號碼"]}`
+        });
     }else if(deliverAddressErrors){
-        alert(deliverAddressErrors["配送地址"]);
+        Toast.fire({
+            icon: "warning",
+            title: `${deliverAddressErrors["配送地址"]}`
+        });
     }else{
         apiAddCartDeliverInfo();
     }

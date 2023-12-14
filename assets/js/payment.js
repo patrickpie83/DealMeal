@@ -23,6 +23,19 @@ const _url="https://dealmealserver.onrender.com";
 let userId = localStorage.getItem("userId");
 
 
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
+
 //初始
 init();
 let completeInformation;
@@ -154,15 +167,25 @@ sendOrderBtn.addEventListener("click",function(e){
             apiCountCoupon(completeInformation.coupon);
         }
 
-        //送出訂單後清空購物車
-        apiClearCart();
-        
-        alert("已送出訂單");
-        window.location.href ="index.html";
+        //sweetalert2
+        Toast.fire({
+            icon: "success",
+            title: "已送出訂單"
+        }).then((result) => {
+            //送出訂單後清空購物車
+            apiClearCart();
+            //架上的商品扣除庫存
+            apiTakeProductStorage(completeInformation.cart);
+        });
+
     })
     .catch(function(err){
         console.log(err);
-        alert("訂單送出失敗");
+        //sweetalert2
+        Toast.fire({
+            icon: "error",
+            title: "訂單送出失敗"
+        });
     })
 
 
@@ -226,4 +249,56 @@ function apiClearCart(){
     .catch(function(err){
         console.log(err)
     })
+}
+
+//架上的商品扣除庫存
+function apiTakeProductStorage(data){
+
+    data.forEach(function(item){
+
+        //取得商品原庫存
+        let originStorage;
+        axios.get( `${_url}/products/${item.productId}`)
+        .then(function(res){
+            originStorage = res.data.storage;
+
+
+            //修改商品庫存
+            axios.patch( `${_url}/products/${item.productId}`,{
+                "storage" : originStorage - item.quantity
+            })
+            .then(function(res){
+
+                //若完售，則修改商品狀態
+                if( originStorage - item.quantity <= 0){
+
+                    axios.patch( `${_url}/products/${item.productId}`,{
+                        "state" : "完售中"
+                    })
+                    .then(function(res){
+        
+                    })
+                    .catch(function(err){
+                        console.log(err);
+                    })
+
+                }
+
+                window.location.href ="index.html";
+
+            })
+            .catch(function(err){
+                console.log(err);
+            })
+
+
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+
+
+
+    })
+
 }

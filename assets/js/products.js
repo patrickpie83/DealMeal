@@ -1,47 +1,76 @@
 //產品列表頁面
 const productsList=document.querySelector(".productsList");
-const _url="https://dealmealserver.onrender.com";
 
+const _url="https://dealmealserver.onrender.com";
 // const _url="http://localhost:3000";
+
+//sweetalert2
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top",
+  showConfirmButton: false,
+  timer: 1000,
+  timerProgressBar: false,
+  didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+  }
+});
 
 //渲染內容
 function renderProducts(data){
     let str="";
 
     data.forEach(function(item){
+        //商品庫存判斷
 
-        //要判斷狀態，若完售中，文字要改變。若販售中，要顯示庫存
+        //完售時變透明
+        let filterStr="";
+        //無加入購物車按鈕
+        let displayNoneStr="";
+        //庫存敘述
+        let storageStr="";
+        if( item.storage <= 0){
+          storageStr ="完售中";
+          filterStr = "soldOutFilter";
+          displayNoneStr = "d-none";
+        }else{
+          storageStr =`即時庫存：${item.storage}份`;
+        }
+
+
+        
         str+=`
-        <div class="col-6 mb-5 mb-lg-7">
-              <div class="card rounded-0 border-0">
-                <div class="position-relative">
-                  <div class="ratio ratio-1x1">
-                    <img src="${item.image}" alt="${item.name}">
-                  </div>
-                  <button class="cardBtn py-4" data-js="addCartBtn" data-productId="${item.id}" >加入購物車</button>
-                </div>
-                <div class="mt-1 mt-lg-2 p-2 p-lg-3 border border-primary">
-                  <div class="d-lg-flex justify-content-lg-between">
-                    <a class="stretched-link text-decoration-none" href="meal.html?id=${item.id}"><h3 class="productName">${item.name}</h3></a>
-                    <p class="text-end mt-2 mt-lg-0 fs-7 text-dark-brown">即時庫存：${item.storage}份</p>
-                  </div>
-                  <div class="mt-3 mt-lg-4 d-lg-flex justify-content-lg-between align-items-lg-end">
-                    <div class="productNutrition">
-                      <p>熱量：${item.nutrition.calories}大卡
-                      <br>碳水化合物：${item.nutrition.carb}公克
-                      <br>蛋白質：${item.nutrition.protein}公克
-                      <br>脂肪：${item.nutrition.fat}公克 
-                      </p>
-                    </div>
-                    <p class="productPrice fw-bold mt-3 mt-lg-0">售價：${item.price}元</p>
-                    
-                  </div>
-                </div>
+        <div class="col-6 mb-5 mb-lg-7 ${filterStr} ">
+          <div class="card rounded-0 border-0">
+            <div class="position-relative">
+              <div class="ratio ratio-1x1">
+                <img src="${item.image}" alt="${item.name}">
               </div>
-              <button class="cartIcon text-center d-lg-none py-1 w-100 border-0" data-js="addCartBtn" data-productId="${item.id}" >
-                <img data-js="addCartBtn" src="../assets/images/icon_cart.png" alt="icon_cart" style="height: 16px;">
-              </button>
+              <button class="${displayNoneStr} cardBtn py-4" data-js="addCartBtn" data-productId="${item.id}" >加入購物車</button>
             </div>
+            <div class="mt-1 mt-lg-2 p-2 p-lg-3 border border-primary">
+              <div class="d-lg-flex justify-content-lg-between">
+                <a class="stretched-link text-decoration-none" href="meal.html?id=${item.id}"><h3 class="productName">${item.name}</h3></a>
+                <p class="text-end mt-2 mt-lg-0 fs-7 text-dark-brown">${storageStr}</p>
+              </div>
+              <div class="mt-3 mt-lg-4 d-lg-flex justify-content-lg-between align-items-lg-end">
+                <div class="productNutrition">
+                  <p>熱量：${item.nutrition.calories}大卡
+                  <br>碳水化合物：${item.nutrition.carb}公克
+                  <br>蛋白質：${item.nutrition.protein}公克
+                  <br>脂肪：${item.nutrition.fat}公克 
+                  </p>
+                </div>
+                <p class="productPrice fw-bold mt-3 mt-lg-0">售價：${item.price}元</p>
+                
+              </div>
+            </div>
+          </div>
+          <button class="${displayNoneStr} cartIcon text-center d-lg-none py-1 w-100 border-0" data-js="addCartBtn" data-productId="${item.id}" >
+            <img data-js="addCartBtn" src="../assets/images/icon_cart.png" alt="icon_cart" style="height: 16px;" data-js="addCartBtn" data-productId="${item.id}">
+          </button>
+        </div>
         `
     })
 
@@ -69,8 +98,15 @@ function apiAddCart(productId){
 
   //登入會員判斷
   if(!userId){
-    alert("請先登入會員");
-    window.location.href ="login.html";
+
+    //sweetalert2
+    Toast.fire({
+      icon: "warning",
+      title: "請先登入會員"
+    }).then((result) =>{
+        window.location.href ="login.html";
+    })
+
   }else{
 
     let productImage;
@@ -136,7 +172,14 @@ function apiAddCart(productId){
                   "total":total + productPrice
                 })
                 .then(function(res){
-                  alert("已加入購物車")
+                  //sweetalert2
+                  Toast.fire({
+                    icon: "success",
+                    title: "已加入購物車"
+                  }).then((result) =>{
+                    location.reload();
+                  })
+                  
                 })
                 .catch(function(err){
                   console.log(err);
@@ -167,7 +210,13 @@ function apiAddCart(productId){
                 "total":productPrice + 80
               })
               .then(function(res){
-                alert("已加入購物車")
+                  //sweetalert2
+                  Toast.fire({
+                    icon: "success",
+                    title: "已加入購物車"
+                  }).then((result) =>{
+                    location.reload();
+                  })
               })
               .catch(function(err){
                 console.log(err);

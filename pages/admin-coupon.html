@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>訂食後台管理</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
   </head>
 
   <body>
      <!-- VALIDATE.JS -->
      <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+     <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
     
     <%- include('./layout/admin-header'); -%>
     <div class="container py-7">
@@ -35,9 +39,11 @@
                   <label class="fs-6 mt-4" for="releaseCouponId">優惠碼序號</label>
                   <div class="d-flex">
                     <input class="w-75" type="text" id="releaseCouponId" name="優惠碼序號">
-                    <button class="w-25 ms-4 py-0 btn btn-normal-brown rounded-pill text-primary" type="button">檢查</button>
+                    <button class="w-25 ms-4 py-0 btn btn-normal-brown rounded-pill text-primary checkIdBtn" type="button">檢查</button>
                   </div>
-                  <p class="fs-7 text-danger">＊序號已重複</p>
+                  <div class="checkIdText">
+
+                  </div>
 
                   <label class="fs-6 mt-4" for="releaseCouponName">用途名稱</label>
                   <select class="w-100 py-1" name="couponNameSelector" id="releaseCouponName">
@@ -70,7 +76,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-secondary cancelCouponBtn" data-bs-dismiss="modal">取消</button>
                   <button type="submit" class="btn btn-danger checkCouponBtn" >送出</button>
                 </div>
               </form>

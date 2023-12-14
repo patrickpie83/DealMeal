@@ -30,8 +30,20 @@ const pan=document.querySelector("#pan");
 const finishBtn=document.querySelector(".finishBtn");
 
 const _url="https://dealmealserver.onrender.com";
-//本地測試
 // const _url="http://localhost:3000";
+
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
 
 let checkNameOK = false;
 let checkImgOK = false;
@@ -59,7 +71,11 @@ imgCancel.addEventListener("click",function(e){
 checkNameBtn.addEventListener("click",function(e){
     e.preventDefault();
     if(!productName.value){
-        alert("商品名稱不可為空");
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: "商品名稱不可為空"
+        });
     }
     checkName(productName.value);
 })
@@ -136,8 +152,14 @@ function apiNewProduct(){
         }
     })
     .then(function(res){
-        console.log(res);
-        //跳轉至後台商品頁
+        Toast.fire({
+            icon: "success",
+            title: "成功送出"
+        }).then((result) =>{
+            window.location.href ="admin-products.html";
+            //跳轉至後台商品頁
+        })
+        
     })
     .catch(function(err){
         console.log(err);
@@ -154,47 +176,70 @@ finishBtn.addEventListener("click",function(e){
 
     if( !imgInput.value ){
         //檢查圖片網址欄位空白
-        alert("圖片網址不可為空");
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: "圖片網址不可為空"
+        });
 
     }else if( !checkImgOK ){
         //檢查預覽過圖片
-        alert("請先預覽過圖片");
+        Toast.fire({
+            icon: "warning",
+            title: "請先預覽過圖片"
+        });
 
     }else if( productSeries.value=="請選擇" ){
-        //檢查預覽過圖片
-        alert("尚未選取商品系列");
-
+        //未選取商品系列
+        Toast.fire({
+            icon: "warning",
+            title: "尚未選取商品系列"
+        });
     }else if( !productName.value ){
         //檢查商品名稱欄位
-        alert("商品名稱不可為空");
-
+        Toast.fire({
+            icon: "warning",
+            title: "商品名稱不可為空"
+        });
     }else if( !checkNameOK ){
         //檢查是否檢查過商品名稱
-        alert("請檢查商品名稱");
-
+        Toast.fire({
+            icon: "warning",
+            title: "請檢查商品名稱"
+        });
     }else if( !productPrice.value ){
         //單價
-        alert("單價不可為空");
-
+        Toast.fire({
+            icon: "warning",
+            title: "單價不可為空"
+        });
     }else if( !productStock.value ){
         //庫存
-        alert("庫存不可為空");
-
+        Toast.fire({
+            icon: "warning",
+            title: "庫存不可為空"
+        });
     }else if( !productIngredient.value ){
-        //內容物   
-        alert("內容物不可為空");
-
+        //內容物
+        Toast.fire({
+            icon: "warning",
+            title: "內容物不可為空"
+        });
     }else if( !(productSize.value && productCalories.value && productCarb.value && productProtein.value && productFat.value) ){
         //營養標示
-        alert("營養標示不可為空");
-
+        Toast.fire({
+            icon: "warning",
+            title: "營養標示不可為空"
+        });
     }else if( !(microwave.value && oven.value && electricPot.value && pan.value )){
         //加熱方式
-        alert("加熱方式不可為空");
-
+        Toast.fire({
+            icon: "warning",
+            title: "加熱方式不可為空"
+        });
     }else{
-        apiNewProduct()
-        alert("成功送出");
+        apiNewProduct();
+        
     }
     
 

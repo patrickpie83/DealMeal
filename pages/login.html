@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
   </head>
 
   <body>
@@ -13,7 +15,9 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- VALIDATE.JS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
-    
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
+
     <%- include('./layout/header'); -%>
     
     <section class="container">
@@ -27,9 +31,10 @@
                       <button class="nav-link w-100 text-dark-brown py-4 fs-4" data-bs-toggle="tab" data-bs-target="#signUp" type="button" role="tab" aria-controls="signUp" aria-selected="false">註冊會員</button>
                     </li>
                 </ul>
+
                 <div class="tab-content border border-dark-brown border-top-0 py-7 d-flex flex-column align-items-center">
                     <!-- 會員登入 -->
-                    <div class="tab-pane fade show active w-50" id="login" role="tabpanel">
+                    <div class="tab-pane fade show active tabPaneWidth" id="login" role="tabpanel">
                         <label for="loginEmail" class="form-label">電子信箱</label>
                         <input type="email" class="form-control rounded-0 border-primary mb-4" id="loginEmail" placeholder="請輸入電子信箱">
                         <label for="loginPassword" class="form-label">密碼</label>
@@ -38,8 +43,7 @@
                         <a class="text-decoration-none" href="password.html">忘記密碼？</a>
                     </div>
                     <!-- 註冊會員 -->
-                    
-                    <div class="tab-pane fade w-50" id="signUp" role="tabpanel">
+                    <div class="tab-pane fade tabPaneWidth" id="signUp" role="tabpanel">
                       <form class="signUpForm">
                         <label for="signUpName" class="form-label">用戶名稱</label>
                         <input type="text" class="form-control rounded-0 border-primary" id="signUpName" placeholder="請輸入用戶大名" name="用戶名稱">

@@ -1,3 +1,27 @@
 .menu-icon:hover{
   opacity: 0.5;
 }
+
+.alertBadgeBackground{
+  position: relative;
+}
+
+.alertBadge{
+  position: absolute;
+  padding: 4px;
+  background-color: $danger;
+  border: 1px solid $white;
+  border-radius: 50%;
+  top: 15%;
+  left: 57%;
+
+  @include sm{
+    left: 55%;
+  }
+
+  @include pc{
+    left: 80%;
+
+  }
+
+}

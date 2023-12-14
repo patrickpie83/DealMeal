@@ -9,11 +9,22 @@ const saveFileComfirm = document.querySelector(".saveFileComfirm");
 //歷史訂單
 const historyOrderContent = document.querySelector(".historyOrderContent");
 
-
 let userId ;
 const _url="https://dealmealserver.onrender.com";
-
 // const _url="http://localhost:3000";
+
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
 
 //會員中心初始
 init()
@@ -120,8 +131,13 @@ function apiModifyMember(name,email,address){
         "email":email
     })
     .then(function(res){
-        alert("變更成功");
-        window.location.href ="member.html";
+        //sweetalert2
+        Toast.fire({
+            icon: "success",
+            title: "變更成功"
+        }).then((result) =>{
+            window.location.href ="member.html";
+        })
     })
     .catch(function(err){
         console.log(err);

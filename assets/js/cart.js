@@ -2,8 +2,10 @@
 //頁面判斷
 const cartFirstStep=document.querySelector(".cartFirstStep");
 //購物車內容
+const clearCartBtn=document.querySelector(".clearCartBtn");
 const cartItemsContent=document.querySelector(".cartItemsContent");
 const cartTotal=document.querySelector(".cartTotal");
+
 //優惠折扣碼
 const couponInput=document.querySelector(".couponInput");
 const useCouponBtn=document.querySelector(".useCouponBtn");
@@ -11,10 +13,23 @@ const couponDiscount=document.querySelector(".couponDiscount");
 //下一步
 const cartNextBtn=document.querySelector(".cartNextBtn");
 
-
 const _url="https://dealmealserver.onrender.com";
 // const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
+
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 800,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
+
 
 //初始
 init();
@@ -140,6 +155,7 @@ function apiModifyCart(cartItemId,quantity){
     
 }
 
+
 //刪除購物車指定品項監聽
 cartItemsContent.addEventListener("click",function(e){
     e.preventDefault();
@@ -147,6 +163,7 @@ cartItemsContent.addEventListener("click",function(e){
         apiDeleteCartItem( e.target.getAttribute("data-cartItemId") );
     }
 })
+
 
 //刪除購物車指定品項
 function apiDeleteCartItem(cartItemId){
@@ -162,23 +179,7 @@ function apiDeleteCartItem(cartItemId){
 
         //若購物車已被清空，則重新顯示
         if(ary.length == 0){
-            axios.patch(`${_url}/users/${userId}`,{
-                "cartExist":false
-            })
-            .then(function(res){
-
-                axios.delete(`${_url}/carts/${userId}`)
-                .then(function(res){
-                    init();
-                })
-                .catch(function(err){
-                    console.log(err);
-                })
-                
-            })
-            .catch(function(err){
-                console.log(err);
-            })
+            apiClearCart();
         }else{
             axios.patch(`${_url}/carts/${userId}`,{
                 "cart":ary
@@ -196,6 +197,45 @@ function apiDeleteCartItem(cartItemId){
     .catch(function(err){
         console.log(err);
     })
+}
+
+
+//清空購物車監聽
+clearCartBtn.addEventListener("click",function(e){
+    e.preventDefault();
+    apiClearCart();
+})
+
+
+//清空購物車
+function apiClearCart(){
+
+    axios.patch(`${_url}/users/${userId}`,{
+        "cartExist":false
+    })
+    .then(function(res){
+
+        axios.delete(`${_url}/carts/${userId}`)
+        .then(function(res){
+
+            //sweetalert2
+            Toast.fire({
+                icon: "info",
+                title: "購物車已清空"
+            }).then((result) =>{
+                location.reload();
+            })
+            
+        })
+        .catch(function(err){
+            console.log(err);
+        })
+        
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+    
 }
 
 
@@ -313,9 +353,6 @@ function apiCalculateTotal(data){
 
 
 }
-
-
-
 
 
 //下一步

@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
   </head>
 
   <body>
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
+    
     <%- include('./layout/header'); -%>
     <section class="container my-7">
       <div class="row justify-content-center cartFirstStep">
@@ -32,6 +37,12 @@
         </div>
         
         <div class="col-10 my-5">
+          <div class="row justify-content-end mb-3">
+            <div class="col-6 col-md-3">
+              <button type="button" class="py-2 btn btn-outline-primary w-100 rounded-0 clearCartBtn">清空購物車</button>
+            </div>
+          </div>
+
           <!-- mobile抬頭 -->
           <div class="row d-md-none bg-normal-brown py-2">
             <span class="d-block text-center">商品總覽</span>

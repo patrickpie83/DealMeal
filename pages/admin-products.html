@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>訂食後台管理</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
   </head>
 
   <body>
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
+    
     <%- include('./layout/admin-header'); -%>
     <div class="container py-7">
       <div class="d-flex justify-content-between align-items-center mb-5">
@@ -39,10 +44,27 @@
           <a href="admin-newProduct.html" type="button" class="py-3 btn btn-normal-brown text-primary w-100 rounded-0">登錄新商品</a>
         </div>
         <div class="col-4">
-          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯架上狀態與庫存</button>
+          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0 editBtn">編輯架上狀態與庫存</button>
         </div>
         <div class="col-4">
-          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0">編輯完成</button>
+          <button type="button" class="py-3 btn btn-dark-brown text-light-brown w-100 rounded-0 finishBtn disabled"  data-bs-toggle="modal" data-bs-target="#finishModal">送出編輯</button>
+          <!-- Modal -->
+          <div class="modal fade" id="finishModal" tabindex="-1" aria-labelledby="finishModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h6 class="modal-title" id="finishModal">確認視窗</h6>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body finishContent lh-lg">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary finishConfirmBtn">確認</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

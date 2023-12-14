@@ -14,9 +14,22 @@ const signUpPasswordContent=document.querySelector(".signUpPasswordContent");
 const loginEmail=document.querySelector("#loginEmail");
 const loginPassword=document.querySelector("#loginPassword");
 const loginBtn=document.querySelector(".loginBtn");
-
 const _url="https://dealmealserver.onrender.com";
 // const _url="http://localhost:3000";
+
+//sweetalert2
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+    });
+
 
 // 註冊會員API
 function apiSignUp(){
@@ -31,8 +44,14 @@ function apiSignUp(){
         "historyOrder":[]
     })
     .then(function(res){
-        alert("註冊成功");
-        window.location.href = "login.html" ;
+        //sweetalert2
+        Toast.fire({
+            icon: "success",
+            title: "註冊成功"
+        }).then((result) =>{
+            window.location.href = "login.html" ;
+        })
+        
     })
     .catch(function(err){
         console.log(err);
@@ -114,22 +133,36 @@ function apiLogin(){
         "password":loginPassword.value
     })
     .then(function(res){
-        alert("登入成功");
-        localStorage.setItem("userToken",res.data.accessToken);
-        localStorage.setItem("userId",res.data.user.id);
-        window.location.href ="index.html";
-        
+        //sweetalert2
+        Toast.fire({
+            icon: "success",
+            title: "登入成功"
+          }).then((result) => {
+            localStorage.setItem("userToken",res.data.accessToken);
+            localStorage.setItem("userId",res.data.user.id);
+            window.location.href ="index.html";
+          });
     })
     .catch(function(err){
         console.log(err);
-        alert("登入失敗");
+        //sweetalert2
+        Toast.fire({
+            icon: "error",
+            title: "登入失敗"
+        })
     })
 }
 
 loginBtn.addEventListener("click",function(e){
     e.preventDefault();
     if(! (loginEmail.value && loginPassword.value)){
-        alert("欄位未填");
+
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: "欄位未填"
+        })
+
         return;
     }
     apiLogin();
