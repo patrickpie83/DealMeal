@@ -1,4 +1,19 @@
-import"./bootstrap.min-275429c0.js";import"./header-d5d66ed4.js";const l=location.href.split("=")[1],n=document.querySelector(".mealDetail"),o="https://dealmealserver.onrender.com";console.log("js oK");function i(s){let e="",t=s[0];console.log(t),e+=`
+import"./bootstrap.min-d005857b.js";import"./header-6e941449.js";const n=location.href.split("=")[1],a=document.querySelector(".mealDetail"),i="https://dealmealserver.onrender.com";function o(e){let l="",t=e[0],s="";t.storage>0?s=`
+        <div class="d-flex align-items-center mb-4">
+            <p class="mealQuatity me-3">數量</p>
+                        
+            <div class="d-flex justify-content-between w-75">
+                <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
+                    <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                </button>
+                <input type="number" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1" max="${t.storage}">
+                <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
+                    <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                </button>
+            </div>
+        </div>
+        <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
+        `:s='<p class="mealQuatity">完售中</p>',l+=`
     <div class="row justify-content-between mb-7">
         <div class="col-lg-6">
             <div class="ratio ratio-1x1">
@@ -8,26 +23,12 @@ import"./bootstrap.min-275429c0.js";import"./header-d5d66ed4.js";const l=locatio
         <div class="col-lg-6 d-flex flex-column justify-content-between mt-3 mt-lg-0">
             <div>
                 <span class="mb-3">${t.series}</span>
-                <h1 class="mealName mb-3 mb-lg-4">${t.name}</h1>
+                <h1 class="mealName mb-4 mb-lg-4">${t.name}</h1>
                 <p class="mealStorage mb-lg-4">即時庫存：${t.storage}份</p>
                 <p class="mealPrice fw-bold">售價：${t.price}元</p>
             </div>
-            <div class="mt-3 mt-lg-0">
-                <div class="d-lg-flex align-items-center">
-                    <p class="mealQuatity me-3 mb-1">數量</p>
-                    
-                    <div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
-                        </button>
-                        <input type="text" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1">
-                        <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                            <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
-                        </button>
-                    </div>
-                    
-                </div>
-                <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
+            <div class="mt-4 mt-lg-0">
+                ${s}
             </div>
         </div>
     </div>
@@ -60,4 +61,4 @@ import"./bootstrap.min-275429c0.js";import"./header-d5d66ed4.js";const l=locatio
             <p>${t.heat.pan}</p>
         </div>
     </div>
-    `,n.innerHTML=e}function a(){axios.get(`${o}/products?id=${l}`).then(function(s){i(s.data)}).catch(function(s){console.log(s)})}a();
+    `,a.innerHTML=l}function c(){axios.get(`${i}/products?id=${n}`).then(function(e){o(e.data)}).catch(function(e){console.log(e)})}c();

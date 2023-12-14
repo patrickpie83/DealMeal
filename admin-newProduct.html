@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>訂食後台管理</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/admin-newProduct-f152bebd.js"></script>
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-275429c0.js">
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/admin-header-184d0ca2.js">
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-4b9cc774.css">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
+    <script type="module" crossorigin src="/DealMeal/assets/admin-newProduct-dc1ee44a.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-d005857b.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/admin-header-663d3a3c.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-c278d8d2.css">
   </head>
 
   <body>
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
     <nav class="navbar bg-primary py-2 sticky-top shadow-sm navbar-expand-lg">
     <div class="container">
         <!-- 收合按鈕及視窗待調整 -->
@@ -27,11 +31,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-center text-light-brown" href="#" id="orderManage" role="button" data-bs-toggle="dropdown" aria-expanded="false">訂單管理</a>
                     <ul class="dropdown-menu dropdown-menu-primary bg-primary text-center" aria-labelledby="orderManage">
-                        <li class="mb-1"><a class="dropdown-item text-dark-brown" href="admin-orderList.html">尚未處理</a></li>
-                        <li class="mb-1"><a class="dropdown-item text-dark-brown" href="">揀貨中</a></li>
-                        <li class="mb-1"><a class="dropdown-item text-dark-brown" href="">出貨中</a></li>
-                        <li class="mb-1"><a class="dropdown-item text-dark-brown" href="">取消的訂單</a></li>
-                        <li class="mb-1"><a class="dropdown-item text-dark-brown" href="">完成的訂單</a></li>
+                        <li class="mb-1"><a class="dropdown-item text-dark-brown notProcessedOrder" href="">尚未處理</a></li>
+                        <li class="mb-1"><a class="dropdown-item text-dark-brown processingOrder" href="">揀貨中</a></li>
+                        <li class="mb-1"><a class="dropdown-item text-dark-brown deliveringOrder" href="">出貨中</a></li>
+                        <li class="mb-1"><a class="dropdown-item text-dark-brown canceledOrder" href="">取消的訂單</a></li>
+                        <li class="mb-1"><a class="dropdown-item text-dark-brown completedOrder" href="">完成的訂單</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

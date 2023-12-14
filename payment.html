@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deal Meal 訂食</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/payment-8ee506ee.js"></script>
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-275429c0.js">
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-d5d66ed4.js">
-    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-4b9cc774.css">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
+    <script type="module" crossorigin src="/DealMeal/assets/payment-9a02b535.js"></script>
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-d005857b.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-6e941449.js">
+    <link rel="stylesheet" href="/DealMeal/assets/bootstrap-c278d8d2.css">
   </head>
 
   <body>
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
+
     
 <nav class="navbar bg-dark-brown py-2 sticky-top shadow-sm navbar-expand-lg">
     <div class="container">
@@ -21,25 +26,26 @@
         <div class="memberWelcome"></div>
 
 
-        <!-- 收合按鈕及視窗待調整 -->
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="material-icons-round fs-1 text-light-brown menu-icon">menu</span>
+        <button class="navbar-toggler border-0 shadow-none burgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="material-icons-round fs-2 text-light-brown menu-icon">menu</span>
+            <span class="cartAlertBurgerBadge alertBadge">
+                <span class="visually-hidden">New alerts</span>
+            </span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+        <div class="collapse navbar-collapse " id="navbarSupportedContent"> 
             <ul class="navbar-nav ms-lg-auto">
                 <li class="nav-item">
                     <a class="nav-link text-center text-light-brown" href="products.html">商品總覽</a>
                 </li>
-                <!-- 尚未製作，判斷是否登入呈現登入或帳戶資料 -->
                 <li class="nav-item">
                     <a class="nav-link text-center text-light-brown memberBtn" href="">會員中心</a>
                 </li>
                 <li class="nav-item memberCart">
                     <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-center text-light-brown" href="admin.html">後台測試用連結</a>
+                    <span class="cartAlertBadge alertBadge">
+                        <span class="visually-hidden">New alerts</span>
+                    </span>
                 </li>
             </ul>
         </div>
@@ -278,6 +284,7 @@
         <a class="mt-5 text-light-brown text-decoration-none" href="">隱私條款</a>
         <p class="mt-5 text-light-brown">客服信箱：dealmeal@mail.com</p>
         <p class="mt-5 text-light-brown">客服電話：02-12345678</p>
+        <a class="mt-5 text-dark-brown text-decoration-none" href="admin.html">進入後台</a>
     </div>
 </footer>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
