@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
     <!-- sweetalert -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/login-25ba0ab7.js"></script>
+    <script type="module" crossorigin src="/DealMeal/assets/login-ae277427.js"></script>
     <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-d005857b.js">
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-6e941449.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-4ab9cc05.js">
     <link rel="stylesheet" href="/DealMeal/assets/bootstrap-c278d8d2.css">
   </head>
 
@@ -32,7 +32,8 @@
 
         <button class="navbar-toggler border-0 shadow-none burgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="material-icons-round fs-2 text-light-brown menu-icon">menu</span>
-            <span class="cartAlertBurgerBadge alertBadge">
+            <!-- burgerBtn (alertBadgeBackground是relative, alertBadge是absolute -->
+            <span class="cartAlertBurgerBadge alertBadge d-none">
                 <span class="visually-hidden">New alerts</span>
             </span>
         </button>
@@ -45,12 +46,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-center text-light-brown memberBtn" href="">會員中心</a>
                 </li>
+                <!-- memberCar( alertBadgeBackground是relative, alertBadge是absolute -->
                 <li class="nav-item memberCart">
                     <a class="nav-link text-center text-light-brown" href="cart.html">購物車</a>
-                    <span class="cartAlertBadge alertBadge">
+                    <span class="cartAlertBadge alertBadge d-none">
                         <span class="visually-hidden">New alerts</span>
                     </span>
                 </li>
+
             </ul>
         </div>
         

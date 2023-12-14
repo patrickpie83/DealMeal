@@ -1,4 +1,4 @@
-import"./bootstrap.min-d005857b.js";import"./header-6e941449.js";const p=document.querySelector(".cartFirstStep"),h=document.querySelector(".clearCartBtn"),l=document.querySelector(".cartItemsContent"),m=document.querySelector(".cartTotal"),s=document.querySelector(".couponInput"),g=document.querySelector(".useCouponBtn"),u=document.querySelector(".couponDiscount"),v=document.querySelector(".cartNextBtn"),c="https://dealmealserver.onrender.com";let a=localStorage.getItem("userId");const $=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:800,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});x();function x(){axios.get(`${c}/users/${a}`).then(function(e){e.data.cartExist?axios.patch(`${c}/carts/${a}`,{coupon:"",couponDiscount:""}).then(function(t){s.value="",r(t.data)}).catch(function(t){console.log(t)}):p.innerHTML=`
+import"./bootstrap.min-d005857b.js";import"./header-4ab9cc05.js";const p=document.querySelector(".cartFirstStep"),h=document.querySelector(".clearCartBtn"),l=document.querySelector(".cartItemsContent"),m=document.querySelector(".cartTotal"),s=document.querySelector(".couponInput"),g=document.querySelector(".useCouponBtn"),u=document.querySelector(".couponDiscount"),v=document.querySelector(".cartNextBtn"),c="https://dealmealserver.onrender.com";let a=localStorage.getItem("userId");const $=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:800,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});x();function x(){axios.get(`${c}/users/${a}`).then(function(e){e.data.cartExist?axios.patch(`${c}/carts/${a}`,{coupon:"",couponDiscount:""}).then(function(t){s.value="",r(t.data)}).catch(function(t){console.log(t)}):p.innerHTML=`
             <div class="col-10">
                 <p class="my-7 text-dark-brown" align="center">目前購物車內無商品</p>
                 <a href="products.html" type="button" class="d-block mx-auto py-3 btn btn-primary text-light-brown w-50 rounded-0">前往挑選商品</a>
@@ -29,7 +29,7 @@ import"./bootstrap.min-d005857b.js";import"./header-6e941449.js";const p=documen
             </div>
             <div class="col-md-1 mt-3  my-md-auto text-end text-md-center">
                 <a href="" >
-                    <img data-js="deleteItem"  data-cartItemId="${n.cartItemId}" width="16" src="../assets/images/icon_trash.png" alt="icon_trash">
+                    <img data-js="deleteItem"  data-cartItemId="${n.cartItemId}" width="16" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_trash.png?raw=true" alt="icon_trash">
                 </a>
                 
             </div>

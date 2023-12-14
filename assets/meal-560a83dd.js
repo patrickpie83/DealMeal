@@ -1,14 +1,14 @@
-import"./bootstrap.min-d005857b.js";import"./header-6e941449.js";const n=location.href.split("=")[1],a=document.querySelector(".mealDetail"),i="https://dealmealserver.onrender.com";function o(e){let l="",t=e[0],s="";t.storage>0?s=`
+import"./bootstrap.min-d005857b.js";import"./header-4ab9cc05.js";const a=location.href.split("=")[1],i=document.querySelector(".mealDetail"),n="https://dealmealserver.onrender.com";function o(e){let l="",t=e[0],s="";t.storage>0?s=`
         <div class="d-flex align-items-center mb-4">
             <p class="mealQuatity me-3">數量</p>
                         
             <div class="d-flex justify-content-between w-75">
                 <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="../assets/icon_minus.png" alt="icon_minus" style="width: 20px;height: 2px;">
+                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_minus.png?raw=true" alt="icon_minus" style="width: 20px;height: 2px;">
                 </button>
                 <input type="number" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1" max="${t.storage}">
                 <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="../assets/icon_add.png" alt="icon_minus" style="width: 20px;height: 20px;">
+                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_add.png?raw=true" alt="icon_add" style="width: 20px;height: 20px;">
                 </button>
             </div>
         </div>
@@ -61,4 +61,4 @@ import"./bootstrap.min-d005857b.js";import"./header-6e941449.js";const n=locatio
             <p>${t.heat.pan}</p>
         </div>
     </div>
-    `,a.innerHTML=l}function c(){axios.get(`${i}/products?id=${n}`).then(function(e){o(e.data)}).catch(function(e){console.log(e)})}c();
+    `,i.innerHTML=l}function r(){axios.get(`${n}/products?id=${a}`).then(function(e){o(e.data)}).catch(function(e){console.log(e)})}r();
