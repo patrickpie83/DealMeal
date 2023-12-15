@@ -204,15 +204,24 @@ saveFileComfirm.addEventListener("click",function(e){
 
     
     if(modifyNameErrorsContent){
-        alert(modifyNameErrorsContent);
+        //sweetalert2
+        Toast.fire({
+            icon: "warning",
+            title: `${modifyNameErrorsContent}`
+        });
     }else if(modifyAddressErrorsContent){
-        alert(modifyAddressErrorsContent);
+        Toast.fire({
+            icon: "warning",
+            title: `${modifyAddressErrorsContent}`
+        });
     }else if(modifyEmailErrorsContent){
-        alert(modifyEmailErrorsContent);
+        Toast.fire({
+            icon: "warning",
+            title: `${modifyEmailErrorsContent}`
+        });
     }else{
         apiModifyMember(memberName.value,memberEmail.value,memberAddress.value);
         
-
     }
 
 
