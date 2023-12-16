@@ -256,10 +256,13 @@ useCouponBtn.addEventListener("click",function(){
             couponDiscount.innerHTML=`
             <span class="text-danger">無效的優惠碼，請重新確認</span>`;
             //重新計算total
-            axios.get(`${_url}/carts/${userId}`
-            )
+            // 初始優惠碼＆初始total計算&渲染購物車
+            axios.patch(`${_url}/carts/${userId}`,{
+                "coupon":"",
+                "couponDiscount":""
+            })
             .then(function(res){
-                apiCalculateTotal(res.data)
+                apiCalculateTotal(res.data);
             })
             .catch(function(err){
                 console.log(err);
