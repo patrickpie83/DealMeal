@@ -255,6 +255,15 @@ useCouponBtn.addEventListener("click",function(){
         if(Object.keys(getCoupon).length == 0){
             couponDiscount.innerHTML=`
             <span class="text-danger">無效的優惠碼，請重新確認</span>`;
+            //重新計算total
+            axios.get(`${_url}/carts/${userId}`
+            )
+            .then(function(res){
+                apiCalculateTotal(res.data)
+            })
+            .catch(function(err){
+                console.log(err);
+            })
         }else{
             couponDiscount.innerHTML=`
             套用優惠碼：
