@@ -30,7 +30,7 @@ function renderProducts(data){
         let displayNoneStr="";
         //庫存敘述
         let storageStr="";
-        if( item.storage <= 0){
+        if( item.storage <= 0 || item.state == "完售中"){
           storageStr ="完售中";
           filterStr = "soldOutFilter";
           displayNoneStr = "d-none";
