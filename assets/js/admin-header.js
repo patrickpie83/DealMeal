@@ -7,10 +7,6 @@ const deliveringOrder=document.querySelector(".deliveringOrder");
 const canceledOrder=document.querySelector(".canceledOrder");
 const completedOrder=document.querySelector(".completedOrder");
 
-
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
-
 //登出admin
 adminLogoutBtn.addEventListener("click",function(e){
     e.preventDefault();

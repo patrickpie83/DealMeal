@@ -8,8 +8,6 @@ const id = location.href.split("=")[1];
 
 const mealDetail=document.querySelector(".mealDetail");
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
 
 function renderData(data){
     let str="";

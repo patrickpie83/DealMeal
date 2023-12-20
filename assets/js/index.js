@@ -22,7 +22,7 @@ if(backToTopBtn){
 }
 
 
-//sweetalert2
+//sweetalert2 timer=1200
 const Toast = Swal.mixin({
   toast: true,
   position: "top",

@@ -21,9 +21,10 @@
     <nav class="stickyWithNav d-lg-none bg-primary">
       <div class="container">
         <div class="row">
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">全部商品</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
         </div>
       </div>
     </nav>
@@ -33,6 +34,7 @@
         <!-- pc選單 -->
         <aside class="col-lg-3">
           <div class="d-none  d-lg-flex flex-column stickyWithNav d-none">
+            <button type="button" class="btn btn-primary rounded-0 text-light-brown">全部商品</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">塑身系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">增肌系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">早餐系列</button>
@@ -42,6 +44,27 @@
         <div class="col-lg-9">
           <div class="row pt-3 pt-lg-0 productsList">
           </div>
+          <div class="row justify-content-center">
+            <div class=" d-flex justify-content-end pagination">
+              <a class="btn btn-primary" type="button" data-page="previous">
+                <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous">
+              </a>
+              <a class="btn btn-primary" type="button" data-page="1">1</a>
+              <a class="btn btn-primary" type="button" data-page="2">2</a>
+              <a class="btn btn-primary" type="button" data-page="3">3</a>
+              <a class="btn btn-primary" type="button" data-page="4">4</a>
+              <a class="btn btn-primary" type="button" data-page="5">5</a>
+              <a class="btn btn-primary" type="button" data-page="6">6</a>
+              <a class="btn btn-primary" type="button" data-page="7">7</a>
+              <a class="btn btn-primary" type="button" data-page="8">8</a>
+              <a class="btn btn-primary" type="button" data-page="9">9</a>
+              <a class="btn btn-primary" type="button" data-page="10">10</a>
+              <a class="btn btn-primary" type="button" data-page="11">11</a>
+              <a class="btn btn-primary" type="button" data-page="next">
+                <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next">
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -50,6 +73,7 @@
     <%- include('./layout/footer'); -%>
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script src="../config.js"></script>
     <script type="module" src="../assets/js/products.js"></script>
   </body>
 </html>

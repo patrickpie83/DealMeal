@@ -13,11 +13,9 @@ const couponDiscount=document.querySelector(".couponDiscount");
 //下一步
 const cartNextBtn=document.querySelector(".cartNextBtn");
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
-//sweetalert2
+//sweetalert2 timer=800
 const Toast = Swal.mixin({
     toast: true,
     position: "top",

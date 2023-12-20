@@ -8,22 +8,8 @@ const deliverInfoAddress=document.querySelector(".deliverInfoAddress");
 const deliverNextBtn=document.querySelector(".deliverNextBtn");
 
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
-//sweetalert2
-const Toast = Swal.mixin({
-    toast: true,
-    position: "top",
-    showConfirmButton: false,
-    timer: 1000,
-    timerProgressBar: false,
-    didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-    }
-});
 
 //初始
 init();

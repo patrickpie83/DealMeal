@@ -10,9 +10,6 @@ const cartAlertBadge = document.querySelector(".cartAlertBadge");
 
 let userId ;
 
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
-
 
 //初始
 init();

@@ -17,24 +17,8 @@ const confrimBtn=document.querySelector(".confrimBtn");
 //確認按鈕
 const sendOrderBtn=document.querySelector(".sendOrderBtn");
 
-
-const _url="https://dealmealserver.onrender.com";
-// const _url="http://localhost:3000";
 let userId = localStorage.getItem("userId");
 
-
-//sweetalert2
-const Toast = Swal.mixin({
-    toast: true,
-    position: "top",
-    showConfirmButton: false,
-    timer: 1000,
-    timerProgressBar: false,
-    didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
-    }
-});
 
 //初始
 init();
