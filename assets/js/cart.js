@@ -15,6 +15,10 @@ const cartNextBtn=document.querySelector(".cartNextBtn");
 
 let userId = localStorage.getItem("userId");
 
+// const _url="https://dealmealserver.onrender.com";
+const _url="http://localhost:3000";
+
+
 //sweetalert2 timer=800
 const Toast = Swal.mixin({
     toast: true,

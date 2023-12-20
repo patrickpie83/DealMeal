@@ -5,6 +5,22 @@ const orderListContent=document.querySelector(".orderListContent");
 //取得header點選狀態
 let listStatus = location.href.split("=")[1];
 
+// const _url="https://dealmealserver.onrender.com";
+const _url="http://localhost:3000";
+
+//sweetalert2 timer=1000
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
+
 if(listStatus == "notProcessedOrder"){
     listStatus = "尚未處理";
     orderStatusTitle.textContent = "尚未處理的訂單";
