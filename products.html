@@ -8,9 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
     <!-- sweetalert -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
-    <script type="module" crossorigin src="/DealMeal/assets/products-20c6e808.js"></script>
+    <script type="module" crossorigin src="/DealMeal/assets/products-6f64515d.js"></script>
     <link rel="modulepreload" crossorigin href="/DealMeal/assets/bootstrap.min-d005857b.js">
-    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-4ab9cc05.js">
+    <link rel="modulepreload" crossorigin href="/DealMeal/assets/header-1a60f231.js">
     <link rel="stylesheet" href="/DealMeal/assets/bootstrap-c278d8d2.css">
   </head>
 
@@ -64,9 +64,10 @@
     <nav class="stickyWithNav d-lg-none bg-primary">
       <div class="container">
         <div class="row">
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
-          <button type="button" class="col-4 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">全部商品</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">塑身系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">增肌系列</button>
+          <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">早餐系列</button>
         </div>
       </div>
     </nav>
@@ -76,6 +77,7 @@
         <!-- pc選單 -->
         <aside class="col-lg-3">
           <div class="d-none  d-lg-flex flex-column stickyWithNav d-none">
+            <button type="button" class="btn btn-primary rounded-0 text-light-brown">全部商品</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">塑身系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">增肌系列</button>
             <button type="button" class="btn btn-primary rounded-0 text-light-brown">早餐系列</button>
@@ -84,6 +86,27 @@
 
         <div class="col-lg-9">
           <div class="row pt-3 pt-lg-0 productsList">
+          </div>
+          <div class="row justify-content-center">
+            <div class=" d-flex justify-content-end pagination">
+              <a class="btn btn-primary" type="button" data-page="previous">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEVSURBVHgB7di9DcIwEIbhCzQpkw0YgVHYABiDkklgJJgAKKniMp25r7OiQHM/VsQ9EgJcfa+UwgpRCCGEEP5I13X7vu8H/jzwm4QacoTBTdNci6M0DENPAityMjMeEgm5BHwZTznnMwmZP0I/xh9TSlcSMg2wHg9mAR7jwSTAazyoB3iOB9UA7/GgFlBjPKgE1BoP4oCa40EcgEsZf23KM6/xoHGV6GbOMjlZk1Dbtm9+hHblGf7z+XMcxzsZEwfwyBuPfdWKEAdAzQiVAKgVoRYANSJUA8A7Qj0APCNMAsArwiwAPCJMA8A6wu29EF/6Djz6MjleznshXO5wyZsek5D5I1QqHqct/nPQCWcUQgghhIX6AN0t2dn7Xi3YAAAAAElFTkSuQmCC" alt="" data-page="previous">
+              </a>
+              <a class="btn btn-primary" type="button" data-page="1">1</a>
+              <a class="btn btn-primary" type="button" data-page="2">2</a>
+              <a class="btn btn-primary" type="button" data-page="3">3</a>
+              <a class="btn btn-primary" type="button" data-page="4">4</a>
+              <a class="btn btn-primary" type="button" data-page="5">5</a>
+              <a class="btn btn-primary" type="button" data-page="6">6</a>
+              <a class="btn btn-primary" type="button" data-page="7">7</a>
+              <a class="btn btn-primary" type="button" data-page="8">8</a>
+              <a class="btn btn-primary" type="button" data-page="9">9</a>
+              <a class="btn btn-primary" type="button" data-page="10">10</a>
+              <a class="btn btn-primary" type="button" data-page="11">11</a>
+              <a class="btn btn-primary" type="button" data-page="next">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEfSURBVHgB7dgxbsJAEIXhcdLY3bpLmSPkKLlBkjLHyEnCETgKnAAoqbylOzOvsxBCSDPzVkjzSQjY6v2YwrJISimllJ5YKeVrHMdJXwd8FrJXMRqGYatvb/oqXdd99n1/nOd5LyQvYlfWXzRiw7wS5iugv/gZv/z6jHklzAE6cqdjT60izAHQMsIlAFpFuAVAiwjXAGBHuAcAMyIkAFgRYQHAiAgNgOiITkj09uJbR/9fHddpmkYx8LgXetRy46yKESUAN3e4ybs+X5blT4zC/0J3xv/UWjdiFBoQPR7CAhjjISSANR7cA5jjwTWAPR7cAlqMB5eAVuPBHNByPJgD8EBL397XZ6zx4P5ciDkevJ4LfeCzjv9ljk8ppZRSaxc2tNXq2BPJzAAAAABJRU5ErkJggg==" alt="" data-page="next">
+              </a>
+            </div>
           </div>
         </div>
 
@@ -111,6 +134,7 @@
     </div>
 </footer>    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     
+    <script src="../config.js"></script>
     
   </body>
 </html>

@@ -1,4 +1,4 @@
-import"./bootstrap.min-d005857b.js";import"./header-4ab9cc05.js";const a=location.href.split("=")[1],i=document.querySelector(".mealDetail"),n="https://dealmealserver.onrender.com";function o(e){let l="",t=e[0],s="";t.storage>0?s=`
+import"./bootstrap.min-d005857b.js";import"./header-1a60f231.js";import"./config-b9ecf40d.js";const a=location.href.split("=")[1],i=document.querySelector(".mealDetail");function n(e){let l="",t=e[0],s="";t.storage>0?s=`
         <div class="d-flex align-items-center mb-4">
             <p class="mealQuatity me-3">數量</p>
                         
@@ -61,4 +61,4 @@ import"./bootstrap.min-d005857b.js";import"./header-4ab9cc05.js";const a=locatio
             <p>${t.heat.pan}</p>
         </div>
     </div>
-    `,i.innerHTML=l}function r(){axios.get(`${n}/products?id=${a}`).then(function(e){o(e.data)}).catch(function(e){console.log(e)})}r();
+    `,i.innerHTML=l}function o(){axios.get(`${_url}/products?id=${a}`).then(function(e){n(e.data)}).catch(function(e){console.log(e)})}o();
