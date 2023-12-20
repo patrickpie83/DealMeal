@@ -1,4 +1,4 @@
-import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./config-b9ecf40d.js";const a=document.querySelector(".orderStatusTitle"),t=document.querySelector(".orderListContent");let c=location.href.split("=")[1];c=="notProcessedOrder"?(c="尚未處理",a.textContent="尚未處理的訂單"):c=="processingOrder"?(c="揀貨中",a.textContent="揀貨中的訂單"):c=="deliveringOrder"?(c="出貨中",a.textContent="出貨中的訂單"):c=="canceledOrder"?(c="訂單取消",a.textContent="已取消的訂單"):c=="completedOrder"&&(c="訂單完成",a.textContent="已完成的訂單");f();function f(){axios.get(`${_url}/orders`).then(function(o){p(o.data)}).catch(function(o){console.log(o)})}function p(o){let i="";o.forEach(function(e){if(e.status==c){let l="";e.status=="尚未處理"?l=`
+import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const a=document.querySelector(".orderStatusTitle"),t=document.querySelector(".orderListContent");let c=location.href.split("=")[1];const f="http://localhost:3000";Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:r=>{r.onmouseenter=Swal.stopTimer,r.onmouseleave=Swal.resumeTimer}});c=="notProcessedOrder"?(c="尚未處理",a.textContent="尚未處理的訂單"):c=="processingOrder"?(c="揀貨中",a.textContent="揀貨中的訂單"):c=="deliveringOrder"?(c="出貨中",a.textContent="出貨中的訂單"):c=="canceledOrder"?(c="訂單取消",a.textContent="已取消的訂單"):c=="completedOrder"&&(c="訂單完成",a.textContent="已完成的訂單");p();function p(){axios.get(`${f}/orders`).then(function(r){h(r.data)}).catch(function(r){console.log(r)})}function h(r){let i="";r.forEach(function(e){if(e.status==c){let d="";e.status=="尚未處理"?d=`
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="notProcessed-${e.id}" checked>
                     <label class="form-check-label" for="notProcessed-${e.id}">尚未處理</label>
@@ -19,7 +19,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="orderCompleted-${e.id}">
                     <label class="form-check-label" for="orderCompleted-${e.id}">訂單完成</label>
                 </div>
-                `:e.status=="揀貨中"?l=`
+                `:e.status=="揀貨中"?d=`
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="notProcessed-${e.id}">
                     <label class="form-check-label" for="notProcessed-${e.id}">尚未處理</label>
@@ -40,7 +40,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="orderCompleted-${e.id}">
                     <label class="form-check-label" for="orderCompleted-${e.id}">訂單完成</label>
                 </div>
-                `:e.status=="出貨中"?l=`
+                `:e.status=="出貨中"?d=`
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="notProcessed-${e.id}">
                     <label class="form-check-label" for="notProcessed-${e.id}">尚未處理</label>
@@ -61,7 +61,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="orderCompleted-${e.id}">
                     <label class="form-check-label" for="orderCompleted-${e.id}">訂單完成</label>
                 </div>
-                `:e.status=="訂單取消"?l=`
+                `:e.status=="訂單取消"?d=`
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="notProcessed-${e.id}">
                     <label class="form-check-label" for="notProcessed-${e.id}">尚未處理</label>
@@ -82,7 +82,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="orderCompleted-${e.id}">
                     <label class="form-check-label" for="orderCompleted-${e.id}">訂單完成</label>
                 </div>
-                `:e.status=="訂單完成"&&(l=`
+                `:e.status=="訂單完成"&&(d=`
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="notProcessed-${e.id}">
                     <label class="form-check-label" for="notProcessed-${e.id}">尚未處理</label>
@@ -103,14 +103,14 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-663d3a3c.js";import"./
                     <input class="form-check-input" type="radio" name="orderState-${e.id}" id="orderCompleted-${e.id}" checked>
                     <label class="form-check-label" for="orderCompleted-${e.id}">訂單完成</label>
                 </div>
-                `);let d=e.cart,s="";for(let r=0;r<d.length;r++)r==d.length-1?s+=`${d[r].productName}X${d[r].quantity}`:s+=`${d[r].productName}X${d[r].quantity}、`;let n="";e.couponDiscount?n=`${e.couponDiscount}`:n="無",i+=`
+                `);let o=e.cart,s="";for(let l=0;l<o.length;l++)l==o.length-1?s+=`${o[l].productName}X${o[l].quantity}`:s+=`${o[l].productName}X${o[l].quantity}、`;let n="";e.couponDiscount?n=`${e.couponDiscount}`:n="無",i+=`
             <tr>
                 <td>${e.orderDate}</td>
                 <td>${e.id}</td>
                 <td>${e.deliverInfo.name}</td>
 
                 <td>
-                ${l}
+                ${d}
                 </td>
 
                 <td>
