@@ -1,4 +1,4 @@
-import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=document.querySelector(".editBtn"),u=document.querySelector(".finishBtn"),i=document.querySelector(".finishContent"),f=document.querySelector(".finishConfirmBtn"),r=document.querySelector(".productListContent"),c="http://localhost:3000",p=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});h();function h(){axios.get(`${c}/products`).then(function(e){$(e.data)}).catch(function(e){console.log(e)}),axios.get(`${c}/productsEditTemp`).then(function(e){e.data.forEach(function(a){axios.delete(`${c}/productsEditTemp/${a.id}`).then(function(t){}).catch(function(t){console.log(t)})})}).catch(function(e){console.log(e)})}function $(e){let a="";e.forEach(function(t){let n="",o=t.state;o=="販售中"?n=`
+import"./bootstrap.min-f122c4cb.js";import"./admin-header-e186e282.js";const m=document.querySelector(".filterArea"),S=document.querySelector("#selectStatus"),b=document.querySelector("#selectSeries"),h=document.querySelector(".editBtn"),g=document.querySelector(".finishBtn"),$=document.querySelector(".finishContent"),k=document.querySelector(".finishConfirmBtn"),p=document.querySelector(".productListContent"),d="http://localhost:3000",v=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});x();let c=[],i=[];function x(){axios.get(`${d}/products`).then(function(e){c=e.data,i=c,u(c)}).catch(function(e){console.log(e)}),axios.get(`${d}/productsEditTemp`).then(function(e){e.data.forEach(function(a){axios.delete(`${d}/productsEditTemp/${a.id}`).then(function(t){}).catch(function(t){console.log(t)})})}).catch(function(e){console.log(e)})}function u(e){let a="";e.forEach(function(t){let s="",o=t.state;o=="販售中"?s=`
             <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input ms-auto" type="radio" name="productState-${t.name}" id="onSale-${t.name}" checked disabled>
@@ -13,7 +13,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                     </label>
                 </div>
             </td>
-            `:o=="完售中"&&(n=`
+            `:o=="完售中"&&(s=`
             <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input ms-auto" type="radio" name="productState-${t.name}" id="onSale-${t.name}" disabled>
@@ -28,7 +28,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                     </label>
                 </div>
             </td>
-            `);let s="";t.storage<=0?s='<span class="text-danger">庫存量：無</span>':t.storage<=10?s='<span class="text-info">庫存量：低</span>':t.storage<=20?s='<span class="text-success">庫存量：中</span>':s='<span class="text-primary">庫存量：高</span>',a+=`
+            `);let n="";t.storage<=0?n='<span class="text-danger">庫存量：無</span>':t.storage<=10?n='<span class="text-info">庫存量：低</span>':t.storage<=20?n='<span class="text-success">庫存量：中</span>':n='<span class="text-primary">庫存量：高</span>',a+=`
         <tr class="align-middle border border-primary">
             <td class="p-3" style="width: 110px;">
                 <div class="ratio ratio-1x1 ">
@@ -38,10 +38,10 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
             <td>${t.series}</td>
             <td>${t.name}</td>
             <td>${t.price}元</td>
-            ${n}
+            ${s}
             <td>
                 <span>${t.storage}份，</span>
-                ${s}
+                ${n}
             </td>
             <td>
                 <input type="number" disabled>
@@ -50,7 +50,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                 <a href="admin-detail.html?id=${t.id}">詳細內容</a>
             </td>
         </tr>
-        `}),r.innerHTML=a}l.addEventListener("click",function(e){axios.get(`${c}/products`).then(function(a){a.data.forEach(function(t){axios.post(`${c}/productsEditTemp`,t).then(function(n){}).catch(function(n){console.log(n)})}),g(a.data),u.classList.remove("disabled"),l.classList.add("disabled")}).catch(function(a){console.log(a)})});function g(e){let a="";e.forEach(function(t){let n="",o=t.state;o=="販售中"?n=`
+        `}),p.innerHTML=a}h.addEventListener("click",function(e){c.forEach(function(a){axios.post(`${d}/productsEditTemp`,a).then(function(t){}).catch(function(t){console.log(t)})}),y(c),g.classList.remove("disabled"),h.classList.add("disabled"),S.disabled="ture",b.disabled="ture"});function y(e){let a="";e.forEach(function(t){let s="",o=t.state;o=="販售中"?s=`
             <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input ms-auto" type="radio" name="productState-${t.name}" id="onSale-${t.name}" data-js="editState" data-js-id="${t.id}" data-js-name="${t.name}" data-js-state="販售中" checked>
@@ -65,7 +65,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                     </label>
                 </div>
             </td>
-            `:o=="完售中"&&(n=`
+            `:o=="完售中"&&(s=`
             <td>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input ms-auto" type="radio" name="productState-${t.name}" id="onSale-${t.name}" data-js="editState" data-js-id="${t.id}" data-js-name="${t.name}" data-js-state="販售中">
@@ -80,7 +80,7 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                     </label>
                 </div>
             </td>
-            `);let s="";t.storage<=0?s='<span class="text-danger">庫存量：無</span>':t.storage<=10?s='<span class="text-info">庫存量：低</span>':t.storage<=20?s='<span class="text-success">庫存量：中</span>':s='<span class="text-primary">庫存量：高</span>',a+=`
+            `);let n="";t.storage<=0?n='<span class="text-danger">庫存量：無</span>':t.storage<=10?n='<span class="text-info">庫存量：低</span>':t.storage<=20?n='<span class="text-success">庫存量：中</span>':n='<span class="text-primary">庫存量：高</span>',a+=`
         <tr class="align-middle border border-primary">
             <td class="p-3" style="width: 110px;">
                 <div class="ratio ratio-1x1 ">
@@ -90,10 +90,10 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
             <td>${t.series}</td>
             <td>${t.name}</td>
             <td>${t.price}元</td>
-            ${n}
+            ${s}
             <td>
                 <span>${t.storage}份，</span>
-                ${s}
+                ${n}
             </td>
             <td>
                 <input type="number" min="0" data-js="editStorage" data-js-id="${t.id}">
@@ -102,9 +102,9 @@ import"./bootstrap.min-d005857b.js";import"./admin-header-e186e282.js";const l=d
                 <a >詳細內容</a>
             </td>
         </tr>
-        `}),r.innerHTML=a}r.addEventListener("click",function(e){if(e.target.getAttribute("data-js")=="editState"){let a=e.target.getAttribute("data-js-id"),t=e.target.getAttribute("data-js-state");axios.patch(`${c}/productsEditTemp/${a}`,{state:t}).then(function(n){}).catch(function(n){console.log(n)})}});r.addEventListener("change",function(e){if(e.target.getAttribute("data-js")=="editStorage"){let a=e.target.getAttribute("data-js-id"),t=Number(e.target.value);axios.get(`${c}/products/${a}`).then(function(n){let o=n.data.storage;axios.patch(`${c}/productsEditTemp/${a}`,{storage:o+t}).then(function(s){}).catch(function(s){console.log(s)})}).catch(function(n){console.log(n)})}});let d="";u.addEventListener("click",function(e){axios.get(`${c}/productsEditTemp`).then(function(a){axios.get(`${c}/products`).then(function(t){d="";let n=[];n=t.data,a.data.forEach(function(o){n.forEach(function(s){o.id==s.id&&(o.state!=s.state||o.storage!=s.storage)&&(d+=`<span class="text-danger">${o.name}</span> 的架上狀態修改為 <span class="text-danger">${o.state}</span> ，所增加庫存量為 <span class="text-danger">${o.storage-s.storage} 份</span><br>`)})}),d?i.innerHTML=`
-                本次編輯的資料為<br>
-                ${d}
-                `:i.innerHTML=`
-                無變更資料，確認後離開編輯模式
-                `}).catch(function(t){console.log(t)})}).catch(function(a){console.log(a)})});f.addEventListener("click",function(e){d?axios.get(`${c}/productsEditTemp`).then(function(a){let t=a.data.length,n=0;a.data.forEach(function(o){axios.patch(`${c}/products/${o.id}`,o).then(function(s){n+=1,n==t&&p.fire({icon:"success",title:"修改成功"}).then(m=>{location.reload()})}).catch(function(s){console.log(s)})})}).catch(function(a){console.log(a)}):location.reload()});
+        `}),p.innerHTML=a}p.addEventListener("click",function(e){if(e.target.getAttribute("data-js")=="editState"){let a=e.target.getAttribute("data-js-id"),t=e.target.getAttribute("data-js-state");axios.patch(`${d}/productsEditTemp/${a}`,{state:t}).then(function(s){}).catch(function(s){console.log(s)})}});p.addEventListener("change",function(e){if(e.target.getAttribute("data-js")=="editStorage"){let a=e.target.getAttribute("data-js-id"),t=Number(e.target.value);axios.get(`${d}/products/${a}`).then(function(s){let o=s.data.storage;axios.patch(`${d}/productsEditTemp/${a}`,{storage:o+t}).then(function(n){}).catch(function(n){console.log(n)})}).catch(function(s){console.log(s)})}});let f="";g.addEventListener("click",function(e){axios.get(`${d}/productsEditTemp`).then(function(a){f="",a.data.forEach(function(t){c.forEach(function(s){t.id==s.id&&(t.state!=s.state||t.storage!=s.storage)&&(f+=`<span class="text-danger">${t.name}</span> 的架上狀態修改為 <span class="text-danger">${t.state}</span> ，所增加庫存量為 <span class="text-danger">${t.storage-s.storage} 份</span><br>`)})}),f?$.innerHTML=`
+            本次編輯的資料為<br>
+            ${f}
+            `:$.innerHTML=`
+            無變更資料，確認後離開編輯模式
+            `}).catch(function(a){console.log(a)})});k.addEventListener("click",function(e){f?axios.get(`${d}/productsEditTemp`).then(function(a){let t=a.data.length,s=0;a.data.forEach(function(o){axios.patch(`${d}/products/${o.id}`,o).then(function(n){s+=1,s==t&&v.fire({icon:"success",title:"修改成功"}).then(E=>{location.reload()})}).catch(function(n){console.log(n)})})}).catch(function(a){console.log(a)}):location.reload()});let r="全部",l="全部";m.addEventListener("change",function(e){let a=[];e.target.getAttribute("id")=="selectStatus"?r=e.target.value:e.target.getAttribute("id")=="selectSeries"&&(l=e.target.value),console.log(r),console.log(l),r=="全部"&&l=="全部"?(c=i,u(c)):l=="全部"?(i.forEach(function(t){t.state==r&&a.push(t)}),c=a,u(c)):r=="全部"?(i.forEach(function(t){t.series==l&&a.push(t)}),c=a,u(c)):(i.forEach(function(t){t.state==r&&t.series==l&&a.push(t)}),c=a,u(c))});
