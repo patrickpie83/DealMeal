@@ -1,10 +1,12 @@
-import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const g=document.querySelector(".mealDetail"),v=location.href.split("=")[1],n="https://dealmealserver.onrender.com",h=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});function y(e){let a="",t=e[0],o="";t.storage>0?o=`
+import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const h=document.querySelector(".mealDetail"),v=location.href.split("=")[1],n="https://dealmealserver.onrender.com",g=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:e=>{e.onmouseenter=Swal.stopTimer,e.onmouseleave=Swal.resumeTimer}});function y(e){let a="",t=e[0],o="",i="";t.storage>0?(o=`
         <div class="d-flex align-items-center mb-4">
             <p class="mealQuatity me-3">數量</p>
              <input type="number" class="rounded-0 mx-2 border border-primary w-75" value="1" min="1" max="${t.storage}" data-js="addCartQuantity">
         </div>
         <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
-        `:o='<p class="mealQuatity">完售中</p>',a+=`
+        `,i=`
+        <p class="mealStorage mb-lg-4">即時庫存：${t.storage}份</p>
+        `):o='<p class="mealQuatity">完售中</p>',a+=`
     <div class="row justify-content-between mb-7">
         <div class="col-lg-6">
             <div class="ratio ratio-1x1">
@@ -15,7 +17,7 @@ import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const g=documen
             <div>
                 <span class="mb-3 text-dark-brown">${t.series}</span>
                 <h1 class="mealName mb-4 mb-lg-4">${t.name}</h1>
-                <p class="mealStorage mb-lg-4">即時庫存：${t.storage}份</p>
+                ${i}
                 <p class="mealPrice fw-bold">售價：${t.price}元</p>
             </div>
             <div class="mt-4 mt-lg-0">
@@ -52,4 +54,4 @@ import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const g=documen
             <p>${t.heat.pan}</p>
         </div>
     </div>
-    `,g.innerHTML=a}function I(){axios.get(`${n}/products?id=${v}`).then(function(e){y(e.data)}).catch(function(e){console.log(e)})}I();let x=1;g.addEventListener("change",function(e){e.target.getAttribute("data-js")=="addCartQuantity"&&(x=Number(e.target.value))});g.addEventListener("click",function(e){e.target.textContent=="加入購物車"&&S(v,x)});function S(e,a){let t=localStorage.getItem("userId");if(!t)h.fire({icon:"warning",title:"請先登入會員"}).then(o=>{window.location.href="login.html"});else{let o,d,p,m,i,b;axios.get(`${n}/products/${e}`).then(function(s){o=s.data.image,d=s.data.series,p=s.data.storage,m=s.data.name,i=s.data.price,axios.get(`${n}/users/${t}`).then(function(u){let w=crypto.randomUUID();u.data.cartExist?axios.get(`${n}/carts/${t}`).then(function(l){let c=l.data.cart,f=[];b=l.data.total;let $=!1;c.forEach(function(r){r.productId==e&&(r.quantity+=a,$=!0)}),$||c.push({productId:e,cartItemId:w,productImage:o,productSeries:d,productStorage:p,productName:m,productPrice:i,quantity:a}),f=c,axios.patch(`${n}/carts/${t}`,{cart:f,total:b+i*a}).then(function(r){h.fire({icon:"success",title:"已加入購物車"}).then(C=>{location.reload()})}).catch(function(r){console.log(r)})}).catch(function(l){console.log(l)}):axios.post(`${n}/carts`,{id:t,cart:[{productId:e,cartItemId:w,productImage:o,productSeries:d,productStorage:p,productName:m,productPrice:i,quantity:a}],total:i*a+80}).then(function(l){h.fire({icon:"success",title:"已加入購物車"}).then(c=>{location.reload()})}).catch(function(l){console.log(l)}),axios.patch(`${n}/users/${t}`,{cartExist:!0})}).catch(function(u){console.log(u)})}).catch(function(s){console.log(s)})}}
+    `,h.innerHTML=a}function S(){axios.get(`${n}/products?id=${v}`).then(function(e){y(e.data)}).catch(function(e){console.log(e)})}S();let x=1;h.addEventListener("change",function(e){e.target.getAttribute("data-js")=="addCartQuantity"&&(x=Number(e.target.value))});h.addEventListener("click",function(e){e.target.textContent=="加入購物車"&&I(v,x)});function I(e,a){let t=localStorage.getItem("userId");if(!t)g.fire({icon:"warning",title:"請先登入會員"}).then(o=>{window.location.href="login.html"});else{let o,i,p,m,r,b;axios.get(`${n}/products/${e}`).then(function(s){o=s.data.image,i=s.data.series,p=s.data.storage,m=s.data.name,r=s.data.price,axios.get(`${n}/users/${t}`).then(function(u){let w=crypto.randomUUID();u.data.cartExist?axios.get(`${n}/carts/${t}`).then(function(l){let c=l.data.cart,f=[];b=l.data.total;let $=!1;c.forEach(function(d){d.productId==e&&(d.quantity+=a,$=!0)}),$||c.push({productId:e,cartItemId:w,productImage:o,productSeries:i,productStorage:p,productName:m,productPrice:r,quantity:a}),f=c,axios.patch(`${n}/carts/${t}`,{cart:f,total:b+r*a}).then(function(d){g.fire({icon:"success",title:"已加入購物車"}).then(C=>{location.reload()})}).catch(function(d){console.log(d)})}).catch(function(l){console.log(l)}):axios.post(`${n}/carts`,{id:t,cart:[{productId:e,cartItemId:w,productImage:o,productSeries:i,productStorage:p,productName:m,productPrice:r,quantity:a}],total:r*a+80}).then(function(l){g.fire({icon:"success",title:"已加入購物車"}).then(c=>{location.reload()})}).catch(function(l){console.log(l)}),axios.patch(`${n}/users/${t}`,{cartExist:!0})}).catch(function(u){console.log(u)})}).catch(function(s){console.log(s)})}}
