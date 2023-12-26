@@ -1,4 +1,4 @@
-import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=document.querySelector(".productsList"),S=document.querySelector(".mobileSeriesFilter"),I=document.querySelector(".pcSeriesFilter"),C=document.querySelector(".pagination"),l="http://localhost:3000",y=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:o=>{o.onmouseenter=Swal.stopTimer,o.onmouseleave=Swal.resumeTimer}});let m=[],s,r="全部商品";function h(o){let n=["全部商品","塑身系列","增肌系列","早餐系列"],e="",a="";n.forEach(function(i){i==o?(e+=`
+import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const B=document.querySelector(".productsList"),S=document.querySelector(".mobileSeriesFilter"),I=document.querySelector(".pcSeriesFilter"),C=document.querySelector(".pagination"),l="https://dealmealserver.onrender.com",y=Swal.mixin({toast:!0,position:"top",showConfirmButton:!1,timer:1e3,timerProgressBar:!1,didOpen:o=>{o.onmouseenter=Swal.stopTimer,o.onmouseleave=Swal.resumeTimer}});let m=[],r,s="全部商品";function f(o){let n=["全部商品","塑身系列","增肌系列","早餐系列"],e="",a="";n.forEach(function(i){i==o?(e+=`
         <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown active">${i}</button>
         `,a+=`
         <button type="button" class="btn btn-primary rounded-0 text-light-brown active">${i}</button>
@@ -6,7 +6,7 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
         <button type="button" class="fs-7 col-3 btn btn-primary rounded-0 text-light-brown">${i}</button>
         `,a+=`
         <button type="button" class="btn btn-primary rounded-0 text-light-brown">${i}</button>
-        `)}),S.innerHTML=e,I.innerHTML=a}function f(o){let n="";o.forEach(function(t){let u="",p="",c="";t.storage<=0||t.state=="完售中"?(c="完售中",u="soldOutFilter",p="d-none"):c=`即時庫存：${t.storage}份`,n+=`
+        `)}),S.innerHTML=e,I.innerHTML=a}function h(o){let n="";o.forEach(function(t){let u="",p="",c="";t.storage<=0||t.state=="完售中"?(c="完售中",u="soldOutFilter",p="d-none"):c=`即時庫存：${t.storage}份`,n+=`
       <div class="col-6 mb-5 mb-lg-7 ${u} ">
         <div class="card rounded-0 border-0">
           <div class="position-relative">
@@ -41,11 +41,11 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
           <img data-js="addCartBtn" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_cart.png?raw=true" alt="icon_cart" style="height: 16px;" data-js="addCartBtn" data-productId="${t.id}">
         </button>
       </div>
-      `}),B.innerHTML=n;let e="",a="",i=Math.ceil(m.length/4);if(i<=7){for(let t=1;t<=i;t++)s==t?a+=`
+      `}),B.innerHTML=n;let e="",a="",i=Math.ceil(m.length/4);if(i<=7){for(let t=1;t<=i;t++)r==t?a+=`
         <button class="btn btn-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
         `:a+=`
         <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
-        `;i==1?e=a:s==1?e=`
+        `;i==1?e=a:r==1?e=`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous" disabled>
         <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
       </button>
@@ -53,7 +53,7 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
         <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
       </button>
-      `:s==i?e=`
+      `:r==i?e=`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
         <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
       </button>
@@ -69,27 +69,27 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
         <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
       </button>
-      `}else{if(s<=4){for(let t=1;t<=6;t++)s==t?a+=`
+      `}else{if(r<=4){for(let t=1;t<=6;t++)r==t?a+=`
           <button class="btn btn-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
           `:a+=`
           <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
           `;a+=`
       <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${i}">${i}</button>
-      `}else if(s>=i-3){a+=`
+      `}else if(r>=i-3){a+=`
       <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="1">1</button>
-      `;for(let t=i-5;t<=i;t++)s==t?a+=`
+      `;for(let t=i-5;t<=i;t++)r==t?a+=`
           <button class="btn btn-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
           `:a+=`
           <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
-          `}else if(s>4&&s<i-3){a+=`
+          `}else if(r>4&&r<i-3){a+=`
       <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="1">1</button>
-      `;for(let t=s-2;t<=s+2;t++)s==t?a+=`
+      `;for(let t=r-2;t<=r+2;t++)r==t?a+=`
           <button class="btn btn-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
           `:a+=`
           <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${t}">${t}</button>
           `;a+=`
       <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${i}">${i}</button>
-      `}s==1?e=`
+      `}r==1?e=`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous" disabled>
         <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
       </button>
@@ -97,7 +97,7 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
         <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
       </button>
-      `:s==i?e=`
+      `:r==i?e=`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
         <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
       </button>
@@ -113,4 +113,4 @@ import"./bootstrap.min-f122c4cb.js";import"./header-3fefa29a.js";const B=documen
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
         <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
       </button>
-      `}C.innerHTML=e}function v(){axios.get(`${l}/products`).then(function(o){m=o.data,axios.get(`${l}/products?_page=1&_limit=4`).then(function(n){s=1,f(n.data),h(r)}).catch(function(n){console.log(n)})}).catch(function(o){console.log(o)})}v();function E(o){let n=localStorage.getItem("userId");if(!n)y.fire({icon:"warning",title:"請先登入會員"}).then(e=>{window.location.href="login.html"});else{let e,a,i,t,u,p;axios.get(`${l}/products/${o}`).then(function(c){e=c.data.image,a=c.data.series,i=c.data.storage,t=c.data.name,u=c.data.price,axios.get(`${l}/users/${n}`).then(function(x){let w=crypto.randomUUID();x.data.cartExist?axios.get(`${l}/carts/${n}`).then(function(d){let g=d.data.cart,$=[];p=d.data.total;let _=!1;g.forEach(function(b){b.productId==o&&(b.quantity+=1,_=!0)}),_||g.push({productId:o,cartItemId:w,productImage:e,productSeries:a,productStorage:i,productName:t,productPrice:u,quantity:1}),$=g,axios.patch(`${l}/carts/${n}`,{cart:$,total:p+u}).then(function(b){y.fire({icon:"success",title:"已加入購物車"}).then(L=>{location.reload()})}).catch(function(b){console.log(b)})}).catch(function(d){console.log(d)}):axios.post(`${l}/carts`,{id:n,cart:[{productId:o,cartItemId:w,productImage:e,productSeries:a,productStorage:i,productName:t,productPrice:u,quantity:1}],total:u+80}).then(function(d){y.fire({icon:"success",title:"已加入購物車"}).then(g=>{location.reload()})}).catch(function(d){console.log(d)}),axios.patch(`${l}/users/${n}`,{cartExist:!0})}).catch(function(x){console.log(x)})}).catch(function(c){console.log(c)})}}B.addEventListener("click",function(o){if(o.target.getAttribute("data-js")==="addCartBtn"){let n=o.target.getAttribute("data-productId");E(n)}});C.addEventListener("click",function(o){o.preventDefault();let n=o.target.getAttribute("data-page");n=="previous"?s-=1:n=="next"?s+=1:n&&(s=Number(n)),r=="全部商品"?axios.get(`${l}/products?_page=${s}&_limit=4`).then(function(e){f(e.data)}).catch(function(e){console.log(e)}):axios.get(`${l}/products?series=${r}&_page=${s}&_limit=4`).then(function(e){f(e.data)}).catch(function(e){console.log(e)})});S.addEventListener("click",function(o){r=o.target.textContent,h(r),r=="全部商品"?v():axios.get(`${l}/products?series=${r}`).then(function(n){m=n.data,axios.get(`${l}/products?series=${r}&_page=1&_limit=4`).then(function(e){s=1,f(e.data),h(r)}).catch(function(e){console.log(e)})}).catch(function(n){console.log(n)})});I.addEventListener("click",function(o){r=o.target.textContent,h(r),r=="全部商品"?v():axios.get(`${l}/products?series=${r}`).then(function(n){m=n.data,axios.get(`${l}/products?series=${r}&_page=1&_limit=4`).then(function(e){s=1,f(e.data),h(r)}).catch(function(e){console.log(e)})}).catch(function(n){console.log(n)})});
+      `}C.innerHTML=e}function v(){axios.get(`${l}/products`).then(function(o){m=o.data,axios.get(`${l}/products?_page=1&_limit=4`).then(function(n){r=1,h(n.data),f(s)}).catch(function(n){console.log(n)})}).catch(function(o){console.log(o)})}v();function E(o){let n=localStorage.getItem("userId");if(!n)y.fire({icon:"warning",title:"請先登入會員"}).then(e=>{window.location.href="login.html"});else{let e,a,i,t,u,p;axios.get(`${l}/products/${o}`).then(function(c){e=c.data.image,a=c.data.series,i=c.data.storage,t=c.data.name,u=c.data.price,axios.get(`${l}/users/${n}`).then(function(x){let w=crypto.randomUUID();x.data.cartExist?axios.get(`${l}/carts/${n}`).then(function(d){let g=d.data.cart,$=[];p=d.data.total;let _=!1;g.forEach(function(b){b.productId==o&&(b.quantity+=1,_=!0)}),_||g.push({productId:o,cartItemId:w,productImage:e,productSeries:a,productStorage:i,productName:t,productPrice:u,quantity:1}),$=g,axios.patch(`${l}/carts/${n}`,{cart:$,total:p+u}).then(function(b){y.fire({icon:"success",title:"已加入購物車"}).then(L=>{location.reload()})}).catch(function(b){console.log(b)})}).catch(function(d){console.log(d)}):axios.post(`${l}/carts`,{id:n,cart:[{productId:o,cartItemId:w,productImage:e,productSeries:a,productStorage:i,productName:t,productPrice:u,quantity:1}],total:u+80}).then(function(d){y.fire({icon:"success",title:"已加入購物車"}).then(g=>{location.reload()})}).catch(function(d){console.log(d)}),axios.patch(`${l}/users/${n}`,{cartExist:!0})}).catch(function(x){console.log(x)})}).catch(function(c){console.log(c)})}}B.addEventListener("click",function(o){if(o.target.getAttribute("data-js")==="addCartBtn"){let n=o.target.getAttribute("data-productId");E(n)}});C.addEventListener("click",function(o){o.preventDefault();let n=o.target.getAttribute("data-page");n=="previous"?r-=1:n=="next"?r+=1:n&&(r=Number(n)),s=="全部商品"?axios.get(`${l}/products?_page=${r}&_limit=4`).then(function(e){h(e.data)}).catch(function(e){console.log(e)}):axios.get(`${l}/products?series=${s}&_page=${r}&_limit=4`).then(function(e){h(e.data)}).catch(function(e){console.log(e)})});S.addEventListener("click",function(o){s=o.target.textContent,f(s),s=="全部商品"?v():axios.get(`${l}/products?series=${s}`).then(function(n){m=n.data,axios.get(`${l}/products?series=${s}&_page=1&_limit=4`).then(function(e){r=1,h(e.data),f(s)}).catch(function(e){console.log(e)})}).catch(function(n){console.log(n)})});I.addEventListener("click",function(o){s=o.target.textContent,f(s),s=="全部商品"?v():axios.get(`${l}/products?series=${s}`).then(function(n){m=n.data,axios.get(`${l}/products?series=${s}&_page=1&_limit=4`).then(function(e){r=1,h(e.data),f(s)}).catch(function(e){console.log(e)})}).catch(function(n){console.log(n)})});
