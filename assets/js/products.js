@@ -153,11 +153,11 @@ function renderProducts(data){
       // 如果是在第一頁，不會有前頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous" disabled>
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
 
@@ -165,11 +165,11 @@ function renderProducts(data){
       // 如果是在最後一頁，不會有後頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next" disabled>
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
 
@@ -177,11 +177,11 @@ function renderProducts(data){
       //有前後頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
     }
@@ -267,22 +267,22 @@ function renderProducts(data){
       // 如果是在第一頁，不會有前頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous" disabled>
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src=".https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
     }else if(currentPageNum == lastPageNum){
       // 如果是在最後一頁，不會有後頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next" disabled>
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
 
@@ -290,11 +290,11 @@ function renderProducts(data){
       //有前後頁切換按鈕
       paginationStr =`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous">
-        <img src="../assets/images/icon_chevron_left.png" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${pageNumStr}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
-        <img src="../assets/images/icon_chevron_right.png" alt="" data-page="next" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_right.png?raw=true" alt="" data-page="next" style="width: 16px;">
       </button>
       `;
     }

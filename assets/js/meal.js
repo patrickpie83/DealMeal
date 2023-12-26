@@ -23,6 +23,7 @@ function renderData(data){
     let str="";
     let item=data[0];
     let quantityInputStr="";
+    let storageStr="";
 
     if(item.storage > 0){
         quantityInputStr =`
@@ -31,7 +32,10 @@ function renderData(data){
              <input type="number" class="rounded-0 mx-2 border border-primary w-75" value="1" min="1" max="${item.storage}" data-js="addCartQuantity">
         </div>
         <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
-        `
+        `;
+        storageStr=`
+        <p class="mealStorage mb-lg-4">即時庫存：${item.storage}份</p>
+        `;
     }else{
         quantityInputStr =`<p class="mealQuatity">完售中</p>`
     }
@@ -47,7 +51,7 @@ function renderData(data){
             <div>
                 <span class="mb-3 text-dark-brown">${item.series}</span>
                 <h1 class="mealName mb-4 mb-lg-4">${item.name}</h1>
-                <p class="mealStorage mb-lg-4">即時庫存：${item.storage}份</p>
+                ${storageStr}
                 <p class="mealPrice fw-bold">售價：${item.price}元</p>
             </div>
             <div class="mt-4 mt-lg-0">
