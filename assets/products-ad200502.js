@@ -91,7 +91,7 @@ import"./bootstrap.min-f122c4cb.js";import"./header-cf4ee72a.js";const B=documen
       <button class="btn btn-outline-primary px-0 rounded-0 pageBtn" type="button" data-page="${i}">${i}</button>
       `}r==1?e=`
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="previous" disabled>
-        <img src=".https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
+        <img src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_chevron_left.png?raw=true" alt="" data-page="previous" style="width: 16px;">
       </button>
       ${a}
       <button class="btn btn-outline-light-brown px-0 rounded-0 pageBtn" type="button" data-page="next">
