@@ -152,8 +152,6 @@ checkCouponBtn.addEventListener("click",function(e){
         },
     };
 
-
-
     const releaseCouponDateErrors = validate(releaseCouponForm,releaseCouponDateConstraints);
     const releaseCouponIdErrors = validate(releaseCouponForm,releaseCouponIdConstraints);
     const releaseCouponNameErrors = releaseCouponName.value=="請選擇" ? true : false;

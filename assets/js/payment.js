@@ -148,7 +148,7 @@ sendOrderBtn.addEventListener("click",function(e){
     let minutes = currentDate.getMinutes();
     let seconds = currentDate.getSeconds();
 
-    let orderDate = `${year}/${month}/${day} ${hours}:${minutes}:${seconds}`;
+    let orderDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
     completeInformation.id = orderuuid;
     completeInformation.memberId = memberId;
@@ -192,13 +192,15 @@ sendOrderBtn.addEventListener("click",function(e){
     axios.get(`${_url}/users/${userId}`)
     .then(function(res){
         let historyOrderAry = res.data.historyOrder;
+        let usedCouponAry = res.data.usedCoupon;
         historyOrderAry.push(completeInformation);
+        usedCouponAry.push(completeInformation.coupon);
 
         axios.patch(`${_url}/users/${userId}`,{
-            "historyOrder":historyOrderAry
+            "historyOrder":historyOrderAry,
+            "usedCoupon":usedCouponAry
         })
         .then(function(res){
-            console.log(res);
         })
         .catch(function(err){
             console.log(err);
@@ -208,6 +210,32 @@ sendOrderBtn.addEventListener("click",function(e){
         console.log(err);
     })
 
+    let saleMonth =`${year}-${month}`;
+    let saleProducts = [];
+    //將所購買的商品，資料挑出來
+    completeInformation.cart.forEach(function(item){
+        saleProducts.push({
+            "productId": item.productId,
+            "image": item.productImage,
+            "series": item.productSeries,
+            "name": item.productName,
+            "price":item.productPrice,
+            "saleQuantity": item.quantity,
+            "saleFigures": item.productPrice*item.quantity
+        })
+    })
+
+    //送出訂單後傳送業績
+    axios.post(`${_url}/sales`,{
+        "monthId":saleMonth,
+        "products":saleProducts
+    })
+    .then(function(res){
+
+    })
+    .catch(function(err){
+        console.log(err);
+    })
 })
 
 

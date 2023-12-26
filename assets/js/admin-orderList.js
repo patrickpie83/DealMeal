@@ -1,6 +1,9 @@
+//頁面
 const orderStatusTitle=document.querySelector(".orderStatusTitle");
 const orderListContent=document.querySelector(".orderListContent");
-
+//移動訂單確認
+const moveOrderContent=document.querySelector(".moveOrderContent");
+const moveOrderConfirmBtn=document.querySelector(".moveOrderConfirmBtn");
 
 //取得header點選狀態
 let listStatus = location.href.split("=")[1];
@@ -65,115 +68,115 @@ function renderOrderList(data){
             if(item.status == "尚未處理"){
                 orderCheckInputStr =`
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="notProcessed-${item.id}" checked>
+                    <input class="form-check-input" type="radio" data-status="尚未處理" name="orderStatus-${item.id}" id="notProcessed-${item.id}" checked>
                     <label class="form-check-label" for="notProcessed-${item.id}">尚未處理</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="processing-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="揀貨中" name="orderStatus-${item.id}" id="processing-${item.id}">
                     <label class="form-check-label" for="processing-${item.id}">揀貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="delivering-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="出貨中" name="orderStatus-${item.id}" id="delivering-${item.id}">
                     <label class="form-check-label" for="delivering-${item.id}">出貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCanceled-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單取消" name="orderStatus-${item.id}" id="orderCanceled-${item.id}">
                     <label class="form-check-label" for="orderCanceled-${item.id}">訂單取消</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCompleted-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單完成" name="orderStatus-${item.id}" id="orderCompleted-${item.id}">
                     <label class="form-check-label" for="orderCompleted-${item.id}">訂單完成</label>
                 </div>
                 `
             }else if(item.status == "揀貨中"){
                 orderCheckInputStr =`
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="notProcessed-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="尚未處理" name="orderStatus-${item.id}" id="notProcessed-${item.id}">
                     <label class="form-check-label" for="notProcessed-${item.id}">尚未處理</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="processing-${item.id}" checked>
+                    <input class="form-check-input" type="radio" data-status="揀貨中" name="orderStatus-${item.id}" id="processing-${item.id}" checked>
                     <label class="form-check-label" for="processing-${item.id}">揀貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="delivering-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="出貨中" name="orderStatus-${item.id}" id="delivering-${item.id}">
                     <label class="form-check-label" for="delivering-${item.id}">出貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCanceled-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單取消" name="orderStatus-${item.id}" id="orderCanceled-${item.id}">
                     <label class="form-check-label" for="orderCanceled-${item.id}">訂單取消</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCompleted-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單完成" name="orderStatus-${item.id}" id="orderCompleted-${item.id}">
                     <label class="form-check-label" for="orderCompleted-${item.id}">訂單完成</label>
                 </div>
                 `
             }else if(item.status == "出貨中"){
                 orderCheckInputStr =`
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="notProcessed-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="尚未處理" name="orderStatus-${item.id}" id="notProcessed-${item.id}">
                     <label class="form-check-label" for="notProcessed-${item.id}">尚未處理</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="processing-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="揀貨中" name="orderStatus-${item.id}" id="processing-${item.id}">
                     <label class="form-check-label" for="processing-${item.id}">揀貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="delivering-${item.id}" checked>
+                    <input class="form-check-input" type="radio" data-status="出貨中" name="orderStatus-${item.id}" id="delivering-${item.id}" checked>
                     <label class="form-check-label" for="delivering-${item.id}">出貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCanceled-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單取消" name="orderStatus-${item.id}" id="orderCanceled-${item.id}">
                     <label class="form-check-label" for="orderCanceled-${item.id}">訂單取消</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCompleted-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單完成" name="orderStatus-${item.id}" id="orderCompleted-${item.id}">
                     <label class="form-check-label" for="orderCompleted-${item.id}">訂單完成</label>
                 </div>
                 `
             }else if(item.status == "訂單取消"){
                 orderCheckInputStr =`
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="notProcessed-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="尚未處理" name="orderStatus-${item.id}" id="notProcessed-${item.id}">
                     <label class="form-check-label" for="notProcessed-${item.id}">尚未處理</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="processing-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="揀貨中" name="orderStatus-${item.id}" id="processing-${item.id}">
                     <label class="form-check-label" for="processing-${item.id}">揀貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="delivering-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="出貨中" name="orderStatus-${item.id}" id="delivering-${item.id}">
                     <label class="form-check-label" for="delivering-${item.id}">出貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCanceled-${item.id}" checked>
+                    <input class="form-check-input" type="radio" data-status="訂單取消" name="orderStatus-${item.id}" id="orderCanceled-${item.id}" checked>
                     <label class="form-check-label" for="orderCanceled-${item.id}">訂單取消</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCompleted-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單完成" name="orderStatus-${item.id}" id="orderCompleted-${item.id}">
                     <label class="form-check-label" for="orderCompleted-${item.id}">訂單完成</label>
                 </div>
                 `
             }else if(item.status == "訂單完成"){
                 orderCheckInputStr =`
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="notProcessed-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="尚未處理" name="orderStatus-${item.id}" id="notProcessed-${item.id}">
                     <label class="form-check-label" for="notProcessed-${item.id}">尚未處理</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="processing-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="揀貨中" name="orderStatus-${item.id}" id="processing-${item.id}">
                     <label class="form-check-label" for="processing-${item.id}">揀貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="delivering-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="出貨中" name="orderStatus-${item.id}" id="delivering-${item.id}">
                     <label class="form-check-label" for="delivering-${item.id}">出貨中</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCanceled-${item.id}">
+                    <input class="form-check-input" type="radio" data-status="訂單取消" name="orderStatus-${item.id}" id="orderCanceled-${item.id}">
                     <label class="form-check-label" for="orderCanceled-${item.id}">訂單取消</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="orderState-${item.id}" id="orderCompleted-${item.id}" checked>
+                    <input class="form-check-input" type="radio" data-status="訂單完成" name="orderStatus-${item.id}" id="orderCompleted-${item.id}" checked>
                     <label class="form-check-label" for="orderCompleted-${item.id}">訂單完成</label>
                 </div>
                 `
@@ -239,3 +242,65 @@ function renderOrderList(data){
         `
     }
 }
+
+//移動訂單狀態監聽
+orderListContent.addEventListener("change",function(e){
+    let moveOrderStatus = e.target.getAttribute("data-status");
+    //取得訂單編號
+    let moveOrderId = e.target.getAttribute("name").split("orderStatus-")[1];
+
+    Swal.fire({
+        title: `移動訂單：${moveOrderId}，<br>狀態改為${moveOrderStatus} `,
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: "確認",
+        denyButtonText: "取消"
+      }).then((result) => {
+        if (result.isConfirmed) {
+        
+            //修改訂單狀態
+            axios.patch(`${_url}/orders/${moveOrderId}`,{
+                "status":moveOrderStatus
+            })
+            .then(function(res){
+                //同時修改該會員的歷史訂單狀態
+                let memberId = res.data.memberId;
+                let memberHistoryOrder=[];
+                axios.get(`${_url}/users/${memberId}`)
+                .then(function(res){
+
+                    memberHistoryOrder = res.data.historyOrder;
+                    memberHistoryOrder.forEach(function(item){
+                        if(item.id == moveOrderId){
+                            item.status = moveOrderStatus;
+                        }
+                    })
+                    axios.patch(`${_url}/users/${memberId}`,{
+                        "historyOrder":memberHistoryOrder
+                    })
+                    .then(function(res){
+                        Toast.fire({
+                            icon: "success",
+                            title: "修改成功"
+                        }).then((result) => {
+                            location.reload();
+                        });
+                    })
+                    .catch(function(err){
+                        console.log(err);
+                    })
+
+                })
+                .catch(function(err){
+                    console.log(err);
+                })
+
+            })
+            .catch(function(err){
+                console.log(err);
+            })
+
+            
+        } 
+      });
+})

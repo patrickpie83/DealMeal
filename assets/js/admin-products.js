@@ -1,3 +1,7 @@
+//篩選
+const filterArea=document.querySelector(".filterArea");
+const selectStatus=document.querySelector("#selectStatus");
+const selectSeries=document.querySelector("#selectSeries");
 //編輯按鈕
 const editBtn=document.querySelector(".editBtn");
 const finishBtn=document.querySelector(".finishBtn");
@@ -25,12 +29,16 @@ const Toast = Swal.mixin({
 
 //初始
 init();
+let productListData = [];
+let originData = [];
 
 function init(){
     //取得所有商品
     axios.get(`${_url}/products`)
     .then(function(res){
-        renderProductsList(res.data);
+        productListData = res.data;
+        originData = productListData;
+        renderProductsList(productListData);
     })
     .catch(function(err){
         console.log(err);
@@ -138,33 +146,25 @@ function renderProductsList(data){
     productListContent.innerHTML = str;
 }
 
-
 //編輯監聽
 editBtn.addEventListener("click",function(e){
-    axios.get(`${_url}/products`)
-    .then(function(res){
-
-        //寫入暫存
-        res.data.forEach(function(item){
-            axios.post(`${_url}/productsEditTemp`,item)
-            .then(function(res){
-
-            })
-            .catch(function(err){
-                console.log(err);
-            })
+    //寫入暫存
+    productListData.forEach(function(item){
+        axios.post(`${_url}/productsEditTemp`,item)
+        .then(function(res){
 
         })
-
-        renderProductsEnableList(res.data);
-        finishBtn.classList.remove("disabled");
-        editBtn.classList.add("disabled");
-
+        .catch(function(err){
+            console.log(err);
+        })
 
     })
-    .catch(function(err){
-        console.log(err);
-    })
+
+    renderProductsEnableList(productListData);
+    finishBtn.classList.remove("disabled");
+    editBtn.classList.add("disabled");
+    selectStatus.disabled = "ture";
+    selectSeries.disabled = "ture";
 })
 
 //渲染-編輯模式
@@ -250,7 +250,6 @@ function renderProductsEnableList(data){
     productListContent.innerHTML = str;
 }
 
-
 //狀態 修改監聽
 productListContent.addEventListener("click",function(e){
 
@@ -272,7 +271,6 @@ productListContent.addEventListener("click",function(e){
 
 
 })
-
 
 //數量 修改監聽
 productListContent.addEventListener("change",function(e){
@@ -305,7 +303,6 @@ productListContent.addEventListener("change",function(e){
     }
 })
 
-
 let editAlertStr="";
 //確認修改的內容
 finishBtn.addEventListener("click",function(e){
@@ -313,60 +310,42 @@ finishBtn.addEventListener("click",function(e){
     axios.get(`${_url}/productsEditTemp`)
     .then(function(res){
 
-        axios.get(`${_url}/products`)
-        .then(function(origin){
+        editAlertStr="";
+        let newProductData=[];
 
-            editAlertStr=""
-            let originProducts=[];
-            let newProductData=[];
-            
+        //tempItem為每一筆暫存內的資料
+        res.data.forEach(function(tempItem){
 
-            originProducts=origin.data;
-
-            //tempItem為每一筆暫存內的資料
-            res.data.forEach(function(tempItem){
-
-                // 跟原始資料比對
-                originProducts.forEach(function(originItem){
-                    if(tempItem.id == originItem.id){
-                        if( tempItem.state != originItem.state || tempItem.storage != originItem.storage){
-                            //若有異動到的商品記錄下來
-                            newProductData.push(tempItem)
-                            editAlertStr += 
-                            `<span class="text-danger">${tempItem.name}</span> 的架上狀態修改為 <span class="text-danger">${tempItem.state}</span> ，所增加庫存量為 <span class="text-danger">${tempItem.storage - originItem.storage} 份</span><br>`;
-                        }
+            // 跟原始資料比對
+            productListData.forEach(function(originItem){
+                if(tempItem.id == originItem.id){
+                    if( tempItem.state != originItem.state || tempItem.storage != originItem.storage){
+                        //若有異動到的商品記錄下來
+                        newProductData.push(tempItem)
+                        editAlertStr += 
+                        `<span class="text-danger">${tempItem.name}</span> 的架上狀態修改為 <span class="text-danger">${tempItem.state}</span> ，所增加庫存量為 <span class="text-danger">${tempItem.storage - originItem.storage} 份</span><br>`;
                     }
-                })
-                
+                }
             })
-
-            if(!editAlertStr){
-                finishContent.innerHTML = `
-                無變更資料，確認後離開編輯模式
-                `;
-            }else{
-                finishContent.innerHTML = `
-                本次編輯的資料為<br>
-                ${editAlertStr}
-                `;
-            }
-
-
-
-        })
-        .catch(function(err){
-            console.log(err);
+            
         })
 
+        if(!editAlertStr){
+            finishContent.innerHTML = `
+            無變更資料，確認後離開編輯模式
+            `;
+        }else{
+            finishContent.innerHTML = `
+            本次編輯的資料為<br>
+            ${editAlertStr}
+            `;
+        }
 
     })
     .catch(function(err){
         console.log(err);
     })
-
-
 })
-
 
 //確認送出按鈕
 finishConfirmBtn.addEventListener("click",function(e){
@@ -411,3 +390,65 @@ finishConfirmBtn.addEventListener("click",function(e){
 
     }
 })
+
+
+let selectStatusFliter = "全部";
+let selectSeriesFliter = "全部";
+//篩選監聽
+filterArea.addEventListener("change",function(e){
+    let filterData = [];
+    
+    //若篩選狀態，則帶入狀態，若篩選系列，則帶入系列 ，如此可以同時進行兩種篩選
+    if (e.target.getAttribute("id") == "selectStatus"){
+        selectStatusFliter = e.target.value;
+        
+    }else if ( e.target.getAttribute("id") == "selectSeries" ){
+        selectSeriesFliter = e.target.value;
+        
+    }
+    console.log(selectStatusFliter)
+    console.log(selectSeriesFliter)
+
+    //篩選狀況
+    if( selectStatusFliter == "全部" && selectSeriesFliter == "全部"){
+        //若皆選擇全部
+        //把原本資料倒回去
+        productListData = originData;
+        renderProductsList(productListData);
+
+    }else if( selectSeriesFliter == "全部" ){
+        //狀態有選擇、系列選全部
+        originData.forEach(function(item){
+            if(item.state == selectStatusFliter){
+                filterData.push(item);
+            }
+        })
+        //資料僅為篩選資料
+        productListData = filterData;
+        renderProductsList(productListData);
+
+    }else if( selectStatusFliter == "全部" ){
+        //系列有選擇、狀態選全部
+        originData.forEach(function(item){
+            if(item.series == selectSeriesFliter){
+                filterData.push(item);
+            }
+        })
+        //資料僅為篩選資料
+        productListData = filterData;
+        renderProductsList(productListData);
+
+    }else{
+        //皆有選擇
+        originData.forEach(function(item){
+            if((item.state == selectStatusFliter) && (item.series == selectSeriesFliter)){
+                filterData.push(item);
+            }
+        })
+        //資料僅為篩選資料
+        productListData = filterData;
+        renderProductsList(productListData);
+    }
+
+})
+

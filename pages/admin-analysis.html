@@ -6,36 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>訂食後台管理</title>
     <link href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined%7CMaterial+Icons+Two+Tone%7CMaterial+Icons+Round%7CMaterial+Icons+Sharp" rel="stylesheet">
+    <!-- sweetalert -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.css" rel="stylesheet">
+    <!-- c3 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css">
   </head>
 
   <body>
+    <!-- sweetalert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert2/11.10.1/sweetalert2.js"></script>
+
     <%- include('./layout/admin-header'); -%>
     <div class="container py-7">
       <div class="d-flex justify-content-between align-items-center mb-5">
         <h2 class="fs-4 fw-normal">業績</h2>
-        <div class="d-flex">
-          <div class="me-5">
-            <label for="selectMonth">月別</label>
-            <select name="monthSelector" id="selectMonth">
-              <option value="全部">全部</option>
-              <option value="8月">2023年8月</option>
-              <option value="9月">2023年9月</option>
-              <option value="10月">2023年10月</option>
-              <option value="11月">2023年11月</option>
-              <option value="12月">2023年12月</option>
-            </select>
-          </div>
-          <div>
-            <label for="selectType">排序</label>
-            <select name="typeSelector" id="selectType">
-              <option value="銷售數量">銷售數量</option>
-              <option value="銷售金額">銷售金額</option>
-            </select>
-            <select name="salesSelector" id="selectSales">
-              <option value="由高至低">由高至低</option>
-              <option value="由低至高">由低至高</option>
-            </select>
-          </div>
+        <div>
+          <label for="selectMonth">月別</label>
+          <select name="monthSelector" id="selectMonth">
+            <option value="全部">全部</option>
+            <option value="2023-11">2023-11</option>
+            <option value="2023-12">2023-12</option>
+          </select>
         </div>
       </div>
 
@@ -54,21 +45,7 @@
                 <th class="py-3 text-white fw-normal border border-light-brown" scope="col">銷售金額</th>
               </tr>
             </thead>
-            <tbody>
-              <!-- 第一筆 -->
-              <tr class="align-middle border border-primary">
-                <td>2023年9月</td>
-                <td class="p-3" style="width: 110px;">
-                  <div class="ratio ratio-1x1 ">
-                    <img src="../assets/images/早餐＿蘿蔔蛤蜊蘑菇濃湯.jpg" alt="">
-                  </div>
-                </td>
-                <td>早餐系列</td>
-                <td>蘿蔔蛤蜊蘑菇濃湯湯湯</td>
-                <td>160元</td>
-                <td>100份</td>
-                <td>16000元</td>
-              </tr>
+            <tbody class="productList">
             </tbody>
           </table>
         </div>
@@ -84,19 +61,24 @@
               </tr>
             </thead>
             <tbody>
-              <!-- 第一筆 -->
-              <tr class="align-middle border border-primary">
-                <td>800份</td>
-                <td>128000元</td>
+              <tr class="align-middle border border-primary totalContent">
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col chartContent">
         </div>
       </div>
 
     </div>
     
 
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script type="module" src="../main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
+    <script type="module" src="../assets/js/admin-analysis.js"></script>
   </body>
 </html>

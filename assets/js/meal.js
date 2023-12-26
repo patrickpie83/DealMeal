@@ -11,7 +11,7 @@ const mealDetail=document.querySelector(".mealDetail");
 // const _url="https://dealmealserver.onrender.com";
 const _url="http://localhost:3000";
 
-//sweetalert2 timer=1000
+//sweetalert2 timer=1200
 const Toast = Swal.mixin({
     toast: true,
     position: "top",
@@ -19,11 +19,12 @@ const Toast = Swal.mixin({
     timer: 1000,
     timerProgressBar: false,
     didOpen: (toast) => {
-        toast.onmouseenter = Swal.stopTimer;
-        toast.onmouseleave = Swal.resumeTimer;
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
     }
-});
+  });
 
+//渲染內容
 function renderData(data){
     let str="";
     let item=data[0];
@@ -33,16 +34,7 @@ function renderData(data){
         quantityInputStr =`
         <div class="d-flex align-items-center mb-4">
             <p class="mealQuatity me-3">數量</p>
-                        
-            <div class="d-flex justify-content-between w-75">
-                <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_minus.png?raw=true" alt="icon_minus" style="width: 20px;height: 2px;">
-                </button>
-                <input type="number" class="rounded-0 mx-2 border border-primary w-100" value="1" min="1" max="${item.storage}">
-                <button type="button" class="btn btn-white border border-primary rounded-0 p-1" style="height: 30px;">
-                    <img class="d-block" src="https://github.com/patrickpie83/DealMeal/blob/main/assets/images/icon_add.png?raw=true" alt="icon_add" style="width: 20px;height: 20px;">
-                </button>
-            </div>
+             <input type="number" class="rounded-0 mx-2 border border-primary w-75" value="1" min="1" max="${item.storage}" data-js="addCartQuantity">
         </div>
         <button type="button" class="py-2 py-lg-3 mt-3 mt-lg-5 btn btn-primary text-light-brown w-100 rounded-0">加入購物車</button>
         `
@@ -59,7 +51,7 @@ function renderData(data){
         </div>
         <div class="col-lg-6 d-flex flex-column justify-content-between mt-3 mt-lg-0">
             <div>
-                <span class="mb-3">${item.series}</span>
+                <span class="mb-3 text-dark-brown">${item.series}</span>
                 <h1 class="mealName mb-4 mb-lg-4">${item.name}</h1>
                 <p class="mealStorage mb-lg-4">即時庫存：${item.storage}份</p>
                 <p class="mealPrice fw-bold">售價：${item.price}元</p>
@@ -108,6 +100,7 @@ function apiGetMeal(){
     axios.get(`${_url}/products?id=${id}`)
     .then(function(res){
         renderData(res.data);
+
     })
     .catch(function(err){
         console.log(err);
@@ -117,3 +110,180 @@ function apiGetMeal(){
 
 //初始
 apiGetMeal()
+
+//初始數量
+let addQuantity=1;
+
+mealDetail.addEventListener("change",function(e){
+    if(e.target.getAttribute("data-js") == "addCartQuantity"){
+        addQuantity = Number(e.target.value);
+    }
+})
+
+
+//加入購物車監聽
+mealDetail.addEventListener("click",function(e){
+    if(e.target.textContent == "加入購物車"){
+        apiAddCart(id,addQuantity);
+    }
+
+})
+
+
+//加入購物車
+function apiAddCart(productId,productQuantity){
+
+    let userId = localStorage.getItem("userId");
+  
+    //登入會員判斷
+    if(!userId){
+  
+      //sweetalert2
+      Toast.fire({
+        icon: "warning",
+        title: "請先登入會員"
+      }).then((result) =>{
+          window.location.href ="login.html";
+      })
+  
+    }else{
+  
+      let productImage;
+      let productSeries;
+      let productStorage;
+      let productName;
+      let productPrice;
+      let total;
+  
+      //取得商品資訊一起加入購物車
+      axios.get(`${_url}/products/${productId}`)
+      .then(function(res){
+        productImage = res.data.image;
+        productSeries = res.data.series;
+        productStorage = res.data.storage;
+        productName = res.data.name;
+        productPrice = res.data.price;
+  
+            //取得會員狀態
+            axios.get(`${_url}/users/${userId}`)
+            .then(function(res){
+  
+              let cartItemuuid = crypto.randomUUID();
+  
+              //判斷使用者是否已有使用購物車
+              if(res.data.cartExist){
+  
+                //購物車已有商品
+                //先取得購物車資訊
+                //就修改(推入) cart內容
+                axios.get(`${_url}/carts/${userId}`)
+                .then(function(res){
+                  
+                  let cart = res.data.cart;
+                  let newCart=[];
+                  total = res.data.total;
+                  let alreadyExist = false;
+  
+                  //判斷購物車內是否有此重複商品
+                  cart.forEach(function(item){
+                    if(item.productId == productId){
+                      item.quantity+=productQuantity;
+                      alreadyExist = true;
+                    }
+                  })
+  
+                  if(alreadyExist){
+                    newCart = cart;
+                  }else{
+                    cart.push({
+                      "productId": productId,
+                      "cartItemId": cartItemuuid,
+                      "productImage":productImage,
+                      "productSeries":productSeries,
+                      "productStorage":productStorage,
+                      "productName":productName,
+                      "productPrice":productPrice,
+                      "quantity": productQuantity
+                    })
+                    newCart = cart;
+                  }
+  
+                  
+                  axios.patch(`${_url}/carts/${userId}`,{
+                    "cart":newCart,
+                    "total":total + productPrice*productQuantity
+                  })
+                  .then(function(res){
+                    //sweetalert2
+                    Toast.fire({
+                      icon: "success",
+                      title: "已加入購物車"
+                    }).then((result) =>{
+                      location.reload();
+                    })
+                    
+                  })
+                  .catch(function(err){
+                    console.log(err);
+                  })
+  
+                  
+  
+                })
+                .catch(function(err){
+                  console.log(err);
+                })
+  
+              }else{
+                //購物車尚未有商品
+                axios.post(`${_url}/carts`,{
+                  "id":userId,
+                  "cart": [
+                    {
+                      "productId": productId,
+                      "cartItemId": cartItemuuid,
+                      "productImage":productImage,
+                      "productSeries":productSeries,
+                      "productStorage":productStorage,
+                      "productName":productName,
+                      "productPrice":productPrice,
+                      "quantity": productQuantity
+                    }
+                  ],
+                  "total":productPrice*productQuantity + 80
+                })
+                .then(function(res){
+                    //sweetalert2
+                    Toast.fire({
+                      icon: "success",
+                      title: "已加入購物車"
+                    }).then((result) =>{
+                      location.reload();
+                    })
+                })
+                .catch(function(err){
+                  console.log(err);
+                })
+              }
+              
+              //新增入購物車成功，有物品在購物車的話，會員狀態會改為true
+              axios.patch(`${_url}/users/${userId}`,{
+                "cartExist":true
+              })
+  
+                
+            })
+            .catch(function(err){
+              console.log(err);
+            })
+  
+      })
+      .catch(function(err){
+        console.log(err);
+      })
+  
+  
+  
+  
+    }
+  }

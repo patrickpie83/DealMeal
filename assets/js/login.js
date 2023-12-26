@@ -42,6 +42,7 @@ function apiSignUp(){
         "email":signUpEmail.value,
         "password":signUpPassword.value,
         "cartExist":false,
+        "usedCoupon":[],
         "historyOrder":[]
     })
     .then(function(res){
