@@ -3,8 +3,8 @@ const adminEmail=document.querySelector("#adminEmail");
 const adminPassword=document.querySelector("#adminPassword");
 const adminLoginBtn=document.querySelector(".adminLoginBtn");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({

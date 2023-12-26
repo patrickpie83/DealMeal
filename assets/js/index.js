@@ -21,7 +21,6 @@ if(backToTopBtn){
   console.error('Element with ID "myButton" not found.');
 }
 
-
 //sweetalert2 timer=1200
 const Toast = Swal.mixin({
   toast: true,
@@ -42,7 +41,6 @@ const copyCouponBtn=document.querySelector(".copyCouponBtn");
 copyCouponBtn.addEventListener("click",function(){
   navigator.clipboard.writeText(couponText.value)
         .then(function() {
-
           //sweetalert2
           Toast.fire({
               icon: "success",

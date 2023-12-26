@@ -6,8 +6,8 @@ const pcSeriesFilter=document.querySelector(".pcSeriesFilter");
 //分頁
 const pagination=document.querySelector(".pagination");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2
 const Toast = Swal.mixin({
@@ -81,8 +81,6 @@ function renderProducts(data){
         storageStr =`即時庫存：${item.storage}份`;
       }
 
-
-      
       str+=`
       <div class="col-6 mb-5 mb-lg-7 ${filterStr} ">
         <div class="card rounded-0 border-0">
@@ -306,7 +304,6 @@ function renderProducts(data){
   pagination.innerHTML = paginationStr;
 }
 
-
 // 初始
 function init(){
   axios.get(`${_url}/products`)
@@ -413,7 +410,6 @@ function apiAddCart(productId){
                   })
                   newCart = cart;
                 }
-
                 
                 axios.patch(`${_url}/carts/${userId}`,{
                   "cart":newCart,
@@ -432,8 +428,6 @@ function apiAddCart(productId){
                 .catch(function(err){
                   console.log(err);
                 })
-
-                
 
               })
               .catch(function(err){
@@ -477,7 +471,6 @@ function apiAddCart(productId){
               "cartExist":true
             })
 
-              
           })
           .catch(function(err){
             console.log(err);
@@ -488,15 +481,11 @@ function apiAddCart(productId){
       console.log(err);
     })
 
-
-
-
   }
 }
 
 //商品列表頁的 加入購物車按鍵
 productsList.addEventListener("click",function(e){
-
   if(e.target.getAttribute("data-js") !== "addCartBtn"){
     return;
   }else{
@@ -504,8 +493,6 @@ productsList.addEventListener("click",function(e){
     apiAddCart(productId)
   }
 })
-
-
 
 // 分頁按鈕
 pagination.addEventListener("click",function(e){
@@ -537,10 +524,7 @@ pagination.addEventListener("click",function(e){
         console.log(err);
     })
   }
-
-
 })
-
 
 // 篩選系列
 mobileSeriesFilter.addEventListener("click",function(e){

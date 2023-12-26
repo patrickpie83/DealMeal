@@ -4,12 +4,11 @@ const orderListContent=document.querySelector(".orderListContent");
 //移動訂單確認
 const moveOrderContent=document.querySelector(".moveOrderContent");
 const moveOrderConfirmBtn=document.querySelector(".moveOrderConfirmBtn");
-
 //取得header點選狀態
 let listStatus = location.href.split("=")[1];
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -299,7 +298,6 @@ orderListContent.addEventListener("change",function(e){
             .catch(function(err){
                 console.log(err);
             })
-
             
         } 
       });

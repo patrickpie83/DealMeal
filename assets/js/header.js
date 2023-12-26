@@ -9,25 +9,25 @@ const cartAlertBurgerBadge = document.querySelector(".cartAlertBurgerBadge");
 const cartAlertBadge = document.querySelector(".cartAlertBadge");
 
 let userId ;
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
-
-//sweetalert2 timer=1200
-// const Toast = Swal.mixin({
-//     toast: true,
-//     position: "top",
-//     showConfirmButton: false,
-//     timer: 1200,
-//     timerProgressBar: false,
-//     didOpen: (toast) => {
-//         toast.onmouseenter = Swal.stopTimer;
-//         toast.onmouseleave = Swal.resumeTimer;
-//     }
-// });
+// sweetalert2 timer=1200
+const Toast = Swal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 1200,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+    }
+});
 
 //初始
 init();
+
 function init(){
     userId = localStorage.getItem("userId");
     
@@ -46,7 +46,6 @@ function apiGetUser(userId){
     .then(function(res){
         const memberName = res.data.name ;
         memberWelcome.innerHTML=`<p class="text-normal-brown">${memberName}，歡迎回來</p>`;
-
 
         if(res.data.cartExist){
             cartAlertBurgerBadge.classList.remove("d-none");
@@ -68,13 +67,12 @@ function apiGetUser(userId){
     })
     .catch(function(err){
         console.log(err);
-        // Toast.fire({
-        //     icon: "error",
-        //     title: "會員帳號有問題，請聯絡官方"
-        // })
+        Toast.fire({
+            icon: "error",
+            title: "會員帳號有問題，請聯絡官方"
+        })
     })
 }
-
 
 memberBtn.addEventListener("click",function(e){
     e.preventDefault();

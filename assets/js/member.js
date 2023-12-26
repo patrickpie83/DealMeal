@@ -10,9 +10,8 @@ const saveFileComfirm = document.querySelector(".saveFileComfirm");
 const historyOrderContent = document.querySelector(".historyOrderContent");
 
 let userId ;
-
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -123,7 +122,6 @@ function render(data){
     }
 }
 
-
 //修改會員資料
 function apiModifyMember(name,email,address){
     axios.patch(`${_url}/users/${userId}`,{
@@ -144,7 +142,6 @@ function apiModifyMember(name,email,address){
         console.log(err);
     })
 }
-
 
 //登出
 logoutBtn.addEventListener("click",function(e){
@@ -194,7 +191,6 @@ saveFileComfirm.addEventListener("click",function(e){
         },
     };
 
-
     const modifyNameErrors = validate(memberFile,modifyNameConstraints);
     const modifyAddressErrors = validate(memberFile,modifyAddressConstraints);
     const modifyEmailErrors = validate(memberFile,modifyEmailConstraints);
@@ -203,7 +199,6 @@ saveFileComfirm.addEventListener("click",function(e){
     let modifyAddressErrorsContent = modifyAddressErrors ? `${modifyAddressErrors["配送地址"]}` : "";
     let modifyEmailErrorsContent = modifyEmailErrors ? `${modifyEmailErrors["電子信箱"]}` : "";
 
-    
     if(modifyNameErrorsContent){
         //sweetalert2
         Toast.fire({
@@ -224,6 +219,5 @@ saveFileComfirm.addEventListener("click",function(e){
         apiModifyMember(memberName.value,memberEmail.value,memberAddress.value);
         
     }
-
 
 })

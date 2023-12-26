@@ -1,15 +1,9 @@
-//各產品詳細頁
-//在products頁渲染時已給予各商品跳轉meal.html篩選id
-//到meal.html時，js將該id取出，並到server取得該商品的資料
-//渲染到meal.html
+const mealDetail=document.querySelector(".mealDetail");
 
 //取出跳轉商品id，把當前網址切割，取[1]的值 (此id為string)
 const id = location.href.split("=")[1];
-
-const mealDetail=document.querySelector(".mealDetail");
-
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1200
 const Toast = Swal.mixin({
@@ -120,7 +114,6 @@ mealDetail.addEventListener("change",function(e){
     }
 })
 
-
 //加入購物車監聽
 mealDetail.addEventListener("click",function(e){
     if(e.target.textContent == "加入購物車"){
@@ -128,7 +121,6 @@ mealDetail.addEventListener("click",function(e){
     }
 
 })
-
 
 //加入購物車
 function apiAddCart(productId,productQuantity){
@@ -281,9 +273,6 @@ function apiAddCart(productId,productQuantity){
       .catch(function(err){
         console.log(err);
       })
-  
-  
-  
   
     }
   }

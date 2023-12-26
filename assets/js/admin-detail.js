@@ -4,8 +4,6 @@ const detailContent=document.querySelector(".detailContent");
 const deleteBtn=document.querySelector(".deleteBtn");
 //送出按鈕
 const sendBtn=document.querySelector(".sendBtn");
-
-
 //圖片
 let imgInput;
 let imgArea;
@@ -31,17 +29,10 @@ let oven;
 let electricPot;
 let pan;
 
-
-
-
-
-
-
-
 //取出跳轉商品id，把當前網址切割，取[1]的值 (此id為string)
 const id = location.href.split("=")[1];
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -300,8 +291,6 @@ function apiDeleteProduct(){
         })
 }
 
-
-
 let checkNameOK = false;
 let checkImgOK = false;
 //圖片預覽監聽
@@ -316,6 +305,7 @@ detailContent.addEventListener("click",function(e){
         checkImgOK = true ;
     }
 })
+
 //圖片輸入移除監聽
 detailContent.addEventListener("click",function(e){
     e.preventDefault();
@@ -384,7 +374,6 @@ function checkName(newName){
                 existNameText.textContent = "此名稱可以使用";
                 checkNameOK = true ;
             }
-
         }
 
     })
@@ -504,13 +493,6 @@ sendBtn.addEventListener("click",function(e){
                 apiEditProduct();
             } 
           });
-
-
-
-
-
-
-        
     }
 })
 

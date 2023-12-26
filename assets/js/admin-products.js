@@ -7,12 +7,11 @@ const editBtn=document.querySelector(".editBtn");
 const finishBtn=document.querySelector(".finishBtn");
 const finishContent=document.querySelector(".finishContent");
 const finishConfirmBtn=document.querySelector(".finishConfirmBtn");
-
 //商品列表
 const productListContent=document.querySelector(".productListContent");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({

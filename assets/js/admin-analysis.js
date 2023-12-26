@@ -4,8 +4,9 @@ const selectMonth=document.querySelector("#selectMonth");
 const productList=document.querySelector(".productList");
 const totalContent=document.querySelector(".totalContent");
 const chartContent=document.querySelector(".chartContent");
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //初始
 init();

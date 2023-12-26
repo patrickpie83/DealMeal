@@ -9,14 +9,13 @@ const signUpNameContent=document.querySelector(".signUpNameContent");
 const signUpAddressContent=document.querySelector(".signUpAddressContent");
 const signUpEmailContent=document.querySelector(".signUpEmailContent");
 const signUpPasswordContent=document.querySelector(".signUpPasswordContent");
-
 //登入會員
 const loginEmail=document.querySelector("#loginEmail");
 const loginPassword=document.querySelector("#loginPassword");
 const loginBtn=document.querySelector(".loginBtn");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -30,7 +29,6 @@ const Toast = Swal.mixin({
         toast.onmouseleave = Swal.resumeTimer;
     }
 });
-
 
 // 註冊會員API
 function apiSignUp(){

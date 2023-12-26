@@ -18,9 +18,8 @@ const confrimBtn=document.querySelector(".confrimBtn");
 const sendOrderBtn=document.querySelector(".sendOrderBtn");
 
 let userId = localStorage.getItem("userId");
-
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -114,7 +113,6 @@ function renderPayment(data){
     totalPriceContent.textContent = `${data.total}元`;
 }
 
-
 let choosePayment;
 
 linePay.addEventListener("click",function(e){
@@ -130,9 +128,6 @@ applePay.addEventListener("click",function(e){
     choosePayment = e.target.getAttribute("data-js-payment");
     confrimBtn.setAttribute("data-bs-target","#confirmOrderModal")
 })
-
-
-
 
 sendOrderBtn.addEventListener("click",function(e){
 
@@ -155,7 +150,6 @@ sendOrderBtn.addEventListener("click",function(e){
     completeInformation.payment = choosePayment;
     completeInformation.orderDate = orderDate;
     completeInformation.status = "尚未處理";
-
 
     //送出訂單資訊
     axios.post(`${_url}/orders`,completeInformation)
@@ -186,7 +180,6 @@ sendOrderBtn.addEventListener("click",function(e){
             title: "訂單送出失敗"
         });
     })
-
 
     //送出訂單後移到歷史訂單
     axios.get(`${_url}/users/${userId}`)
@@ -238,7 +231,6 @@ sendOrderBtn.addEventListener("click",function(e){
     })
 })
 
-
 //計算優惠碼相關資訊
 function apiCountCoupon(couponId){
     axios.get(`${_url}/coupons/${couponId}`)
@@ -255,7 +247,6 @@ function apiCountCoupon(couponId){
         console.log(err);
     })
 }
-
 
 //送出訂單後清空購物車
 function apiClearCart(){
@@ -289,13 +280,11 @@ function apiTakeProductStorage(data){
         .then(function(res){
             originStorage = res.data.storage;
 
-
             //修改商品庫存
             axios.patch( `${_url}/products/${item.productId}`,{
                 "storage" : originStorage - item.quantity
             })
             .then(function(res){
-
                 //若完售，則修改商品狀態
                 if( originStorage - item.quantity <= 0){
 
@@ -310,21 +299,16 @@ function apiTakeProductStorage(data){
                     })
 
                 }
-
                 window.location.href ="index.html";
-
             })
             .catch(function(err){
                 console.log(err);
             })
 
-
         })
         .catch(function(err){
             console.log(err);
         })
-
-
 
     })
 

@@ -5,7 +5,6 @@ const cartFirstStep=document.querySelector(".cartFirstStep");
 const clearCartBtn=document.querySelector(".clearCartBtn");
 const cartItemsContent=document.querySelector(".cartItemsContent");
 const cartTotal=document.querySelector(".cartTotal");
-
 //優惠折扣碼
 const couponInput=document.querySelector(".couponInput");
 const useCouponBtn=document.querySelector(".useCouponBtn");
@@ -14,10 +13,8 @@ const couponDiscount=document.querySelector(".couponDiscount");
 const cartNextBtn=document.querySelector(".cartNextBtn");
 
 let userId = localStorage.getItem("userId");
-
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
-
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=800
 const Toast = Swal.mixin({
@@ -31,7 +28,6 @@ const Toast = Swal.mixin({
         toast.onmouseleave = Swal.resumeTimer;
     }
 });
-
 
 //初始
 init();
@@ -117,16 +113,13 @@ function renderCart(data){
 
 }
 
-
 //購物車商品調整，金額變動監聽
 cartItemsContent.addEventListener("change",function(e){
     if(e.target.getAttribute("data-js") == "quantityInput"){
 
         apiModifyCart( e.target.getAttribute("data-cartItemId"),  Number(e.target.value) )
     }
-    
 })
-
 
 //修改購物車數量
 function apiModifyCart(cartItemId,quantity){
@@ -150,15 +143,11 @@ function apiModifyCart(cartItemId,quantity){
         .catch(function(err){
             console.log(err);
         })
-
-
     })
     .catch(function(err){
         console.log(err);
     })
-    
 }
-
 
 //刪除購物車指定品項監聽
 cartItemsContent.addEventListener("click",function(e){
@@ -167,7 +156,6 @@ cartItemsContent.addEventListener("click",function(e){
         apiDeleteCartItem( e.target.getAttribute("data-cartItemId") );
     }
 })
-
 
 //刪除購物車指定品項
 function apiDeleteCartItem(cartItemId){
@@ -203,13 +191,11 @@ function apiDeleteCartItem(cartItemId){
     })
 }
 
-
 //清空購物車監聽
 clearCartBtn.addEventListener("click",function(e){
     e.preventDefault();
     apiClearCart();
 })
-
 
 //清空購物車
 function apiClearCart(){
@@ -337,16 +323,12 @@ useCouponBtn.addEventListener("click",function(){
     })
 })
 
-
 //計算cart total並寫入
 function apiCalculateTotal(data){
     //data為整個cart資訊
 
     let calculateTotal=0;
     let deliverFee = 80;
-
-
-
 
     data.cart.forEach(function(item){
         calculateTotal += item.productPrice * item.quantity ;
@@ -404,16 +386,13 @@ function apiCalculateTotal(data){
                 console.log(err);
             })
 
-
         })
         .catch(function(err){
             console.log(err);
         })
     }
 
-
 }
-
 
 //下一步
 cartNextBtn.addEventListener("click",function(e){
@@ -451,9 +430,5 @@ cartNextBtn.addEventListener("click",function(e){
     .catch(function(err){
         console.log(err);
     })
-
-
-
-
 
 })

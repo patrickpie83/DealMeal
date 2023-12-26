@@ -7,11 +7,9 @@ const deliverInfoAddress=document.querySelector(".deliverInfoAddress");
 //下一步
 const deliverNextBtn=document.querySelector(".deliverNextBtn");
 
-
 let userId = localStorage.getItem("userId");
-
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -41,11 +39,9 @@ function init(){
 
 //渲染
 function renderDeliver(data){
-
     deliverInfoName.value = data.name;
     deliverInfoEmail.value = data.email;
     deliverInfoAddress.value = data.address;
-
 }
 
 //下一步監聽&驗證
@@ -100,7 +96,6 @@ deliverNextBtn.addEventListener("click",function(e){
     const deliverAddressErrors = validate(deliverInfoForm,deliverAddressConstraints);
     const deliverEmailErrors = validate(deliverInfoForm,deliverEmailConstraints);
     const deliverTelErrors = validate(deliverInfoForm,deliverTelConstraints);
-
 
     if(deliverNameErrors){
         //sweetalert2

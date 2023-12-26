@@ -29,8 +29,8 @@ const pan=document.querySelector("#pan");
 //完成按鈕
 const finishBtn=document.querySelector(".finishBtn");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
@@ -241,7 +241,5 @@ finishBtn.addEventListener("click",function(e){
         apiNewProduct();
         
     }
-    
-
 })
    

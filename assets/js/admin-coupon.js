@@ -7,16 +7,14 @@ const releaseCouponUsage=document.querySelector("#releaseCouponUsage");
 const releaseCouponDiscount=document.querySelector("#releaseCouponDiscount");
 const checkIdBtn=document.querySelector(".checkIdBtn");
 const checkIdText=document.querySelector(".checkIdText");
-
 //優惠碼列表
 const couponList=document.querySelector(".couponList");
 //送出按鈕
 const cancelCouponBtn=document.querySelector(".cancelCouponBtn");
 const checkCouponBtn=document.querySelector(".checkCouponBtn");
 
-// const _url="https://dealmealserver.onrender.com";
-const _url="http://localhost:3000";
-
+const _url="https://dealmealserver.onrender.com";
+// const _url="http://localhost:3000";
 
 //sweetalert2 timer=1000
 const Toast = Swal.mixin({
